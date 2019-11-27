@@ -1,0 +1,1 @@
+/Users/gracehoward/.config/nvim/init.vim
