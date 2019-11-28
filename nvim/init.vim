@@ -24,23 +24,26 @@ call plug#begin('~/.config/nvim/plugged')
     " vim-startify
     Plug 'mhinz/vim-startify'
 
-    " Vim Color Schemes
+    "Color Schemes
     " Plug 'flazz/vim-colorschemes'
-
-    " Color Scheme / Recommended Plugins
     Plug 'kaicataldo/material.vim'
     Plug 'patstockwell/vim-monokai-tasty'
     Plug 'joshdick/onedark.vim'
+    
+    " Syntax Plugins
     Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
     Plug 'pangloss/vim-javascript'
     Plug 'MaxMEllon/vim-jsx-pretty'
     Plug 'elzr/vim-json'
     Plug 'jparise/vim-graphql'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'bfrg/vim-cpp-modern'
 
     " Productivity
     Plug 'junegunn/goyo.vim'
     Plug 'xolox/vim-notes'
     Plug 'xolox/vim-misc'
+    Plug 'tpope/vim-fugitive'
 
     " Auto pairs
     Plug 'jiangmiao/auto-pairs'
@@ -124,6 +127,12 @@ inoremap jj <Esc>`^
 nnoremap <Leader>n :NERDTree<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 
+" Window move cursor
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    6. COLOR SCHEME    "
 "~~~~~~~~~~~~~~~~~~~~~~~"
@@ -149,30 +158,41 @@ colorscheme onedark
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    7. STARTIFY        "
 "~~~~~~~~~~~~~~~~~~~~~~~"
-    let g:startify_custom_header = []
+let g:startify_custom_header = []
 
-    "let g:startify_custom_header=[
-    "\ '                                       ',
-    "\ ]
+"let g:startify_custom_header=[
+"\ '                                       ',
+"\ ]
 
-    let g:startify_bookmarks = [{"v":"~/.config/nvim/init.vim"}]
-    let g:startify_lists = [
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'files',     'header': ['   Recent Files']            },
-          \ { 'type': 'dir',       'header': ['   Recent Files in '. getcwd()] },
+let g:startify_bookmarks = [{"v":"~/.config/nvim/init.vim"}]
+let g:startify_lists = [
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'files',     'header': ['   Recent Files']            },
+      \ { 'type': 'dir',       'header': ['   Recent Files in '. getcwd()] },
 \ ]
-    let g:startify_files_number = 5 
+let g:startify_files_number = 5 
 
-    " NERDTree at startup
-    autocmd VimEnter *
-            \   if !argc()
-            \ |   Startify
-            \ |   NERDTree
-            \ |   wincmd w
-            \ | endif
+" NERDTree at startup
+autocmd VimEnter *
+        \   if !argc()
+        \ |   Startify
+        \ |   NERDTree
+        \ |   wincmd w
+        \ | endif
 
 
-"~~~~~~~~~~~~~~~~~~~~~~~"
-"    8. MISCELLANEOUS   "
-"~~~~~~~~~~~~~~~~~~~~~~~"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"    8. SYNTAX HIGHLIGHTING    "
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+let g:cpp_simple_highlight = 1
+let g:cpp_named_requirements_highlight = 1
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+"    9. MISCELLANEOUS    "
+"~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+
+" oF Makefile
+let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
+"autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
