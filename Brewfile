@@ -66,6 +66,7 @@ brew "node", link: false
 brew "openssl@1.1"
 brew "pandoc"
 brew "rbenv"
+brew "rlwrap"
 brew "ruby"
 brew "tmux"
 brew "tree"
