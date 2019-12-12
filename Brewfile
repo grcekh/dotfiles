@@ -12,7 +12,6 @@ brew "mas"
 
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
 
 # Apps
