@@ -89,6 +89,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+
+########## ALIASES ##########
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -96,8 +99,12 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-#
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias config="nvim ~/.zshrc"
+alias src="source ~/.zshrc"
+alias dot="cd ~/dotfiles"
+alias wifi="wifi-password"
 
 
 ########## BROWSER-SYNC ##########
@@ -114,8 +121,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
 
 # Add epylint, pylon, pyreverse, similar, etc.
-
-
-
 
 # . /anaconda3/etc/profile.d/conda.sh
