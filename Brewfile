@@ -15,7 +15,6 @@ mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835
 
 # Apps
-cask "1password"
 cask "adobe-creative-cloud"
 cask "alfred"
 cask "appcleaner"
@@ -67,6 +66,7 @@ brew "neovim"
 brew "node", link: false
 brew "openssl@1.1"
 brew "pandoc"
+brew "pass"
 brew "ruby-build"
 brew "rbenv"
 brew "rlwrap"
