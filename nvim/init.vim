@@ -9,66 +9,66 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.'
 
-    " NERDTree
-    Plug 'scrooloose/nerdtree'
-    
-    " FZF
-    Plug '/usr/local/opt/fzf'
+" NERDTree
+Plug 'scrooloose/nerdtree'
 
-    " commentary.vim
-    Plug 'tpope/vim-commentary'
+" FZF
+Plug '/usr/local/opt/fzf'
 
-    " lightline.vim
-    Plug 'itchyny/lightline.vim'
+" commentary.vim
+Plug 'tpope/vim-commentary'
 
-    " vim-startify
-    Plug 'mhinz/vim-startify'
+" lightline.vim
+Plug 'itchyny/lightline.vim'
 
-    "Color Schemes
-    " Plug 'flazz/vim-colorschemes'
-    Plug 'kaicataldo/material.vim'
-    Plug 'patstockwell/vim-monokai-tasty'
-    Plug 'joshdick/onedark.vim'
-    
-    " Syntax Plugins
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-    Plug 'pangloss/vim-javascript'
-    Plug 'MaxMEllon/vim-jsx-pretty'
-    Plug 'elzr/vim-json'
-    Plug 'jparise/vim-graphql'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'bfrg/vim-cpp-modern'
+" vim-startify
+Plug 'mhinz/vim-startify'
 
-    " Productivity
-    Plug 'junegunn/goyo.vim'
-    Plug 'xolox/vim-notes'
-    Plug 'xolox/vim-misc'
-    Plug 'tpope/vim-fugitive'
+"Color Schemes
+" Plug 'flazz/vim-colorschemes'
+Plug 'kaicataldo/material.vim'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'joshdick/onedark.vim'
 
-    " Auto pairs
-    Plug 'jiangmiao/auto-pairs'
+" Syntax Plugins
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'elzr/vim-json'
+Plug 'jparise/vim-graphql'
+Plug 'sheerun/vim-polyglot'
+Plug 'bfrg/vim-cpp-modern'
 
-    " Neovim Completion Manager 2
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
+" Productivity
+Plug 'junegunn/goyo.vim'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-fugitive'
 
-    " enable ncm2 for all buffers
-    autocmd BufEnter * call ncm2#enable_for_buffer()
+" Auto pairs
+Plug 'jiangmiao/auto-pairs'
 
-    " IMPORTANT: :help Ncm2PopupOpen for more information
-    set completeopt=noinsert,menuone,noselect
+" Neovim Completion Manager 2
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 
-    " completion sources   
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-pyclang'
-    "Plug 'ncm2/ncm2-tern',{'do':'npm install'}
-    Plug 'ncm2/ncm2-cssomni'
-    Plug 'ncm2/ncm2-html-subscope'
-    Plug 'ncm2/ncm2-tagprefix'
-    Plug 'ncm2/ncm2-syntax'
-    Plug 'Shougo/neco-syntax'
-    Plug 'ncm2/ncm2-html-subscope'
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" completion sources   
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-pyclang'
+"Plug 'ncm2/ncm2-tern',{'do':'npm install'}
+Plug 'ncm2/ncm2-cssomni'
+Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-tagprefix'
+Plug 'ncm2/ncm2-syntax'
+Plug 'Shougo/neco-syntax'
+Plug 'ncm2/ncm2-html-subscope'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
