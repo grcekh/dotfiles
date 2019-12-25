@@ -9,44 +9,44 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.'
 
-    " NERDTree
-    Plug 'scrooloose/nerdtree'
-    
-    " FZF
-    Plug '/usr/local/opt/fzf'
+" NERDTree
+Plug 'scrooloose/nerdtree'
 
-    " commentary.vim
-    Plug 'tpope/vim-commentary'
+" FZF
+Plug '/usr/local/opt/fzf'
 
-    " lightline.vim
-    Plug 'itchyny/lightline.vim'
+" commentary.vim
+Plug 'tpope/vim-commentary'
 
-    " vim-startify
-    Plug 'mhinz/vim-startify'
+" lightline.vim
+Plug 'itchyny/lightline.vim'
 
-    "Color Schemes
-    " Plug 'flazz/vim-colorschemes'
-    Plug 'kaicataldo/material.vim'
-    Plug 'patstockwell/vim-monokai-tasty'
-    Plug 'joshdick/onedark.vim'
-    
-    " Syntax Plugins
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-    Plug 'pangloss/vim-javascript'
-    Plug 'MaxMEllon/vim-jsx-pretty'
-    Plug 'elzr/vim-json'
-    Plug 'jparise/vim-graphql'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'bfrg/vim-cpp-modern'
+" vim-startify
+Plug 'mhinz/vim-startify'
 
-    " Productivity
-    Plug 'junegunn/goyo.vim'
-    Plug 'xolox/vim-notes'
-    Plug 'xolox/vim-misc'
-    Plug 'tpope/vim-fugitive'
+"Color Schemes
+" Plug 'flazz/vim-colorschemes'
+Plug 'kaicataldo/material.vim'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'joshdick/onedark.vim'
 
-    " Auto pairs
-    Plug 'jiangmiao/auto-pairs'
+" Syntax Plugins
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'elzr/vim-json'
+Plug 'jparise/vim-graphql'
+Plug 'sheerun/vim-polyglot'
+Plug 'bfrg/vim-cpp-modern'
+
+" Productivity
+Plug 'junegunn/goyo.vim'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'tpope/vim-fugitive'
+
+" Auto pairs
+Plug 'jiangmiao/auto-pairs'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
