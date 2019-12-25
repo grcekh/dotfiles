@@ -9,28 +9,23 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.'
 
-" NERDTree
+" Core 
 Plug 'scrooloose/nerdtree'
-
-" FZF
 Plug '/usr/local/opt/fzf'
-
-" commentary.vim
 Plug 'tpope/vim-commentary'
-
-" lightline.vim
 Plug 'itchyny/lightline.vim'
-
-" vim-startify
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Color Schemes
+" Color Schemes + Icons
 " Plug 'flazz/vim-colorschemes'
 Plug 'kaicataldo/material.vim'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
 
-" Syntax Plugins
+" Syntax
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -43,32 +38,28 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'junegunn/goyo.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
-Plug 'tpope/vim-fugitive'
-
-" Auto pairs
-Plug 'jiangmiao/auto-pairs'
 
 " Neovim Completion Manager 2
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+"Plug 'ncm2/ncm2'
+"Plug 'roxma/nvim-yarp'
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+"autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+"set completeopt=noinsert,menuone,noselect
 
 " completion sources   
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-pyclang'
-"Plug 'ncm2/ncm2-tern',{'do':'npm install'}
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-tagprefix'
-Plug 'ncm2/ncm2-syntax'
-Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-html-subscope'
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
+"Plug 'ncm2/ncm2-pyclang'
+""Plug 'ncm2/ncm2-tern',{'do':'npm install'}
+"Plug 'ncm2/ncm2-cssomni'
+"Plug 'ncm2/ncm2-html-subscope'
+"Plug 'ncm2/ncm2-tagprefix'
+"Plug 'ncm2/ncm2-syntax'
+"Plug 'Shougo/neco-syntax'
+"Plug 'ncm2/ncm2-html-subscope'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -134,7 +125,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
-"    6. COLOR SCHEME    "
+"   6. COLOR SCHEME    "
 "~~~~~~~~~~~~~~~~~~~~~~~"
 " Enable true colors
 if (has('termguicolors'))
@@ -156,7 +147,80 @@ colorscheme onedark
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
-"    7. STARTIFY        "
+"      7. COC.NVIM      "
+"~~~~~~~~~~~~~~~~~~~~~~~"
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  "\ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~"
+"      8. STARTIFY      "
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:startify_custom_header = []
 
@@ -182,14 +246,14 @@ autocmd VimEnter *
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"    8. SYNTAX HIGHLIGHTING    "
+"    9. SYNTAX HIGHLIGHTING    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"    9. MISCELLANEOUS    "
+"   10. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 

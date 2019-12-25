@@ -115,7 +115,7 @@ export LOCAL_IP=`ipconfig getifaddr en0`
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 
 
-
+########## MISCELLANEOUS ##########
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
@@ -123,3 +123,6 @@ export PATH="/usr/local/sbin:$PATH"
 # Add epylint, pylon, pyreverse, similar, etc.
 
 # . /anaconda3/etc/profile.d/conda.sh
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# bindkey '^\n' autosuggest-execute
