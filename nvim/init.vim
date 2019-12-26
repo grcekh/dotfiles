@@ -24,6 +24,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Syntax
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -35,31 +36,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
 
 " Productivity
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
-
-" Neovim Completion Manager 2
-"Plug 'ncm2/ncm2'
-"Plug 'roxma/nvim-yarp'
-
-" enable ncm2 for all buffers
-"autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANT: :help Ncm2PopupOpen for more information
-"set completeopt=noinsert,menuone,noselect
-
-" completion sources   
-"Plug 'ncm2/ncm2-bufword'
-"Plug 'ncm2/ncm2-path'
-"Plug 'ncm2/ncm2-pyclang'
-""Plug 'ncm2/ncm2-tern',{'do':'npm install'}
-"Plug 'ncm2/ncm2-cssomni'
-"Plug 'ncm2/ncm2-html-subscope'
-"Plug 'ncm2/ncm2-tagprefix'
-"Plug 'ncm2/ncm2-syntax'
-"Plug 'Shougo/neco-syntax'
-"Plug 'ncm2/ncm2-html-subscope'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -255,6 +235,9 @@ let g:cpp_named_requirements_highlight = 1
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   10. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
+" NERDTree Ignore
+let g:NERDTreeIgnore = ['^node_modules$']
+
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
 " oF Makefile
