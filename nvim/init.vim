@@ -34,6 +34,7 @@ Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
@@ -198,6 +199,20 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" snippets
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
