@@ -35,6 +35,7 @@ Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'tmsvg/pear-tree'
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
@@ -133,11 +134,12 @@ colorscheme onedark
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  \ 'coc-pairs',
+  "\ 'coc-pairs',
   "\ 'coc-tsserver',
   "\ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-emmet',
   \ ]
 
 " if hidden is not set, TextEdit might fail.
@@ -216,7 +218,54 @@ let g:coc_snippet_next = '<tab>'
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
-"      8. STARTIFY      "
+"      8. PEAR-TREE     "
+"~~~~~~~~~~~~~~~~~~~~~~~"
+" Default rules for matching:
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'},
+            \ '/*': {'closer': '*/'},
+            \ '<!--': {'closer': '-->'},
+            \ }
+" See pear-tree/after/ftplugin/ for filetype-specific matching rules
+
+" Pear Tree is enabled for all filetypes by default:
+let g:pear_tree_ft_disabled = []
+
+" Pair expansion is dot-repeatable by default:
+let g:pear_tree_repeatable_expand = 0
+
+" Smart are disabled by default:pairs
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+
+" If enabled, smart pair functions timeout after 60ms:
+let g:pear_tree_timeout = 60
+
+" Automatically map <BS> and <CR>
+let g:pear_tree_map_special_keys = 0
+
+" Default mappings:
+imap <BS> <Plug>(PearTreeBackspace)
+imap <CR> <Plug>(PearTreeExpand)
+" imap <Esc> <Plug>(PearTreeFinishExpansion)
+" Pear Tree also makes <Plug> mappings for each opening and closing string.
+"     :help <Plug>(PearTreeOpener)
+"     :help <Plug>(PearTreeCloser)
+
+" Not mapped by default:
+" <Plug>(PearTreeSpace)
+" <Plug>(PearTreeJump)
+" <Plug>(PearTreeExpandOne)
+" <Plug>(PearTreeJNR)
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~"
+"      9. STARTIFY      "
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:startify_custom_header = []
 
@@ -241,15 +290,15 @@ autocmd VimEnter *
         \ | endif
 
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"    9. SYNTAX HIGHLIGHTING    "
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"    10. SYNTAX HIGHLIGHTING    "
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"   10. MISCELLANEOUS    "
+"   11. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " NERDTree Ignore
 let g:NERDTreeIgnore = ['^node_modules$']
