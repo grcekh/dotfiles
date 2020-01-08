@@ -230,6 +230,7 @@ let g:pear_tree_pairs = {
             \ '"': {'closer': '"'},
             \ '/*': {'closer': '*/'},
             \ '<!--': {'closer': '-->'},
+            \ '```': {'closer': '```'},
             \ }
 " See pear-tree/after/ftplugin/ for filetype-specific matching rules
 
