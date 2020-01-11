@@ -2614,14 +2614,133 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>C4DA703A-140A-4B63-809E-86FBEC2BEF63</string>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>EnableDivisionView</key>
 	<true/>
+	<key>GlobalKeyMap</key>
+	<dict>
+		<key>0x19-0x60000</key>
+		<dict>
+			<key>Action</key>
+			<integer>39</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x2f-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>gcc</string>
+		</dict>
+		<key>0x70-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>:FZF\n</string>
+		</dict>
+		<key>0x9-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>32</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf700-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>7</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf701-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>6</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>2</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x320000</key>
+		<dict>
+			<key>Action</key>
+			<integer>33</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>0</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x320000</key>
+		<dict>
+			<key>Action</key>
+			<integer>34</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf729-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>5</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>4</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72c-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72c-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>GlobalTouchBarMap</key>
+	<dict/>
 	<key>HapticFeedbackForEsc</key>
-	<false/>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>Hotkey</key>
@@ -2641,7 +2760,7 @@
 	<key>NSNavLastRootDirectory</key>
 	<string>~/iterm2_profile</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<true/>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2666,7 +2785,7 @@
 	dWxs0g0ODxJaTlMub2JqZWN0c1YkY2xhc3OiEBGAAoAKgA3TFA0OFRkdV05TLmtleXOj
 	FhcYgAOABIAFoxobHIAGgAeACIAJWklkZW50aWZpZXJVV2lkdGhWSGlkZGVuUTAjQGjA
 	AAAAAAAI0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0RpY3Rpb25hcnmiJylYTlNP
-	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0B0oZ2yLQ5W0iUmNzhe
+	YmplY3TTFA0OKy8doxYXGIADgASABaMwMRyAC4AMgAiACVExI0BzsZ2yLQ5W0iUmNzhe
 	TlNNdXRhYmxlQXJyYXmjNzkpV05TQXJyYXkACAARABoAJAApADIANwBJAEwAUgBUAGMA
 	aQBuAHkAgACDAIUAhwCJAJAAmACcAJ4AoACiAKYAqACqAKwArgC5AL8AxgDIANEA0gDX
 	AOIA6wD4APsBBAELAQ8BEQETARUBGQEbAR0BHwEhASMBLAExAUABRAAAAAAAAAIBAAAA
@@ -2692,7 +2811,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1072 273 445 103 0 0 1680 1027 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>440 445 799 448 0 0 1680 1027 </string>
+	<string>-1360 426 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 707 400 129 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2702,13 +2821,13 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>109 330 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 589 570 438 0 0 1680 1027 </string>
+	<string>-1920 -30 1920 1057 -1920 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>165 211 570 409 0 0 1680 1027 </string>
+	<string>-1920 -30 1920 1057 -1920 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>143 349 1081 528 0 0 1680 1027 </string>
+	<string>-960 -30 953 1057 -1920 -30 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>685 571 570 400 0 0 1680 1027 </string>
+	<string>0 43 837 984 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
 	<string>990 380 570 423 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
@@ -2894,12 +3013,14 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.58764598099226806</real>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>30</real>
+			<real>0.70592084390862941</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2984,15 +3105,15 @@
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string> </string>
+			<string>ˇ</string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string> </string>
+			<string>T</string>
 			<key>HotKey Key Code</key>
-			<integer>49</integer>
+			<integer>17</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>262144</integer>
+			<integer>655360</integer>
 			<key>HotKey Window Animates</key>
 			<false/>
 			<key>HotKey Window AutoHides</key>
@@ -3003,6 +3124,8 @@
 			<true/>
 			<key>HotKey Window Reopens On Activation</key>
 			<false/>
+			<key>Icon</key>
+			<integer>1</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Jobs to Ignore</key>
@@ -3329,11 +3452,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>HackNerdFontComplete-Regular 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMono-Regular 12</string>
+			<string>SFMono-Medium 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Toolbelt</key>
@@ -3602,7 +3725,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Use Underline Color</key>
@@ -4406,14 +4529,14 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.4</string>
+		<string>3.3.2</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
 		<string>3.3.0</string>
 		<string>3.2.9</string>
-		<string>3.3.2</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -4431,9 +4554,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{-1920, -30}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{789, 823}</string>
+		<string>{-1785, 843}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -4444,7 +4567,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>590096401.76965404</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>30</integer>
+	<integer>55</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>586672349.58272398</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -5173,12 +5296,16 @@
 	</array>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>oojkk</string>
+		<string>When I </string>
+		<string>jj$</string>
+		<string>$PWD</string>
+		<string>growing</string>
 		<string>no license</string>
 		<string>globalbabe</string>
 		<string>query</string>
 		<string>git </string>
 		<string>TRUE</string>
-		<string>true color</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>579993288.12426496</real>
@@ -5244,6 +5371,8 @@
 		<string>0054</string>
 		<string>0054</string>
 	</array>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
@@ -5281,6 +5410,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/gracehoward/iterm2_profile</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -5290,13 +5421,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-27T05:55:15Z</date>
+	<date>2020-01-10T23:07:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
-	<false/>
+	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.32267010195035462</real>
 	<key>StatusBarPosition</key>
