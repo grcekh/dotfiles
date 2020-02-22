@@ -135,12 +135,12 @@ colorscheme onedark
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  "\ 'coc-pairs',
-  "\ 'coc-tsserver',
   "\ 'coc-eslint', 
   \ 'coc-prettier', 
+  \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
+  "\ 'coc-pairs',
   \ ]
 
 " if hidden is not set, TextEdit might fail.
