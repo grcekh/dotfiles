@@ -43,6 +43,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
