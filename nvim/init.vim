@@ -25,6 +25,7 @@ Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'arzg/vim-colors-xcode'
 
 " Syntax
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -129,7 +130,7 @@ let g:lightline = {
 
 " Set color scheme
 set background=dark
-colorscheme onedark 
+colorscheme onedark
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
