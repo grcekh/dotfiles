@@ -155,3 +155,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bindkey '^\n' autosuggest-execute
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
