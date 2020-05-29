@@ -140,10 +140,10 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   "\ 'coc-eslint', 
   \ 'coc-prettier', 
+  \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
-  \ 'coc-solargraph'
   "\ 'coc-pairs',
   \ ]
 
