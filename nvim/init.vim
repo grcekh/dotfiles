@@ -302,6 +302,12 @@ autocmd VimEnter *
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 
+" Highlight yanked text
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END
+
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   11. MISCELLANEOUS    "
