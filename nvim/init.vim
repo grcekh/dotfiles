@@ -7,7 +7,7 @@ filetype plugin indent on
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
 
-" Declare the list of plugins.'
+" Declare the list of plugins.
 
 " Core 
 Plug 'scrooloose/nerdtree'
@@ -28,15 +28,13 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'arzg/vim-colors-xcode'
 
 " Syntax
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'elzr/vim-json'
-Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
+" Plug 'tpope/vim-fireplace'
+Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
@@ -44,8 +42,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-" Plug 'camspiers/animate.vim'
-" Plug 'camspiers/lens.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -64,6 +60,10 @@ set number "Turns on line numbering
 "set t_Co=256 "Sets Vim to use 256 colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Override default split pane directions
+set splitbelow
+set splitright
 
 
 "~~~~~~~~~~~~~~~~~~~~~~"
