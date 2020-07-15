@@ -140,6 +140,7 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   "\ 'coc-eslint', 
   \ 'coc-prettier', 
+  "\ 'coc-clangd',
   \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
