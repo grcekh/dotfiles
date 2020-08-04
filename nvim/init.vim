@@ -10,7 +10,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
@@ -24,7 +25,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'arzg/vim-colors-xcode'
 
 " Syntax
@@ -33,7 +34,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
-" Plug 'tpope/vim-fireplace'
 Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 
 " Productivity
@@ -97,14 +97,13 @@ let mapleader="-"
 
 "Use jj instead of esc in insert mode
 inoremap jj <Esc>`^
-"nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-"autocmd VimEnter * NERDTree | wincmd p
 
-" Toggle NERDTree
-nnoremap <Leader>n :NERDTree<CR>
-nnoremap <Leader>t :NERDTreeToggle<CR>
+" Toggle file manager
+nnoremap <Leader>t :CHADopen<CR>
+"nnoremap <Leader>n :NERDTree<CR>
+"nnoremap <Leader>t :NERDTreeToggle<CR>
 
-" Window move cursor
+" Window navigation
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -276,10 +275,6 @@ imap <CR> <Plug>(PearTreeExpand)
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:startify_custom_header = []
 
-"let g:startify_custom_header=[
-"\ '                                       ',
-"\ ]
-
 let g:startify_bookmarks = [{"v":"~/.config/nvim/init.vim"}]
 let g:startify_lists = [
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
@@ -288,13 +283,18 @@ let g:startify_lists = [
 \ ]
 let g:startify_files_number = 5 
 
-" NERDTree at startup
-autocmd VimEnter *
-        \   if !argc()
-        \ |   Startify
-        \ |   NERDTree
-        \ |   wincmd w
-        \ | endif
+" startup
+" autocmd VimEnter *
+"         \   if !argc()
+"         \ |   Startify
+"         \ |   NerdTree
+"         \ |   wincmd w
+"         \ | endif
+augroup startup
+    autocmd!
+    autocmd VimEnter * Startify
+    autocmd VimEnter * CHADopen
+augroup END
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -313,8 +313,9 @@ augroup END
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   11. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-" NERDTree Ignore
-let g:NERDTreeIgnore = ['^node_modules$']
+" Ignore in file manager
+"let g:NERDTreeIgnore = ['^node_modules$']
+let g:chadtree_ignores = { 'path': 'node_modules' }
 
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
