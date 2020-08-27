@@ -137,7 +137,7 @@ colorscheme onedark
 "~~~~~~~~~~~~~~~~~~~~~~~"
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  "\ 'coc-eslint', 
+  \ 'coc-eslint', 
   \ 'coc-prettier', 
   "\ 'coc-clangd',
   \ 'coc-vetur',
