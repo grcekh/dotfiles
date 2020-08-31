@@ -2,18 +2,15 @@ cask_args appdir: "/Applications"
 
 # Taps
 tap "adoptopenjdk/openjdk"
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "rigellute/tap"
 
 # Mac App Store
 brew "mas"
 
-mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835
 
@@ -68,12 +65,10 @@ brew "nnn"
 brew "node"
 brew "openssl@1.1"
 brew "pandoc"
-brew "pass"
 brew "ruby-build"
 brew "rbenv"
 brew "rlwrap"
 brew "ruby"
-brew "sbt"
 brew "tmux"
 brew "tree"
 brew "vim"
@@ -85,4 +80,3 @@ brew "zlib"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
-brew "heroku/brew/heroku"
