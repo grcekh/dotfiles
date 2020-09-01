@@ -34,7 +34,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
-Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
@@ -100,8 +99,6 @@ inoremap jj <Esc>`^
 
 " Toggle file manager
 nnoremap <Leader>t :CHADopen<CR>
-"nnoremap <Leader>n :NERDTree<CR>
-"nnoremap <Leader>t :NERDTreeToggle<CR>
 
 " Window navigation
 map <C-j> <C-W>j
@@ -139,11 +136,11 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
-  "\ 'coc-clangd',
   \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
+  "\ 'coc-clangd',
   "\ 'coc-pairs',
   \ ]
 
@@ -283,17 +280,11 @@ let g:startify_lists = [
 \ ]
 let g:startify_files_number = 5 
 
-" startup
-" autocmd VimEnter *
-"         \   if !argc()
-"         \ |   Startify
-"         \ |   NerdTree
-"         \ |   wincmd w
-"         \ | endif
+" load on startup
 augroup startup
     autocmd!
     autocmd VimEnter * Startify
-    autocmd VimEnter * CHADopen
+    autocmd VimEnter * CHADopen --nofocus
 augroup END
 
 
@@ -314,7 +305,6 @@ augroup END
 "   11. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
-"let g:NERDTreeIgnore = ['^node_modules$']
 let g:chadtree_ignores = { 'path': 'node_modules' }
 
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
