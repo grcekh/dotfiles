@@ -14,7 +14,7 @@
 		"Markdown"
 	],
 	"prettier.disableLanguages": [],
-	"prettier.tabWidth": 4,
+	"prettier.tabWidth": 2,
 	"prettier.useTabs": true,
 	"prettier.arrowParens": "always",
 	"eslint.autoFixOnSave": true,
@@ -22,7 +22,5 @@
 		"indent": ["error", "tab"]
 	},
 	"emmet.showExpandedAbbreviation": "always",
-	"codeLens.enable": true,
-	"clangd.path": "/Users/gracehoward/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
-	//"solargraph.useBundler": true
+	"codeLens.enable": true
 }
