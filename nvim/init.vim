@@ -68,15 +68,15 @@ set splitright
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=4 "Sets display width of tabs
-set shiftwidth=4 "Sets indentation width
+set tabstop=2 "Sets display width of tabs
+set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=4 expandtab
+set softtabstop=2 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
-"set noexpandtab
+" set noexpandtab
 set expandtab
 
 
