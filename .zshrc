@@ -112,7 +112,7 @@ alias wifi="wifi-password"
 # Get the current local IP address
 export LOCAL_IP=`ipconfig getifaddr en0`
 # The command alias to start the Browser-sync server
-alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
+# alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 
 
 ########### FZF + FD  ############
