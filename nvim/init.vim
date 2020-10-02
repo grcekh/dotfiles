@@ -22,10 +22,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'flazz/vim-colorschemes'
 Plug 'kaicataldo/material.vim'
 Plug 'joshdick/onedark.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
