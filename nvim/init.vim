@@ -20,13 +20,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Color Schemes + Icons
-" Plug 'flazz/vim-colorschemes'
 Plug 'kaicataldo/material.vim'
-Plug 'patstockwell/vim-monokai-tasty'
 Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'arzg/vim-colors-xcode'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -38,7 +37,7 @@ Plug 'tmsvg/pear-tree'
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
-Plug 'xolox/vim-notes'
+Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
@@ -126,7 +125,42 @@ let g:lightline = {
 
 " Set color scheme
 set background=dark
-colorscheme onedark
+let g:gruvbox_material_palette = {
+    \ 'bg0':              ['#292d34',   '234'],
+    \ 'bg1':              ['#3f4451',   '235'],
+    \ 'bg2':              ['#292d34',   '235'],
+    \ 'bg3':              ['#3f4451',   '237'],
+    \ 'bg4':              ['#3c3836',   '237'],
+    \ 'bg5':              ['#7b7974',   '239'],
+    \ 'bg_statusline1':   ['#282828',   '235'],
+    \ 'bg_statusline2':   ['#404451',   '235'],
+    \ 'bg_statusline3':   ['#404451',   '239'],
+    \ 'bg_diff_green':    ['#32361a',   '22'],
+    \ 'bg_visual_green':  ['#333e34',   '22'],
+    \ 'bg_diff_red':      ['#3c1f1e',   '52'],
+    \ 'bg_visual_red':    ['#442e2d',   '52'],
+    \ 'bg_diff_blue':     ['#0d3138',   '17'],
+    \ 'bg_visual_blue':   ['#2e3b3b',   '17'],
+    \ 'bg_visual_yellow': ['#473c29',   '94'],
+    \ 'bg_current_word':  ['#32302f',   '236'],
+    \ 'fg0':              ['#d1ccc2',   '223'],
+    \ 'fg1':              ['#d1ccc2',   '223'],
+    \ 'red':              ['#ea6962',   '167'],
+    \ 'orange':           ['#e78a4e',   '208'],
+    \ 'yellow':           ['#d8a657',   '214'],
+    \ 'green':            ['#a9b665',   '142'],
+    \ 'aqua':             ['#89b482',   '108'],
+      \ 'blue':             ['#7daea3',   '109'],
+      \ 'purple':           ['#d3869b',   '175'],
+      \ 'bg_red':           ['#ea6962',   '167'],
+      \ 'bg_green':         ['#a9b665',   '142'],
+      \ 'bg_yellow':        ['#d8a657',   '214'],
+      \ 'grey0':            ['#7b7974',   '243'],
+      \ 'grey1':            ['#99958d',   '245'],
+      \ 'grey2':            ['#acb2be',   '246'],
+      \ 'none':             ['NONE',      'NONE']
+      \ }
+colorscheme gruvbox-material
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
@@ -306,6 +340,10 @@ augroup END
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
 let g:chadtree_ignores = { 'path': 'node_modules' }
+
+" Use Markdown in VimWiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
