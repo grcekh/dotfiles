@@ -14,7 +14,7 @@
 		"Markdown"
 	],
 	"prettier.disableLanguages": [],
-	"prettier.tabWidth": 4,
+	"prettier.tabWidth": 2,
 	"prettier.useTabs": true,
 	"prettier.arrowParens": "always",
 	"eslint.autoFixOnSave": true,
