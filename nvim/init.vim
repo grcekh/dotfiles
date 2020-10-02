@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-"Plug 'scrooloose/nerdtree'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-commentary'
@@ -25,7 +24,9 @@ Plug 'kaicataldo/material.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'arzg/vim-colors-xcode'
+Plug 'sainnhe/gruvbox-material'
+Plug 'yorickpeterse/happy_hacking.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -129,7 +130,42 @@ let g:lightline = {
 
 " Set color scheme
 set background=dark
-colorscheme onedark
+let g:gruvbox_material_palette = {
+    \ 'bg0':              ['#292d34',   '234'],
+    \ 'bg1':              ['#23262c',   '235'],
+    \ 'bg2':              ['#292d34',   '235'],
+    \ 'bg3':              ['#23262c',   '237'],
+    \ 'bg4':              ['#3c3836',   '237'],
+    \ 'bg5':              ['#504945',   '239'],
+    \ 'bg_statusline1':   ['#282828',   '235'],
+    \ 'bg_statusline2':   ['#404451',   '235'],
+    \ 'bg_statusline3':   ['#404451',   '239'],
+    \ 'bg_diff_green':    ['#32361a',   '22'],
+    \ 'bg_visual_green':  ['#333e34',   '22'],
+    \ 'bg_diff_red':      ['#3c1f1e',   '52'],
+    \ 'bg_visual_red':    ['#442e2d',   '52'],
+    \ 'bg_diff_blue':     ['#0d3138',   '17'],
+    \ 'bg_visual_blue':   ['#2e3b3b',   '17'],
+    \ 'bg_visual_yellow': ['#473c29',   '94'],
+    \ 'bg_current_word':  ['#32302f',   '236'],
+    \ 'fg0':              ['#d1ccc2',   '223'],
+    \ 'fg1':              ['#d1ccc2',   '223'],
+    \ 'red':              ['#ea6962',   '167'],
+    \ 'orange':           ['#e78a4e',   '208'],
+    \ 'yellow':           ['#d8a657',   '214'],
+    \ 'green':            ['#a9b665',   '142'],
+    \ 'aqua':             ['#89b482',   '108'],
+      \ 'blue':             ['#7daea3',   '109'],
+      \ 'purple':           ['#d3869b',   '175'],
+      \ 'bg_red':           ['#ea6962',   '167'],
+      \ 'bg_green':         ['#a9b665',   '142'],
+      \ 'bg_yellow':        ['#d8a657',   '214'],
+      \ 'grey0':            ['#7b7974',   '243'],
+      \ 'grey1':            ['#99958d',   '245'],
+      \ 'grey2':            ['#acb2be',   '246'],
+      \ 'none':             ['NONE',      'NONE']
+      \ }
+colorscheme gruvbox-material
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
