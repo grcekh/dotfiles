@@ -69,11 +69,11 @@ set splitright
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=2 "Sets display width of tabs
-set shiftwidth=2 "Sets indentation width
+set tabstop=4 "Sets display width of tabs
+set shiftwidth=4 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=2 expandtab
+set softtabstop=4 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
@@ -349,8 +349,11 @@ augroup END
 "   11. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
-"let g:NERDTreeIgnore = ['^node_modules$']
 let g:chadtree_ignores = { 'path': 'node_modules' }
+
+" Use Markdown in VimWiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
