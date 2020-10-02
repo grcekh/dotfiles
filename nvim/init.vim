@@ -39,7 +39,7 @@ Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
-Plug 'xolox/vim-notes'
+Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
@@ -51,6 +51,7 @@ call plug#end()
 "    2. BASIC SETTINGS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~"
 syntax enable
+syntax on
 set nocompatible "Fixes old Vi bugs
 set backspace=2 "Makes backspace work
 set history=500 "Sets undo history size
@@ -69,11 +70,11 @@ set splitright
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=4 "Sets display width of tabs
-set shiftwidth=4 "Sets indentation width
+set tabstop=2 "Sets display width of tabs
+set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=4 expandtab
+set softtabstop=2 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
