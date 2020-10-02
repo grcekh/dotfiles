@@ -25,7 +25,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'sainnhe/gruvbox-material'
-Plug 'yorickpeterse/happy_hacking.vim'
 Plug 'arcticicestudio/nord-vim'
 
 " Syntax
