@@ -100,14 +100,15 @@ inoremap jj <Esc>`^
 
 " Toggle file manager
 nnoremap <Leader>t :CHADopen<CR>
-"nnoremap <Leader>n :NERDTree<CR>
-"nnoremap <Leader>t :NERDTreeToggle<CR>
 
 " Window navigation
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Enter selects current popup menu item when visible
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
@@ -174,11 +175,11 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
-  "\ 'coc-clangd',
   \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
+  "\ 'coc-clangd',
   "\ 'coc-pairs',
   \ ]
 
@@ -355,6 +356,7 @@ let g:chadtree_ignores = { 'path': 'node_modules' }
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
 
+" As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
 " oF Makefile
