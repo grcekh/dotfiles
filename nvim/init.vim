@@ -124,7 +124,7 @@ let g:material_terminal_italics = 1
 
 " Lightline theme 
 let g:lightline = {
-        \ 'colorscheme': 'onedark',
+        \ 'colorscheme': 'gruvbox_material',
         \ }
 
 " Set color scheme
@@ -136,7 +136,7 @@ let g:gruvbox_material_palette = {
     \ 'bg3':              ['#3f4451',   '237'],
     \ 'bg4':              ['#4c5161',   '237'],
     \ 'bg5':              ['#7b7974',   '239'],
-    \ 'bg_statusline1':   ['#282828',   '235'],
+    \ 'bg_statusline1':   ['#404451',   '235'],
     \ 'bg_statusline2':   ['#404451',   '235'],
     \ 'bg_statusline3':   ['#404451',   '239'],
     \ 'bg_diff_green':    ['#32361a',   '22'],
