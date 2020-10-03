@@ -112,7 +112,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
-"   6. COLOR SCHEME    "
+"    6. COLOR SCHEME    "
 "~~~~~~~~~~~~~~~~~~~~~~~"
 " Enable true colors
 if (has('termguicolors'))
@@ -240,10 +240,10 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" prettier
+" Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" snippets
+" Snippets
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -319,13 +319,7 @@ let g:startify_lists = [
 \ ]
 let g:startify_files_number = 5 
 
-" startup
-" autocmd VimEnter *
-"         \   if !argc()
-"         \ |   Startify
-"         \ |   NerdTree
-"         \ |   wincmd w
-"         \ | endif
+" Load on startup
 augroup startup
     autocmd!
     autocmd VimEnter * Startify
