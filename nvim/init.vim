@@ -26,6 +26,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ap/vim-css-color'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
