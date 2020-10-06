@@ -26,6 +26,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ap/vim-css-color'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -107,7 +108,7 @@ map <C-l> <C-W>l
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
-"   6. COLOR SCHEME    "
+"    6. COLOR SCHEME    "
 "~~~~~~~~~~~~~~~~~~~~~~~"
 " Enable true colors
 if (has('termguicolors'))
@@ -120,7 +121,7 @@ let g:material_terminal_italics = 1
 
 " Lightline theme 
 let g:lightline = {
-        \ 'colorscheme': 'onedark',
+        \ 'colorscheme': 'gruvbox_material',
         \ }
 
 " Set color scheme
@@ -130,9 +131,9 @@ let g:gruvbox_material_palette = {
     \ 'bg1':              ['#3f4451',   '235'],
     \ 'bg2':              ['#292d34',   '235'],
     \ 'bg3':              ['#3f4451',   '237'],
-    \ 'bg4':              ['#3c3836',   '237'],
+    \ 'bg4':              ['#4c5161',   '237'],
     \ 'bg5':              ['#7b7974',   '239'],
-    \ 'bg_statusline1':   ['#282828',   '235'],
+    \ 'bg_statusline1':   ['#404451',   '235'],
     \ 'bg_statusline2':   ['#404451',   '235'],
     \ 'bg_statusline3':   ['#404451',   '239'],
     \ 'bg_diff_green':    ['#32361a',   '22'],
@@ -235,10 +236,10 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" prettier
+" Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" snippets
+" Snippets
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -314,7 +315,7 @@ let g:startify_lists = [
 \ ]
 let g:startify_files_number = 5 
 
-" load on startup
+" Load on startup
 augroup startup
     autocmd!
     autocmd VimEnter * Startify
