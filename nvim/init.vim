@@ -85,6 +85,7 @@ set expandtab
 "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "    4. SEARCH SETTINGS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~"
+set incsearch "Incremental search
 set hlsearch "Highlights search terms
 set showmatch "Highlights matching parentheses
 set ignorecase "Ignores case when searching
