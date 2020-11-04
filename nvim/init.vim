@@ -20,15 +20,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romgrk/barbar.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " Dependency for barbar.vim
 
-" Color Schemes + Icons
-Plug 'kaicataldo/material.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ap/vim-css-color'
-
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -42,6 +33,16 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
+
+" Color Schemes + Icons
+Plug 'kaicataldo/material.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
