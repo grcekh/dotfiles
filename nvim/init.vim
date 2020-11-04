@@ -10,7 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-"Plug 'scrooloose/nerdtree'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-commentary'
@@ -18,6 +17,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-web-devicons' " Dependency for barbar.vim
 
 " Color Schemes + Icons
 Plug 'kaicataldo/material.vim'
@@ -39,8 +40,8 @@ Plug 'tmsvg/pear-tree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'wellle/context.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -346,8 +347,12 @@ let g:chadtree_ignores = { 'path': 'node_modules' }
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
 
+" Context.vim 
+let g:context_nvim_no_redraw = 1
+
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
 " oF Makefile
 let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
 "autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
+
