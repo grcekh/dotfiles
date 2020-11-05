@@ -18,7 +18,6 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romgrk/barbar.nvim'
-Plug 'kyazdani42/nvim-web-devicons' " Dependency for barbar.vim
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -364,6 +363,27 @@ nnoremap <silent>    <A->> :BufferMoveNext<CR>
 " nnoremap <silent>    <A-9> :BufferLast<CR>
 " Close buffer
 nnoremap <silent>    <A-c> :BufferClose<CR>
+
+let bufferline = {}
+" Show a shadow over the editor in buffer-pick mode
+let bufferline.shadow = v:true
+" Enable/disable animations
+let bufferline.animation = v:true
+" Enable/disable icons
+let bufferline.icons = v:false
+" Enable/disable close button
+let bufferline.closable = v:true
+" Enables/disable clickable tabs
+let bufferline.clickable = v:true
+
+" If set, the letters for each buffer in buffer-pick mode will be
+" assigned based on their name. Otherwise or in case all letters are
+" already assigned, the behavior is to assign letters in order of
+" usability (see order below)
+let bufferline.semantic_letters = v:true
+
+" Sets the maximum padding width with which to surround each tab
+let bufferline.maximum_padding = 4
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
