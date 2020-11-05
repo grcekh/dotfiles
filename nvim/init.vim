@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romgrk/barbar.nvim'
 
@@ -375,19 +376,17 @@ let bufferline.icons = v:false
 let bufferline.closable = v:true
 " Enables/disable clickable tabs
 let bufferline.clickable = v:true
-
 " If set, the letters for each buffer in buffer-pick mode will be
 " assigned based on their name. Otherwise or in case all letters are
 " already assigned, the behavior is to assign letters in order of
 " usability (see order below)
 let bufferline.semantic_letters = v:true
-
 " Sets the maximum padding width with which to surround each tab
 let bufferline.maximum_padding = 4
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"   11. MISCELLANEOUS    "
+"   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
 let g:chadtree_ignores = { 'path': 'node_modules' }
