@@ -78,7 +78,7 @@ brew "leiningen"
 brew "libtool"
 brew "mas"
 brew "mono"
-brew "neovim", args: ["HEAD"], link: false
+brew "neovim", args: ["HEAD"]
 brew "nnn"
 brew "node"
 brew "openssl@1.1"
