@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romgrk/barbar.nvim'
 
