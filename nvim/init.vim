@@ -373,9 +373,9 @@ let bufferline.animation = v:true
 " Enable/disable icons
 let bufferline.icons = v:false
 " Enable/disable close button
-let bufferline.closable = v:true
+let bufferline.closable = v:false
 " Enables/disable clickable tabs
-let bufferline.clickable = v:true
+let bufferline.clickable = v:false
 " If set, the letters for each buffer in buffer-pick mode will be
 " assigned based on their name. Otherwise or in case all letters are
 " already assigned, the behavior is to assign letters in order of
@@ -398,6 +398,7 @@ let g:vimwiki_global_ext = 0
 " Context.vim 
 let g:context_nvim_no_redraw = 1
 
+" As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
 " oF Makefile
