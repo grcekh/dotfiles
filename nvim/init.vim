@@ -33,6 +33,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
+Plug 'dbeniamine/cheat.sh-vim'
 
 " Color Schemes + Icons
 Plug 'kaicataldo/material.vim'
