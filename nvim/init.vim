@@ -12,13 +12,13 @@ call plug#begin('~/.config/nvim/plugged')
 " Core 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/local/opt/fzf'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
-Plug 'itchyny/lightline.vim'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'romgrk/barbar.nvim'
+Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -28,7 +28,6 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
 
 " Productivity
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -36,11 +35,7 @@ Plug 'wellle/context.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 
 " Color Schemes + Icons
-Plug 'kaicataldo/material.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/gruvbox-material'
-Plug 'arcticicestudio/nord-vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 
