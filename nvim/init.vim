@@ -16,17 +16,9 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Color Schemes + Icons
-" Plug 'flazz/vim-colorschemes'
-Plug 'kaicataldo/material.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/gruvbox-material'
-Plug 'arcticicestudio/nord-vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ap/vim-css-color'
+Plug 'romgrk/barbar.nvim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -40,8 +32,17 @@ Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'xolox/vim-misc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'wellle/context.vim'
+
+" Color Schemes + Icons
+Plug 'kaicataldo/material.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -343,7 +344,44 @@ augroup END
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"   11. MISCELLANEOUS    "
+"     11. BARBAR.VIM     "
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+" Magic buffer-picking mode
+nnoremap <silent> <C-s> :BufferPick<CR>
+" Sort automatically by:
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+" Move to previous/next buffer
+nnoremap <silent>    <A-,> :BufferPrevious<CR>
+nnoremap <silent>    <A-.> :BufferNext<CR>
+" Re-order to previous/next buffer
+nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" Close buffer
+nnoremap <silent>    <A-c> :BufferClose<CR>
+
+let bufferline = {}
+" Show a shadow over the editor in buffer-pick mode
+let bufferline.shadow = v:true
+" Enable/disable animations
+let bufferline.animation = v:true
+" Enable/disable icons
+let bufferline.icons = v:false
+" Enable/disable close button
+let bufferline.closable = v:false
+" Enables/disable clickable tabs
+let bufferline.clickable = v:false
+" If set, the letters for each buffer in buffer-pick mode will be
+" assigned based on their name. Otherwise or in case all letters are
+" already assigned, the behavior is to assign letters in order of
+" usability (see order below)
+let bufferline.semantic_letters = v:true
+" Sets the maximum padding width with which to surround each tab
+let bufferline.maximum_padding = 4
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+"   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
 let g:chadtree_ignores = { 'path': 'node_modules' }
@@ -351,6 +389,9 @@ let g:chadtree_ignores = { 'path': 'node_modules' }
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
+
+" Context.vim 
+let g:context_nvim_no_redraw = 1
 
 " As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
