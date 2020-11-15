@@ -79,6 +79,7 @@ brew "leiningen"
 brew "libtool"
 brew "mas"
 brew "mono"
+brew "n"
 brew "neovim", args: ["HEAD"]
 brew "nnn"
 brew "node"
