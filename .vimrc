@@ -19,6 +19,7 @@ Plug 'mhinz/vim-startify'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
