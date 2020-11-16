@@ -34,7 +34,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 
-" Colorschemes + icons
+" Color schemes + icons
 Plug 'sainnhe/gruvbox-material'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'

@@ -9,44 +9,33 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.'
 
-" NERDTree
+" Core 
 Plug 'scrooloose/nerdtree'
-
-" FZF
 Plug '/usr/local/opt/fzf'
-
-" commentary.vim
 Plug 'tpope/vim-commentary'
-
-" lightline.vim
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-
-" vim-startify
 Plug 'mhinz/vim-startify'
 
-"Color Schemes
-" Plug 'flazz/vim-colorschemes'
-Plug 'kaicataldo/material.vim'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'joshdick/onedark.vim'
-
-" Syntax Plugins
+" Syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
-Plug 'sheerun/vim-polyglot'
-Plug 'bfrg/vim-cpp-modern'
+Plug 'jiangmiao/auto-pairs'
 
 " Productivity
 Plug 'junegunn/goyo.vim'
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
-Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+Plug 'wellle/context.vim'
 
-" Auto pairs
-Plug 'jiangmiao/auto-pairs'
+"Color Schemes + icons
+Plug 'kaicataldo/material.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -66,15 +55,19 @@ set number "Turns on line numbering
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
+" Override default split pane directions
+set splitbelow
+set splitright
+
 
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=4 "Sets display width of tabs
-set shiftwidth=4 "Sets indentation width
+set tabstop=2 "Sets display width of tabs
+set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=4 expandtab
+set softtabstop=2 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
@@ -98,10 +91,8 @@ let mapleader="-"
 
 "Use jj instead of esc in insert mode
 inoremap jj <Esc>`^
-"nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-"autocmd VimEnter * NERDTree | wincmd p
 
-" Toggle NERDTree
+" Toggle file manager
 nnoremap <Leader>n :NERDTree<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 
@@ -164,3 +155,20 @@ autocmd VimEnter *
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+"    9. MISCELLANEOUS    "
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+" Ignore in file manager
+let g:NERDTreeIgnore = ['^node_modules$']
+
+" Use Markdown in VimWiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+
+" Context.vim 
+let g:context_nvim_no_redraw = 1
+
+" As of MacOS Catalina
+let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
