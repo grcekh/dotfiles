@@ -12,6 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Core 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -103,6 +104,11 @@ inoremap jj <Esc>`^
 
 " Toggle file manager
 nnoremap <Leader>t :CHADopen<CR>
+
+" FZF + ripgrep
+nnoremap <C-p> :FZF<Cr>
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-g> :Rg<Cr>
 
 " Window navigation
 map <C-j> <C-W>j

@@ -115,7 +115,7 @@ export LOCAL_IP=`ipconfig getifaddr en0`
 # alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 
 
-########### FZF + FD  ############
+########### FZF + FD + RIPGREP ############
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -136,10 +136,19 @@ _fzf_compgen_dir() {
 #fd --type f | fzf
 
 # Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
+# export FZF_DEFAULT_COMMAND='fd --type f'
+
+# Setting ripgrep as the default source for fzf
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 
 ########## MISCELLANEOUS ##########
+
 # bat highlighting theme
 export BAT_THEME="base16"
 
