@@ -178,8 +178,5 @@ let g:vimwiki_global_ext = 0
 " Context.vim 
 let g:context_nvim_no_redraw = 1
 
-" FZF
-set rtp+=/usr/local/opt/fzf
-
 " As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
