@@ -67,6 +67,13 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set splitbelow
 set splitright
 
+" Use persistent history
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+
 
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
