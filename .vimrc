@@ -9,44 +9,36 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.'
 
-" NERDTree
+" Core
 Plug 'scrooloose/nerdtree'
-
-" FZF
 Plug '/usr/local/opt/fzf'
-
-" commentary.vim
 Plug 'tpope/vim-commentary'
-
-" lightline.vim
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
-
-" vim-startify
 Plug 'mhinz/vim-startify'
 
-"Color Schemes
-" Plug 'flazz/vim-colorschemes'
-Plug 'kaicataldo/material.vim'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'joshdick/onedark.vim'
-
 " Syntax Plugins
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'jiangmiao/auto-pairs'
 
 " Productivity
 Plug 'junegunn/goyo.vim'
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
-Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+Plug 'wellle/context.vim'
 
-" Auto pairs
-Plug 'jiangmiao/auto-pairs'
+"Color Schemes
+" Plug 'flazz/vim-colorschemes'
+Plug 'kaicataldo/material.vim'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'joshdick/onedark.vim'
+Plug 'ap/vim-css-color'
+Plug 'ryanoasis/vim-devicons'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -116,11 +108,12 @@ inoremap jj <Esc>`^
 nnoremap <Leader>n :NERDTree<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
 
-" Window move cursor
+" Window cursor motions
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    6. COLOR SCHEME    "
@@ -175,3 +168,20 @@ autocmd VimEnter *
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
+
+
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+"    9. MISCELLANEOUS    "
+"~~~~~~~~~~~~~~~~~~~~~~~~"
+" Ignore in file manager
+let g:NERDTreeIgnore = ['^node_modules$']
+
+" Use Markdown in VimWiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+
+" Context.vim 
+let g:context_nvim_no_redraw = 1
+
+" As of MacOS Catalina
+let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
