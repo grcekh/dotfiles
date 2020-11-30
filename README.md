@@ -4,10 +4,13 @@ Building out dotfiles for a Manjaro-i3wm machine. Lots of learning in progress..
 
 * i3
 * polybar
+* rofi
 * zsh
 * kitty
 * neovim
 
 ## TODO
 
-* [ ] picom.conf
+* [ ] `picom.conf`
+* [ ] Create symlink and install scripts to automate process
+* [ ] Find wallpaper
