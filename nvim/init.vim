@@ -18,8 +18,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'romgrk/barbar.nvim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'romgrk/barbar.nvim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -251,7 +251,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" UNCOMMENT LATER
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
