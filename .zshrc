@@ -198,7 +198,8 @@ alias df='df -h'                                                # Human-readable
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 alias l="ls -la"                                                # Quick list all
-alias dot="cd ~/dotfiles"                                       # Shortcut to dotfiles
+alias dot="cd ~/dotfiles && nvim"                               # Shortcut to edit dotfiles
+alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vimwiki
 
 
 ########### FZF + FD + RIPGREP ############
