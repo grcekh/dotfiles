@@ -4,6 +4,7 @@
   text-color: #8ca0aa;
   spacing: 0;
   width: 612px;
+  height: 420px;
 }
 
 #window {
