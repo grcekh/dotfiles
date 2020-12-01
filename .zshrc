@@ -107,8 +107,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias config="nvim ~/.zshrc"
 alias src="source ~/.zshrc"
-alias dot="cd ~/dotfiles"
+alias dot="cd ~/dotfiles && nvim"
 alias wifi="wifi-password"
+alias vw="cd ~/vimwiki && nvim"
 
 
 ########## BROWSER-SYNC ##########
