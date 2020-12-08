@@ -9,9 +9,12 @@
 		"vue",
 		"css",
 		"scss",
+		"less",
 		"json",
 		"graphql",
-		"Markdown"
+		"Markdown",
+		"html",
+		"handlebars"
 	],
 	"prettier.disableLanguages": [],
 	"prettier.tabWidth": 2,
@@ -24,5 +27,4 @@
 	"emmet.showExpandedAbbreviation": "always",
 	"codeLens.enable": true,
 	"clangd.path": "/Users/gracehoward/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
-	//"solargraph.useBundler": true
 }

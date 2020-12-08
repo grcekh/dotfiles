@@ -110,6 +110,14 @@ alias src="source ~/.zshrc"
 alias dot="cd ~/dotfiles && nvim"
 alias wifi="wifi-password"
 alias vw="cd ~/vimwiki && nvim"
+alias gs="git status -s"
+alias gl="git log"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gac="git add . && git commit -m"
+alias gp="git push"
+alias gco="git checkout"
+alias gcob="git checkout -b"
 
 
 ########## BROWSER-SYNC ##########
