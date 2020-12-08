@@ -59,6 +59,7 @@ cask "webpquicklook"
 
 # Binaries
 brew "automake"
+brew "bash"
 brew "bat"
 brew "openssl@1.1"
 brew "cmake"
