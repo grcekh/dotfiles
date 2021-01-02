@@ -46,18 +46,15 @@ install_homebrew() {
   (( silent )) || printf "🍺 Done!\n"
 }
 
-install_vimplug() {
+install_vim_extras() {
   (( silent )) || printf "⌨️  Installing vim-plug...\n"
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | bash
   (( silent )) || printf "⌨️  Done!\n"
-}
 
-install_nvim_providers() {
-  # Make sure Python 3.4+ is available in $PATH
+  (( silent )) || printf "⌨️  Installing Neovim providers...\n"
   python3 -m pip install --user --upgrade pynvim
-
-  # TODO: Node.js/neovim
+  (( silent )) || printf "⌨️  Done!\n"
 }
 
 create_symlinks() {
@@ -95,8 +92,7 @@ main() {
   install_xcode
   install_ohmyzsh
   install_homebrew
-  install_vimplug
-  install_nvim_providers
+  install_vim_extras
   create_symlinks
 }
 
