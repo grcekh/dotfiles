@@ -26,21 +26,19 @@ EOM
 create_symlinks() {
   (( silent )) || printf "📂 Creating symlinks...\n"
 
-  # .config: No such file or directory
-  # .oh-my-zsh: No such file or directory
-  # File exists
-  # File exists
+  # ~/.config: No such file or directory
+  # ~/.oh-my-zsh: No such file or directory
   # File exists
 
-  ln -s "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
+  ln -sib "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
 
-  mkdir "$HOME/.config/nvim"
-  ln -s "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-  ln -s "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+  mkdir -p "$HOME/.config/nvim"
+  ln -sib "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+  ln -sib "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 
-  ln -s "$PWD/.vimrc" "$HOME/.vimrc"
-  ln -s "$PWD/.zshrc" "$HOME/.zshrc"
-  ln -s "$PWD/.gitignore" "$HOME/.gitignore"
+  ln -sib "$PWD/.vimrc" "$HOME/.vimrc"
+  ln -sib "$PWD/.zshrc" "$HOME/.zshrc"
+  ln -sib "$PWD/.gitignore" "$HOME/.gitignore"
 
   (( silent )) || printf "📂 Done!\n"
 }
