@@ -39,39 +39,38 @@ create_symlinks() {
 
 install_xcode() {
   (( silent )) || printf "🛠  Installing Xcode tools... "
-  # xcode-select --install
+  xcode-select --install
   (( silent )) || printf "Done!\n"
 }
 
 install_ohmyzsh() {
   (( silent )) || printf "✨ Installing oh-my-zsh... "
-  # curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+  curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
   (( silent )) || printf "Done!\n"
 }
 
 install_homebrew() {
   (( silent )) || printf "🍺 Installing Homebrew... "
-  # curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+  curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh
   # (( silent )) || printf "Done! "
 
   (( silent )) || printf "Installing formulae... "
-  # brew bundle
+  brew bundle
   (( silent )) || printf "Done!\n"
 }
 
 install_vimplug() {
   (( silent )) || printf "⌨️  Installing vim-plug... "
-  # curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  # https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   (( silent )) || printf "Done!\n"
 }
 
 main() {
   silent=0
 
-  # Just for debugging
-  DIR=$(dirname "$0")
-  echo "$DIR"
+  # DIR=$(dirname "$0")
+  # echo "$DIR"
 
   while getopts ":hs" flag; do
     case $flag in
@@ -82,12 +81,13 @@ main() {
   done
   shift $(( OPTIND - 1 ))
 
+  # TODO: Confirm y/n -- will override existing files
+
   create_symlinks
   install_xcode
   install_ohmyzsh
   install_homebrew
   install_vimplug
-  # TODO: Maybe setup macOS preferences
 }
 
 main "$@"
