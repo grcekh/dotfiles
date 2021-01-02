@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Note: Homebrew has a lot of issues on a multi-user computer
-
 print_usage() {
 cat << EOM
 USAGE:
@@ -76,9 +74,6 @@ create_symlinks() {
 
 main() {
   silent=0
-
-  # DIR=$(dirname "$0")
-  # echo "$DIR"
 
   while getopts ":hs" flag; do
     case $flag in
