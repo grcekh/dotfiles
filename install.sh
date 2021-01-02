@@ -23,7 +23,7 @@ EOM
 #   done
 # }
 
-install_xcode() {
+install_xcode_tools() {
   (( silent )) || printf "🛠  Installing Xcode tools..\n"
   sudo softwareupdate -i -a
   xcode-select --install
@@ -89,7 +89,7 @@ main() {
   done
   shift $(( OPTIND - 1 ))
 
-  install_xcode
+  install_xcode_tools
   install_ohmyzsh
   install_homebrew
   install_vim_extras
