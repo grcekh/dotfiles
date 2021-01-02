@@ -39,7 +39,7 @@ install_ohmyzsh() {
 install_homebrew() {
   (( silent )) || printf "🍺 Installing Homebrew...\n"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
-  (( silent )) || printf "🍺 Done! "
+  (( silent )) || printf "🍺 Done!\n"
 
   (( silent )) || printf "🍺 Installing formulae...\n"
   brew bundle
