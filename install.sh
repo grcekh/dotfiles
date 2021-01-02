@@ -64,15 +64,15 @@ create_symlinks() {
   (( silent )) || printf "📂 Creating symlinks...\n"
 
   cp "$PWD/iterm2/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
-  ln -sib "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
+  ln -si "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
 
   mkdir -p "$HOME/.config/nvim"
-  ln -sib "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-  ln -sib "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+  ln -si "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+  ln -si "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 
-  ln -sib "$PWD/.vimrc" "$HOME/.vimrc"
-  ln -sib "$PWD/.zshrc" "$HOME/.zshrc"
-  ln -sib "$PWD/.gitignore" "$HOME/.gitignore"
+  ln -si "$PWD/.vimrc" "$HOME/.vimrc"
+  ln -si "$PWD/.zshrc" "$HOME/.zshrc"
+  ln -si "$PWD/.gitignore" "$HOME/.gitignore"
 
   (( silent )) || printf "📂 Done!\n"
 }
