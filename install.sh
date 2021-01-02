@@ -23,26 +23,6 @@ EOM
 #   done
 # }
 
-create_symlinks() {
-  (( silent )) || printf "📂 Creating symlinks...\n"
-
-  # ~/.config: No such file or directory
-  # ~/.oh-my-zsh: No such file or directory
-  # File exists
-
-  ln -sib "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
-
-  mkdir -p "$HOME/.config/nvim"
-  ln -sib "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-  ln -sib "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
-
-  ln -sib "$PWD/.vimrc" "$HOME/.vimrc"
-  ln -sib "$PWD/.zshrc" "$HOME/.zshrc"
-  ln -sib "$PWD/.gitignore" "$HOME/.gitignore"
-
-  (( silent )) || printf "📂 Done!\n"
-}
-
 install_xcode() {
   (( silent )) || printf "🛠  Installing Xcode tools..\n"
   sudo softwareupdate -i -a
@@ -73,13 +53,35 @@ install_vimplug() {
   (( silent )) || printf "⌨️  Done!\n"
 }
 
+install_nvim_providers() {
+  # Make sure Python 3.4+ is available in $PATH
+  python3 -m pip install --user --upgrade pynvim
+
+  # TODO: Node.js/neovim
+}
+
+create_symlinks() {
+  (( silent )) || printf "📂 Creating symlinks...\n"
+
+  cp "$PWD/iterm2/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
+  ln -sib "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
+
+  mkdir -p "$HOME/.config/nvim"
+  ln -sib "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+  ln -sib "$PWD/nvim/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+
+  ln -sib "$PWD/.vimrc" "$HOME/.vimrc"
+  ln -sib "$PWD/.zshrc" "$HOME/.zshrc"
+  ln -sib "$PWD/.gitignore" "$HOME/.gitignore"
+
+  (( silent )) || printf "📂 Done!\n"
+}
+
 main() {
   silent=0
 
   # DIR=$(dirname "$0")
   # echo "$DIR"
-
-  whoami
 
   while getopts ":hs" flag; do
     case $flag in
@@ -90,12 +92,11 @@ main() {
   done
   shift $(( OPTIND - 1 ))
 
-  # TODO: Confirm y/n -- will override existing files
-
   install_xcode
   install_ohmyzsh
   install_homebrew
   install_vimplug
+  install_nvim_providers
   create_symlinks
 }
 
