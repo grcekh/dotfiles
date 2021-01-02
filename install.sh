@@ -34,36 +34,37 @@ create_symlinks() {
   ln -s "$PWD/.zshrc" "$HOME/.zshrc"
   ln -s "$PWD/.gitignore" "$HOME/.gitignore"
 
-  (( silent )) || printf "Done!\n"
+  (( silent )) || printf "📂 Done!\n"
 }
 
 install_xcode() {
   (( silent )) || printf "🛠  Installing Xcode tools... "
+  sudo softwareupdate -i -a
   xcode-select --install
-  (( silent )) || printf "Done!\n"
+  (( silent )) || printf "🛠  Done!\n"
 }
 
 install_ohmyzsh() {
   (( silent )) || printf "✨ Installing oh-my-zsh... "
-  curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-  (( silent )) || printf "Done!\n"
+  curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+  (( silent )) || printf "✨ Done!\n"
 }
 
 install_homebrew() {
   (( silent )) || printf "🍺 Installing Homebrew... "
-  curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh
-  # (( silent )) || printf "Done! "
+  curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+  (( silent )) || printf "🍺 Done! "
 
-  (( silent )) || printf "Installing formulae... "
+  (( silent )) || printf "🍺 Installing formulae... "
   brew bundle
-  (( silent )) || printf "Done!\n"
+  (( silent )) || printf "🍺 Done!\n"
 }
 
 install_vimplug() {
   (( silent )) || printf "⌨️  Installing vim-plug... "
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  (( silent )) || printf "Done!\n"
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | bash
+  (( silent )) || printf "⌨️  Done!\n"
 }
 
 main() {
@@ -74,7 +75,7 @@ main() {
 
   while getopts ":hs" flag; do
     case $flag in
-      h ) print_usage ;;
+      h ) print_usage; return 0 ;;
       s ) silent=1 ;;
       ? ) print_usage; return 1 ;;
     esac
