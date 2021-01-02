@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Notes:
+# Need to run with sudo
+# Homebrew has a lot of issues on a multi-user computer
+
 print_usage() {
 cat << EOM
 USAGE:
@@ -23,6 +27,12 @@ EOM
 
 create_symlinks() {
   (( silent )) || printf "📂 Creating symlinks... "
+
+  # .config: No such file or directory
+  # .oh-my-zsh: No such file or directory
+  # File exists
+  # File exists
+  # File exists
 
   ln -s "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
 
@@ -52,7 +62,7 @@ install_ohmyzsh() {
 
 install_homebrew() {
   (( silent )) || printf "🍺 Installing Homebrew... "
-  curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
   (( silent )) || printf "🍺 Done! "
 
   (( silent )) || printf "🍺 Installing formulae... "
@@ -72,6 +82,8 @@ main() {
 
   # DIR=$(dirname "$0")
   # echo "$DIR"
+
+  echo "$whoami"
 
   while getopts ":hs" flag; do
     case $flag in
