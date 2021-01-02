@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-# Notes:
-# Need to run with sudo
-# Homebrew has a lot of issues on a multi-user computer
+# Note: Homebrew has a lot of issues on a multi-user computer
 
 print_usage() {
 cat << EOM
@@ -96,11 +94,11 @@ main() {
 
   # TODO: Confirm y/n -- will override existing files
 
-  create_symlinks
   install_xcode
   install_ohmyzsh
   install_homebrew
   install_vimplug
+  create_symlinks
 }
 
 main "$@"
