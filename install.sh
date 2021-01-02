@@ -26,7 +26,7 @@ EOM
 # }
 
 create_symlinks() {
-  (( silent )) || printf "📂 Creating symlinks... "
+  (( silent )) || printf "📂 Creating symlinks...\n"
 
   # .config: No such file or directory
   # .oh-my-zsh: No such file or directory
@@ -48,30 +48,30 @@ create_symlinks() {
 }
 
 install_xcode() {
-  (( silent )) || printf "🛠  Installing Xcode tools... "
+  (( silent )) || printf "🛠  Installing Xcode tools..\n"
   sudo softwareupdate -i -a
   xcode-select --install
   (( silent )) || printf "🛠  Done!\n"
 }
 
 install_ohmyzsh() {
-  (( silent )) || printf "✨ Installing oh-my-zsh... "
+  (( silent )) || printf "✨ Installing oh-my-zsh...\n"
   curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
   (( silent )) || printf "✨ Done!\n"
 }
 
 install_homebrew() {
-  (( silent )) || printf "🍺 Installing Homebrew... "
+  (( silent )) || printf "🍺 Installing Homebrew...\n"
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
   (( silent )) || printf "🍺 Done! "
 
-  (( silent )) || printf "🍺 Installing formulae... "
+  (( silent )) || printf "🍺 Installing formulae...\n"
   brew bundle
   (( silent )) || printf "🍺 Done!\n"
 }
 
 install_vimplug() {
-  (( silent )) || printf "⌨️  Installing vim-plug... "
+  (( silent )) || printf "⌨️  Installing vim-plug...\n"
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | bash
   (( silent )) || printf "⌨️  Done!\n"
@@ -83,7 +83,7 @@ main() {
   # DIR=$(dirname "$0")
   # echo "$DIR"
 
-  echo "$whoami"
+  whoami
 
   while getopts ":hs" flag; do
     case $flag in
