@@ -59,7 +59,7 @@ create_symlinks() {
   (( silent )) || printf "📂 Creating symlinks...\n"
 
   cp "$PWD/iterm2/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
-  ln -si "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/"
+  ln -si "$PWD/oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/robbyrussellmod.zsh-theme"
 
   mkdir -p "$HOME/.config/nvim"
   ln -si "$PWD/nvim/init.vim" "$HOME/.config/nvim/init.vim"
