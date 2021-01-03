@@ -31,6 +31,7 @@ install_xcode_tools() {
 install_ohmyzsh() {
   (( silent )) || printf "✨ Installing oh-my-zsh...\n"
   curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+  chsh -s $(which zsh)
   (( silent )) || printf "✨ Done!\n"
 }
 
@@ -83,6 +84,8 @@ main() {
     esac
   done
   shift $(( OPTIND - 1 ))
+
+  # TODO: While script is running, prevent computer from going to sleep
 
   install_xcode_tools
   install_ohmyzsh
