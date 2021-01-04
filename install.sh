@@ -31,6 +31,7 @@ install_xcode_tools() {
 install_ohmyzsh() {
   (( silent )) || printf "✨ Installing oh-my-zsh...\n"
   curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   chsh -s $(which zsh)
   (( silent )) || printf "✨ Done!\n"
 }
