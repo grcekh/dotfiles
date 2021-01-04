@@ -46,6 +46,12 @@ install_homebrew() {
   (( silent )) || printf "🍺 Done!\n"
 }
 
+setup_python() {
+  (( silent )) || printf "🐍 Setting up Python...\n"
+  # python -m pip --version
+  (( silent )) || printf "🐍 Done!\n"
+}
+
 install_vim_extras() {
   (( silent )) || printf "⌨️  Installing vim-plug...\n"
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -91,6 +97,7 @@ main() {
   install_xcode_tools
   install_ohmyzsh
   install_homebrew
+  setup_python
   install_vim_extras
   create_symlinks
 }
