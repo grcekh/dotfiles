@@ -48,7 +48,8 @@ install_homebrew() {
 
 setup_python() {
   (( silent )) || printf "🐍 Setting up Python...\n"
-  # python -m pip --version
+  pyenv install 3.8.6
+  pyenv global 3.8.0
   (( silent )) || printf "🐍 Done!\n"
 }
 
@@ -60,6 +61,7 @@ install_vim_extras() {
 
   (( silent )) || printf "⌨️  Installing Neovim providers...\n"
   python3 -m pip install --user --upgrade pynvim
+  npm install -g neovim
   (( silent )) || printf "⌨️  Done!\n"
 }
 
