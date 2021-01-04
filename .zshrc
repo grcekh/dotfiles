@@ -168,9 +168,10 @@ export BAT_THEME="base16"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# Add epylint, pylon, pyreverse, similar, etc.
-
-# . /anaconda3/etc/profile.d/conda.sh
+# pyenv version management
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bindkey '^\n' autosuggest-execute
