@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo -v
+
 print_usage() {
 cat << EOM
 USAGE:
@@ -102,6 +104,7 @@ main() {
   setup_python
   install_vim_extras
   create_symlinks
+  source macos.sh
 }
 
 main "$@"
