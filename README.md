@@ -8,7 +8,7 @@ Building out dotfiles for a Manjaro i3 setup. Lots of learning in progress.
 * [ ] picom
 * [ ] polybar
 * [X] rofi
-* [ ] zsh
+* [X] zsh
 
 ![Manjaro workspace with neofetch](./screenshots/2020-11-30-222804_1920x1080_scrot.png)
 ![Manjaro workspace with floating windows](./screenshots/2020-11-30-225224_1920x1080_scrot.png)

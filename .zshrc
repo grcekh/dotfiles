@@ -2,14 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="home/grace/.oh-my-zsh"
+export ZSH="/home/grace/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # half-life, philips, jonathan, mh
-ZSH_THEME="philips"
+ZSH_THEME=philips
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,7 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Options section
 setopt correct                                                  # Auto correct mistakes
-#setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+#setopt extendedglob                                            # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
 setopt rcexpandparam                                            # Array expension with parameters
 setopt nocheckjobs                                              # Don't warn about running processes when exiting
