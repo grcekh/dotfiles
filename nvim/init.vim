@@ -10,9 +10,10 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'scrooloose/nerdtree'
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
@@ -23,14 +24,11 @@ Plug 'junegunn/gv.vim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
-Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 
 " Productivity
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -110,7 +108,8 @@ let mapleader="-"
 inoremap jj <Esc>`^
 
 " Toggle file manager
-nnoremap <Leader>t :CHADopen<CR>
+" nnoremap <Leader>t :CHADopen<CR>
+nnoremap <Leader>t :NERDTreeToggle<Cr>
 
 " FZF + ripgrep
 nnoremap <C-p> :FZF<Cr>
@@ -340,7 +339,8 @@ let g:startify_files_number = 5
 augroup startup
     autocmd!
     autocmd VimEnter * Startify
-    autocmd VimEnter * CHADopen
+    " autocmd VimEnter * CHADopen
+    autocmd VimEnter * NERDTree
 augroup END
 
 
@@ -398,7 +398,8 @@ let bufferline.maximum_padding = 4
 "   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Ignore in file manager
-let g:chadtree_ignores = { 'path': 'node_modules' }
+" let g:chadtree_ignores = { 'path': 'node_modules' }
+let g:NERDTreeIgnore = ['^node_modules$']
 
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -406,9 +407,6 @@ let g:vimwiki_global_ext = 0
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
-
-" As of MacOS Catalina
-let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 
 " oF Makefile
 let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
