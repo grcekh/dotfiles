@@ -2,12 +2,12 @@
 
 Building out dotfiles for a Manjaro i3 setup. Lots of learning in progress.
 
-* [ ] i3-gaps
+* [X] i3-gaps
 * [X] kitty
 * [ ] alacritty
 * [X] nvim
 * [ ] picom
-* [ ] polybar
+* [X] polybar
 * [X] rofi
 * [X] zsh
 
