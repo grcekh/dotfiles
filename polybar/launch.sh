@@ -1,9 +1,5 @@
 #!/usr/bin/env sh
 
-# Add this to your wm startup file.
-# TODO: Launch polybar for each display
-# https://github.com/polybar/polybar/issues/763
-
 # Terminate already running bar instances
 killall -q polybar
 
