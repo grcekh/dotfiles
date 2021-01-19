@@ -17,7 +17,7 @@ install_packages() {
     bash ./packages.sh -i
 }
 
-setup_zsh() {
+install_ohmyzsh() {
     # Install oh-my-zsh
     # Maybe have to chmod +x run scripts???
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -63,9 +63,10 @@ main() {
     # shift $(( OPTIND - 1 ))
 
     # install_packages
-    # setup_zsh
-    # setup_polybar
+    # install_ohmyzsh
+    # install_neovim
     # create_symlinks
+    # setup_polybar
 }
 
 main "$@"
