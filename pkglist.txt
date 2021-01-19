@@ -1,6 +1,7 @@
 accountsservice
 acpi
 acpid
+alacritty
 alsa-firmware
 alsa-plugins
 alsa-utils
@@ -63,7 +64,6 @@ gimp
 git
 glibc
 gnome-keyring
-gotop-bin
 gparted
 grep
 grub
@@ -74,7 +74,6 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gstreamer
-gtkmm3
 gtksourceview-pkgbuild
 gufw
 gvfs
@@ -95,15 +94,22 @@ kitty
 kvantum-manjaro
 less
 lib32-flex
+lib32-libva-vdpau-driver
 lib32-mesa-demos
+lib32-mesa-vdpau
+lib32-vulkan-intel
+lib32-vulkan-radeon
 libdvdcss
 libgpod
+libreoffice-still
 libtool
+libva-mesa-driver
+libva-vdpau-driver
 licenses
 lightdm-settings
 lightdm-slick-greeter
-linux58
-linux58-virtualbox-guest-modules
+linux59
+linux59-broadcom-wl
 logrotate
 lvm2
 lxappearance
@@ -131,6 +137,7 @@ matcha-gtk-theme
 mdadm
 memtest86+
 mesa-demos
+mesa-vdpau
 mhwd
 mhwd-db
 mkinitcpio-openswap
@@ -144,6 +151,7 @@ nano
 ncdu
 neofetch
 neovim
+nerd-fonts-sf-mono
 netctl
 network-manager-applet
 networkmanager
@@ -152,7 +160,6 @@ networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
-nordvpn-bin
 nss-mdns
 ntfs-3g
 ntp
@@ -161,6 +168,7 @@ open-vm-tools
 openresolv
 openssh
 os-prober
+otf-san-francisco-pro
 p7zip
 pacman
 pamac-gtk
@@ -186,9 +194,11 @@ rofi
 rsync
 s-nail
 sbxkb
+scientifica-bdf
 screenfetch
 sed
 shadow
+siji-git
 snapd
 spectre-meltdown-checker
 speedtest-cli
@@ -202,6 +212,7 @@ systemd-fsck-silent
 systemd-sysvcompat
 tar
 terminus-font
+termsyn-font
 texinfo
 tlp
 tree
@@ -222,6 +233,8 @@ vim
 virtualbox-guest-utils
 vlc
 volumeicon
+vulkan-intel
+vulkan-radeon
 w3m
 wallpapers-juhraya
 wget
@@ -240,11 +253,16 @@ xf86-input-evdev
 xf86-input-libinput
 xf86-input-vmmouse
 xf86-input-void
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+xf86-video-nouveau
 xf86-video-vmware
 xfburn
 xfce4-power-manager
 xfsprogs
 xorg-server
+xorg-server-xephyr
 xorg-twm
 xorg-xfd
 xorg-xhost
