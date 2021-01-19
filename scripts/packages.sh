@@ -8,4 +8,4 @@ fi
 pacman -Qqe > pkglist.txt
 
 # Install packages from pkglist, excluding AUR and up-to-date packages
-pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+# pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
