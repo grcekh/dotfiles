@@ -18,7 +18,7 @@ while true; do
                 "You should update soon" "$UPDATES New packages"
         elif (( UPDATES > 2 )); then
             notify-send -u low -i $NOTIFY_ICON \
-                "$UPDATES New packages"
+                "$UPDATES new packages"
         fi
     fi
 
