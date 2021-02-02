@@ -63,6 +63,7 @@ busybox-initramfs				install
 busybox-static					install
 bzip2						install
 ca-certificates					install
+chafa						install
 cheese-common					install
 chrome-gnome-shell				install
 colord						install
@@ -212,7 +213,6 @@ gir1.2-gdesktopenums-3.0:amd64			install
 gir1.2-gdkpixbuf-2.0:amd64			install
 gir1.2-gdm-1.0:amd64				install
 gir1.2-geoclue-2.0:amd64			install
-gir1.2-geocodeglib-1.0:amd64			install
 gir1.2-glib-2.0:amd64				install
 gir1.2-gnomebluetooth-1.0:amd64			install
 gir1.2-gnomedesktop-3.0:amd64			install
@@ -253,7 +253,6 @@ gnome-accessibility-themes			install
 gnome-bluetooth					install
 gnome-calculator				install
 gnome-calendar					install
-gnome-contacts					install
 gnome-control-center				install
 gnome-control-center-data			install
 gnome-control-center-faces			install
@@ -311,7 +310,6 @@ gnome-user-docs-pt				install
 gnome-user-docs-ru				install
 gnome-user-docs-zh-hans				install
 gnome-video-effects				install
-gnome-weather					install
 gnupg						install
 gnupg-l10n					install
 gnupg-utils					install
@@ -328,6 +326,7 @@ grilo-plugins-0.3-base:amd64			install
 grilo-plugins-0.3-extra:amd64			install
 groff-base					install
 gsettings-desktop-schemas			install
+gsfonts						install
 gstreamer1.0-alsa:amd64				install
 gstreamer1.0-clutter-3.0:amd64			install
 gstreamer1.0-gl:amd64				install
@@ -400,6 +399,7 @@ icu-devtools					install
 ifupdown					install
 iio-sensor-proxy				install
 im-config					install
+imagemagick-6-common				install
 info						install
 init						install
 init-system-helpers				install
@@ -588,8 +588,8 @@ libcdio-cdda2:amd64				install
 libcdio-paranoia2:amd64				install
 libcdio19:amd64					install
 libcdparanoia0:amd64				install
-libcdr-0.1-1:amd64				install
 libcfitsio9:amd64				install
+libchafa0:amd64					install
 libcharls2:amd64				install
 libcheese-gtk25:amd64				install
 libcheese8:amd64				install
@@ -723,7 +723,6 @@ libfontconfig1:amd64				install
 libfontembed1:amd64				install
 libfontenc1:amd64				install
 libfprint-2-2:amd64				install
-libfreehand-0.1-1				install
 libfreerdp2-2:amd64				install
 libfreetype6:amd64				install
 libfreexl1:amd64				install
@@ -938,6 +937,7 @@ liblouis20:amd64				install
 liblouisutdml-bin				install
 liblouisutdml-data				install
 liblouisutdml9:amd64				install
+liblqr-1-0:amd64				install
 liblsan0:amd64					install
 libltdl7:amd64					install
 liblua5.2-0:amd64				install
@@ -952,6 +952,8 @@ liblzma5:amd64					install
 liblzo2-2:amd64					install
 libmagic-mgc					install
 libmagic1:amd64					install
+libmagickcore-6.q16-6:amd64			install
+libmagickwand-6.q16-6:amd64			install
 libmailtools-perl				install
 libmaxminddb0:amd64				install
 libmbim-glib4:amd64				install
@@ -971,7 +973,6 @@ libmpc3:amd64					install
 libmpfr6:amd64					install
 libmpg123-0:amd64				install
 libmsgpackc2:amd64				install
-libmspub-0.1-1:amd64				install
 libmtdev1:amd64					install
 libmtp-common					install
 libmtp-runtime					install
@@ -1045,7 +1046,6 @@ libostree-1-1:amd64				install
 libostree-dev:amd64				install
 libp11-kit0:amd64				install
 libpackagekit-glib2-18:amd64			install
-libpagemaker-0.0-0:amd64			install
 libpam-cap:amd64				install
 libpam-fprintd:amd64				install
 libpam-gnome-keyring:amd64			install
@@ -1140,7 +1140,7 @@ libreoffice-base-core				install
 libreoffice-calc				install
 libreoffice-common				install
 libreoffice-core				install
-libreoffice-draw				install
+libreoffice-draw				deinstall
 libreoffice-gnome				install
 libreoffice-gtk3				install
 libreoffice-help-common				install
@@ -1156,7 +1156,7 @@ libreoffice-help-pt-br				install
 libreoffice-help-ru				install
 libreoffice-help-zh-cn				install
 libreoffice-help-zh-tw				install
-libreoffice-impress				install
+libreoffice-impress				deinstall
 libreoffice-l10n-ar				install
 libreoffice-l10n-de				install
 libreoffice-l10n-en-gb				install
@@ -1324,7 +1324,6 @@ libva2:amd64					install
 libvdpau-va-gl1:amd64				install
 libvdpau1:amd64					install
 libvidstab1.1:amd64				install
-libvisio-0.1-1:amd64				install
 libvisual-0.4-0:amd64				install
 libvncserver1:amd64				install
 libvolume-key1					install
@@ -1509,6 +1508,7 @@ nautilus-extension-gnome-terminal		install
 nautilus-sendto					install
 ncurses-base					install
 ncurses-bin					install
+neofetch					install
 neovim						install
 neovim-runtime					install
 net-tools					install
