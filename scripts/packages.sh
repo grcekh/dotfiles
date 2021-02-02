@@ -4,29 +4,48 @@ if ! [ $(id -u) = 0 ]; then
     echo "This script must be run as root."; exit 1
 fi
 
-# Output a list of installed packages (Arch + AUR)
-create_pkglist() {
-    echo "Creating pkglist.txt..."
-    pacman -Qqe > pkglist.txt
+print_usage() {
+cat << EOM
+USAGE:
+    ./packages.sh [OPTIONS]
+OPTIONS:
+    -c Create pkglist.txt
+    -i Install from pkglist.txt
+    -h Print this message
+EOM
 }
 
-# Install packages from pkglist, excluding AUR and up-to-date packages
+# Output a list of installed packages
+create_pkglist() {
+    echo "Creating pkglist.txt..."
+    dpkg --get-selections > pkglist.txt
+    echo "Done!"
+}
+
+# Install packages from pkglist
 install_pkglist() {
     echo "Installing from pkglist.txt..."
-    pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+    # Excluding AUR and up-to-date packages
+    # pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+    dpkg --set-selections < pkglist.txt
+    echo "Done!"
 }
 
 main() {
-    while getopts ":ci" flag; do
+    pkglist_dir="/home/grace/dotfiles"
+    cd "$pkglist_dir"
+
+    while getopts ":hci" flag; do
         case $flag in
+            h ) create_pkglist; return 0 ;;
             c ) create_pkglist; return 0 ;;
             i ) install_pkglist; return 0 ;;
-            ? ) echo "Select an option."; return 1 ;;
+            ? ) print_usage; return 1 ;;
         esac
     done
     shift $(( OPTIND - 1 ))
 
-    (( $# < 1 )) && echo "Select an option."; return 1
+    (( $# < 1 )) && print_usage; return 1
 }
 
 main "$@"

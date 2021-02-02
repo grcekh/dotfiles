@@ -17,8 +17,11 @@ install_packages() {
     bash ./packages.sh -i
 }
 
-install_ohmyzsh() {
-    # Install oh-my-zsh
+setup_zsh() {
+    # zsh
+    sudo apt install zsh
+
+    # Oh-my-zsh
     # Maybe have to chmod +x run scripts???
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -44,13 +47,22 @@ create_symlinks() {
     ln -si "$DOTS/.zshrc" "$HOME/.zshrc"
 }
 
-setup_polybar() {
-    sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf
+setup_node() {
+    curl -L https://git.io/n-install | bash
+}
+
+setup_python() {
+    sudo apt install python3-pip python3-venv
 }
 
 install_neovim() {
+    # VimPlug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+    # Providers
+    pip3 install pynvim --upgrade
+    npm install -g neovim
 }
 
 main() {
@@ -63,7 +75,7 @@ main() {
     # shift $(( OPTIND - 1 ))
 
     # install_packages
-    # install_ohmyzsh
+    setup_zsh
     # install_neovim
     # create_symlinks
     # setup_polybar

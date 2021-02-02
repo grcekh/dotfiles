@@ -10,8 +10,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+" Plug 'scrooloose/nerdtree'
 " Plug '/usr/local/opt/fzf'
 " Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
@@ -108,8 +108,8 @@ let mapleader="-"
 inoremap jj <Esc>`^
 
 " Toggle file manager
-" nnoremap <Leader>t :CHADopen<CR>
-nnoremap <Leader>t :NERDTreeToggle<Cr>
+nnoremap <Leader>t :CHADopen<CR>
+" nnoremap <Leader>t :NERDTreeToggle<Cr>
 
 " FZF + ripgrep
 nnoremap <C-p> :FZF<Cr>
@@ -341,8 +341,8 @@ let g:startify_files_number = 5
 augroup startup
     autocmd!
     autocmd VimEnter * Startify
-    " autocmd VimEnter * CHADopen
-    autocmd VimEnter * NERDTree
+    autocmd VimEnter * CHADopen
+    " autocmd VimEnter * NERDTree
 augroup END
 
 
@@ -399,9 +399,13 @@ let bufferline.maximum_padding = 4
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
+
+" Set python3 executable
+let g:python3_host_prog = "/usr/bin/python3"
+
 " Ignore in file manager
-" let g:chadtree_ignores = { 'path': 'node_modules' }
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:chadtree_ignores = { 'path': 'node_modules' }
+" let g:NERDTreeIgnore = ['^node_modules$']
 
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]

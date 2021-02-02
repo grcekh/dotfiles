@@ -145,14 +145,14 @@ export LESS=-r
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -188,19 +188,22 @@ fi
 
 ########## ALIASES ##########
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
 alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
+alias df="df -h"                                                # Human-readable sizes
+alias free="free -m"                                            # Show sizes in MB
 alias l="ls -la"                                                # Quick list all
 alias dot="cd ~/dotfiles && nvim"                               # Shortcut to edit dotfiles
 alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vimwiki
+alias src="source ~/.zshrc"                                     # Source .zshrc
 
+# Git specific
+alias gs="git status -s"                                           
+alias gl="git log"
+alias ga="git add ."
+alias gc="git commit -m"
+alias gac="git add . && git commit -m"
 
 ########### FZF + FD + RIPGREP ############
 
@@ -236,5 +239,5 @@ alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vi
 
 ########## MISCELLANEOUS ##########
 
-# Node Version Manager
-source /usr/share/nvm/init-nvm.sh
+# Added by n-install (see http://git.io/n-install-repo)
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
