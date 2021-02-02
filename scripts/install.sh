@@ -65,6 +65,10 @@ install_neovim() {
     npm install -g neovim
 }
 
+install_nordvpn() {
+    sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+}
+
 main() {
     # while getopts ":h" flag; do
     #     case $flag in
@@ -75,10 +79,11 @@ main() {
     # shift $(( OPTIND - 1 ))
 
     # install_packages
-    setup_zsh
+    # setup_zsh
     # install_neovim
     # create_symlinks
     # setup_polybar
+    install_nordvpn
 }
 
 main "$@"
