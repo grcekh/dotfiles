@@ -101,10 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias config="nvim ~/.zshrc"
 alias src="source ~/.zshrc"
-alias dot="cd ~/dotfiles"
+alias dot="cd ~/dotfiles && nvim"
 alias wifi="wifi-password"
+alias gs="git status -s"
+alias gl="git log"
+alias ga="git add ."
+alias gac="git add . && git commit -m"
 
 
 ########## BROWSER-SYNC ##########
@@ -149,12 +152,22 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 ########## MISCELLANEOUS ##########
 
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+d=.dir_colors
+test -r ~/.dir_colors && eval $(gdircolors ~/.dir_colors)
+
 # bat highlighting theme
 export BAT_THEME="base16"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
+
+# To avoid requiring sudo for n and npm global installs
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
 
 # Add epylint, pylon, pyreverse, similar, etc.
 

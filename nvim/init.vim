@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Declare the list of plugins.
 
 " Core 
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -54,7 +54,6 @@ set history=500 "Sets undo history size
 set ruler "Sets up status bar
 set laststatus=2 "Always keeps the status bar active
 set number "Turns on line numbering
-"set t_Co=256 "Sets Vim to use 256 colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -120,6 +119,8 @@ map <C-l> <C-W>l
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    6. COLOR SCHEME    "
 "~~~~~~~~~~~~~~~~~~~~~~~"
+set t_Co=256 "Sets Vim to use 256 colors
+
 " Enable true colors
 if (has('termguicolors'))
   set termguicolors
@@ -181,10 +182,10 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
-  \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
+  \ 'coc-styled-components',
   "\ 'coc-clangd',
   "\ 'coc-pairs',
   \ ]
@@ -386,8 +387,11 @@ let bufferline.maximum_padding = 4
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-" Ignore in file manager
+" CHADTree
 let g:chadtree_ignores = { 'path': 'node_modules' }
+let g:chadtree_settings = {
+      \ "theme.icon_colour_set": "github"
+      \ }
 
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
