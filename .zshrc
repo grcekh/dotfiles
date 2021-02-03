@@ -201,7 +201,7 @@ alias src="source ~/.zshrc"                                     # Source .zshrc
 # Git specific
 alias gs="git status -s"                                           
 alias gl="git log"
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 

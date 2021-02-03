@@ -11,7 +11,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Core 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-" Plug 'scrooloose/nerdtree'
 " Plug '/usr/local/opt/fzf'
 " Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
@@ -19,7 +18,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'romgrk/barbar.nvim'
 
 " Syntax
@@ -27,6 +26,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
+Plug 'tikhomirov/vim-glsl'
 
 " Productivity
 Plug 'junegunn/goyo.vim'
@@ -39,7 +39,6 @@ Plug 'kaicataldo/material.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 
@@ -109,7 +108,6 @@ inoremap jj <Esc>`^
 
 " Toggle file manager
 nnoremap <Leader>t :CHADopen<CR>
-" nnoremap <Leader>t :NERDTreeToggle<Cr>
 
 " FZF + ripgrep
 nnoremap <C-p> :FZF<Cr>
@@ -190,7 +188,6 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
-  \ 'coc-vetur',
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-emmet',
@@ -342,25 +339,11 @@ augroup startup
     autocmd!
     autocmd VimEnter * Startify
     autocmd VimEnter * CHADopen
-    " autocmd VimEnter * NERDTree
-augroup END
-
-
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"    10. SYNTAX HIGHLIGHTING    "
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-let g:cpp_simple_highlight = 1
-let g:cpp_named_requirements_highlight = 1
-
-" Highlight yanked text
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
 augroup END
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"     11. BARBAR.VIM     "
+"     10. BARBAR.VIM     "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Magic buffer-picking mode
 nnoremap <silent> <C-s> :BufferPick<CR>
@@ -396,16 +379,35 @@ let bufferline.semantic_letters = v:true
 let bufferline.maximum_padding = 4
 
 
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"    11. SYNTAX HIGHLIGHTING    "
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+let g:cpp_simple_highlight = 1
+let g:cpp_named_requirements_highlight = 1
+
+" Highlight yanked text
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END
+
+" Correctly set filetype for .frag and .vert files
+augroup filetypedetect
+  autocmd! BufNewFile,BufRead *.frag setfiletype glsl
+  autocmd! BufNewFile,BufRead *.vert setfiletype glsl
+augroup END
+
+
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 
-" Set python3 executable
-let g:python3_host_prog = "/usr/bin/python3"
-
-" Ignore in file manager
+" CHADTree
 let g:chadtree_ignores = { 'path': 'node_modules' }
-" let g:NERDTreeIgnore = ['^node_modules$']
+let g:chadtree_settings = {
+      \ "theme.text_colour_set": "nord",
+      \ "theme.icon_colour_set": "github"
+      \ }
 
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -413,6 +415,9 @@ let g:vimwiki_global_ext = 0
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
+
+" Set python3 executable
+let g:python3_host_prog = "/usr/bin/python3"
 
 " oF Makefile
 let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
