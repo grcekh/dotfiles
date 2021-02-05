@@ -27,6 +27,7 @@ apt-config-icons				install
 apt-config-icons-hidpi				install
 apt-config-icons-large				install
 apt-config-icons-large-hidpi			install
+apt-transport-https				install
 apt-utils					install
 aptdaemon					install
 aptdaemon-data					install
@@ -41,6 +42,7 @@ base-files					install
 base-passwd					install
 bash						install
 bash-completion					install
+bat						install
 bc						install
 bind9-dnsutils					install
 bind9-host					install
@@ -186,6 +188,7 @@ ftp						install
 fuse						install
 fwupd						install
 fwupd-signed					install
+fzf						install
 g++						install
 g++-10						install
 gcc						install
@@ -220,6 +223,7 @@ gir1.2-graphene-1.0:amd64			install
 gir1.2-gstreamer-1.0:amd64			install
 gir1.2-gtk-3.0:amd64				install
 gir1.2-gtksource-4:amd64			install
+gir1.2-gtop-2.0:amd64				install
 gir1.2-gweather-3.0:amd64			install
 gir1.2-handy-0.0:amd64				install
 gir1.2-harfbuzz-0.0:amd64			install
@@ -412,6 +416,7 @@ intel-media-va-driver:amd64			install
 intel-microcode					install
 ipp-usb						install
 iproute2					install
+ipset						install
 iptables					install
 iputils-ping					install
 iputils-tracepath				install
@@ -763,6 +768,7 @@ libgfbgraph-0.2-0:amd64				install
 libgfortran5:amd64				install
 libgif7:amd64					install
 libgirepository-1.0-1:amd64			install
+libgit2-28:amd64				install
 libgjs0g:amd64					install
 libgl1:amd64					install
 libgl1-mesa-dri:amd64				install
@@ -865,6 +871,7 @@ libhttp-daemon-perl				install
 libhttp-date-perl				install
 libhttp-message-perl				install
 libhttp-negotiate-perl				install
+libhttp-parser2.9:amd64				install
 libhunspell-1.7-0:amd64				install
 libhx509-5-heimdal:amd64			install
 libhyphen0:amd64				install
@@ -889,6 +896,7 @@ libio-stringy-perl				install
 libip4tc2:amd64					install
 libip6tc2:amd64					install
 libipc-system-simple-perl			install
+libipset13:amd64				install
 libisc-export1105:amd64				install
 libisl22:amd64					install
 libitm1:amd64					install
@@ -956,6 +964,9 @@ libmagickcore-6.q16-6:amd64			install
 libmagickwand-6.q16-6:amd64			install
 libmailtools-perl				install
 libmaxminddb0:amd64				install
+libmbedcrypto3:amd64				install
+libmbedtls12:amd64				install
+libmbedx509-0:amd64				install
 libmbim-glib4:amd64				install
 libmbim-proxy					install
 libmediaart-2.0-0:amd64				install
@@ -1244,6 +1255,7 @@ libsrt1-gnutls:amd64				install
 libss2:amd64					install
 libssh-4:amd64					install
 libssh-gcrypt-4:amd64				install
+libssh2-1:amd64					install
 libssl1.1:amd64					install
 libstartup-notification0:amd64			install
 libstdc++-10-dev:amd64				install
@@ -1446,14 +1458,20 @@ linux-firmware					install
 linux-generic					install
 linux-headers-5.8.0-7630			install
 linux-headers-5.8.0-7630-generic		install
+linux-headers-5.8.0-7642			install
+linux-headers-5.8.0-7642-generic		install
 linux-headers-generic				install
 linux-image-5.8.0-7630-generic			install
+linux-image-5.8.0-7642-generic			install
 linux-image-generic				install
 linux-libc-dev:amd64				install
 linux-modules-5.8.0-7630-generic		install
+linux-modules-5.8.0-7642-generic		install
 linux-modules-extra-5.8.0-7630-generic		install
+linux-modules-extra-5.8.0-7642-generic		install
 linux-sound-base				install
 linux-system76					install
+lm-sensors					install
 locales						install
 login						install
 logrotate					install
@@ -1510,7 +1528,6 @@ ncurses-base					install
 ncurses-bin					install
 neofetch					install
 neovim						install
-neovim-runtime					install
 net-tools					install
 netbase						install
 netcat-openbsd					install
@@ -1521,6 +1538,7 @@ network-manager-gnome				install
 network-manager-pptp				install
 network-manager-pptp-gnome			install
 networkd-dispatcher				install
+nordvpn						install
 ntfs-3g						install
 ocl-icd-libopencl1:amd64			install
 odbcinst					install
@@ -1697,6 +1715,7 @@ readline-common					install
 repoman						install
 resolvconf					install
 rfkill						install
+ripgrep						install
 rpcsvc-proto					install
 rsync						install
 rsyslog						install
@@ -1840,6 +1859,7 @@ xserver-xorg-video-qxl				install
 xserver-xorg-video-radeon			install
 xserver-xorg-video-vesa				install
 xserver-xorg-video-vmware			install
+xsltproc					install
 xwayland					install
 xxd						install
 xz-utils					install

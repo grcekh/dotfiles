@@ -11,15 +11,15 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Core 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'romgrk/barbar.nvim'
+Plug 'romgrk/barbar.nvim'
 
 " Syntax
 Plug 'sheerun/vim-polyglot'
@@ -76,11 +76,11 @@ set undofile
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=4 "Sets display width of tabs
-set shiftwidth=4 "Sets indentation width
+set tabstop=2 "Sets display width of tabs
+set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=4 expandtab
+set softtabstop=2 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"

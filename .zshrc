@@ -145,7 +145,7 @@ export LESS=-r
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history-substring-search)
+plugins=(git history-substring-search zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -165,6 +165,10 @@ if [[ -r /usr/share/zsh/functions/command-not-found.zsh ]]; then
     source /usr/share/zsh/functions/command-not-found.zsh
     export PKGFILE_PROMPT_INSTALL_MISSING=1
 fi
+
+# Set zsh-autosuggestions highlighting color
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1ccc2,bg=#4c5161,bold,underline"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#73757a,bg=#292d34,bold,underline"
 
 
 ########### USER CONFIG ############
@@ -238,6 +242,9 @@ alias gac="git add . && git commit -m"
 
 
 ########## MISCELLANEOUS ##########
+
+# Set bat theme
+export BAT_THEME="OneHalfDark"
 
 # Added by n-install (see http://git.io/n-install-repo)
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
