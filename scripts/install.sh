@@ -22,8 +22,9 @@ setup_zsh() {
     sudo apt install zsh
 
     # Oh-my-zsh
-    # Maybe have to chmod +x run scripts???
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    # TODO: Plugins
 
     # Change default shell to zsh
     chsh -s $(which zsh)
@@ -63,6 +64,8 @@ install_neovim() {
     # Providers
     pip3 install pynvim --upgrade
     npm install -g neovim
+
+    # TODO: Plugins
 }
 
 install_nordvpn() {

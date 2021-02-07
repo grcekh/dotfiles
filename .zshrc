@@ -168,7 +168,7 @@ fi
 
 # Set zsh-autosuggestions highlighting color
 # export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d1ccc2,bg=#4c5161,bold,underline"
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#73757a,bg=#292d34,bold,underline"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#73757a,bg=#292d34"
 
 
 ########### USER CONFIG ############
@@ -209,28 +209,14 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 
-########### FZF + FD + RIPGREP ############
+########### FZF + RIPGREP ############
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# # Use fd (https://github.com/sharkdp/fd) instead of the default find
-# # command for listing path candidates.
-# # - The first argument to the function ($1) is the base path to start traversal
-# # - See the source code (completion.{bash,zsh}) for the details.
-# _fzf_compgen_path() {
-#   fd --hidden --follow --exclude ".git" . "$1"
-# }
 
 # # Use fd to generate the list for directory completion
 # _fzf_compgen_dir() {
 #   fd --type d --hidden --follow --exclude ".git" . "$1"
 # }
-
-# Feed the output of fd into fzf
-#fd --type f | fzf
-
-# Setting fd as the default source for fzf
-# export FZF_DEFAULT_COMMAND='fd --type f'
 
 # Setting ripgrep as the default source for fzf
 # --files: List files that would be searched but do not search
