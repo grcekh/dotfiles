@@ -131,6 +131,11 @@ ecryptfs-utils					install
 ed						install
 efibootmgr					install
 eject						install
+emacs						install
+emacs-bin-common				install
+emacs-common					install
+emacs-el					install
+emacs-gtk					install
 emacsen-common					install
 enchant-2					install
 eog						install
@@ -140,6 +145,7 @@ evince-common					install
 evolution-data-server				install
 evolution-data-server-common			install
 fakeroot					install
+fd-find						install
 fdisk						install
 file						install
 file-roller					install
@@ -767,6 +773,7 @@ libgexiv2-2:amd64				install
 libgfbgraph-0.2-0:amd64				install
 libgfortran5:amd64				install
 libgif7:amd64					install
+libgirara-gtk3-3:amd64				install
 libgirepository-1.0-1:amd64			install
 libgit2-28:amd64				install
 libgjs0g:amd64					install
@@ -958,6 +965,7 @@ liblwp-protocol-https-perl			install
 liblz4-1:amd64					install
 liblzma5:amd64					install
 liblzo2-2:amd64					install
+libm17n-0:amd64					install
 libmagic-mgc					install
 libmagic1:amd64					install
 libmagickcore-6.q16-6:amd64			install
@@ -1055,6 +1063,7 @@ libosdcpu3.4.3:amd64				install
 libosdgpu3.4.3:amd64				install
 libostree-1-1:amd64				install
 libostree-dev:amd64				install
+libotf0:amd64					install
 libp11-kit0:amd64				install
 libpackagekit-glib2-18:amd64			install
 libpam-cap:amd64				install
@@ -1490,6 +1499,7 @@ lua-luv:amd64					install
 lua-socket:amd64				install
 lvm2						install
 lz4						install
+m17n-db						install
 make						install
 man-db						install
 manpages					install
@@ -1732,12 +1742,14 @@ sgml-base					install
 sgml-data					install
 shared-mime-info				install
 simple-scan					install
+snapd						install
 software-properties-common			install
 sound-icons					install
 sound-theme-freedesktop				install
 speech-dispatcher				install
 speech-dispatcher-audio-plugins:amd64		install
 speech-dispatcher-espeak-ng			install
+squashfs-tools					install
 ssl-cert					install
 strace						install
 sudo						install
@@ -1865,6 +1877,8 @@ xxd						install
 xz-utils					install
 yelp						install
 yelp-xsl					install
+zathura						install
+zathura-pdf-poppler				install
 zenity						install
 zenity-common					install
 zip						install

@@ -198,9 +198,11 @@ alias cp="cp -i"                                                # Confirm before
 alias df="df -h"                                                # Human-readable sizes
 alias free="free -m"                                            # Show sizes in MB
 alias l="ls -la"                                                # Quick list all
+alias src="source ~/.zshrc"                                     # Source .zshrc
+alias fd="fdfind"                                               # Use fd binary as intended
+alias emacs="emacs -nw"                                         # Launch terminal-based Emacs
 alias dot="cd ~/dotfiles && nvim"                               # Shortcut to edit dotfiles
 alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vimwiki
-alias src="source ~/.zshrc"                                     # Source .zshrc
 
 # Git specific
 alias gs="git status -s"                                           
