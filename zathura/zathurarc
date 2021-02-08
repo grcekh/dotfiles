@@ -8,8 +8,8 @@ set statusbar-bg                  "#404451"
 set statusbar-fg                  "#d1ccc2"
 set statusbar-v-padding           5 
 
-set notification-bg               "#00ffff"
-set notification-fg               "#ffffff"
+set notification-bg               "#7daea3"
+set notification-fg               "#292d34"
 set notification-error-bg         "#ea6962"
 set notification-error-fg         "#292d34"
 set notification-warning-bg       "#e78a4e"
