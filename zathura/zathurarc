@@ -1,1 +1,37 @@
+set index-bg                      "#acb2be"
+set index-fg                      "#d1ccc2"
+
+set inputbar-bg                   "#acb2be"
+set inputbar-fg                   "#22272f"
+
+set statusbar-bg                  "#404451"
+set statusbar-fg                  "#d1ccc2"
+set statusbar-v-padding           5 
+
+set notification-bg               "#00ffff"
+set notification-fg               "#ffffff"
+set notification-error-bg         "#ea6962"
+set notification-error-fg         "#292d34"
+set notification-warning-bg       "#e78a4e"
+set notification-warning-fg       "#292d34"
+
+set completion-bg                 "#4c5161"
+set completion-group-bg           "#292d34"
+set completion-highlight-bg       "#89b482"
+
+set highlight-color               "#4ca265"
+set highlight-active-color        "#ffff00"
+set highlight-transparency        0.2
+
+set default-bg                    "#292d34"
+set default-fg                    "#d1ccc2"
+set recolor-lightcolor            "#292d34"
+set default-darkcolor             "#292d34"
+
+set recolor                       true
+set recolor-keephue               true
+
+set render-loading                false
+set selection-clipboard           clipboard
+
 map i recolor
