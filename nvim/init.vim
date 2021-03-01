@@ -28,6 +28,7 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
 Plug 'Olical/conjure', {'tag': 'v3.4.0'}
+Plug 'tikhomirov/vim-glsl'
 
 " Productivity
 Plug 'christoomey/vim-tmux-navigator'
