@@ -111,7 +111,8 @@ alias dot="cd ~/dotfiles && nvim"
 alias wifi="wifi-password"
 alias vw="cd ~/vimwiki && nvim"
 
-alias gcc="g++-10"
+alias gcc="gcc-10"
+alias g++="g++-10"
 
 alias gs="git status -s"
 alias gl="git log"
