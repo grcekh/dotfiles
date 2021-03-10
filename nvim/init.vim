@@ -105,7 +105,7 @@ inoremap jj <Esc>`^
 nnoremap <Leader>t :CHADopen<CR>
 
 " FZF + ripgrep
-nnoremap <C-p> :FZF<Cr>
+" nnoremap <C-p> :FZF<Cr>
 nnoremap <C-f> :Files<Cr>
 nnoremap <C-g> :Rg<Cr>
 
