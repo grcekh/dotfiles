@@ -397,8 +397,12 @@ let bufferline.maximum_padding = 4
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "   12. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-" Ignore in file manager
+" CHADTree
 let g:chadtree_ignores = { 'path': 'node_modules' }
+let g:chadtree_settings = {
+    \ "theme.text_colour_set": "nord",
+    \ "theme.icon_colour_set": "github",
+    \ }
 
 " Use Markdown in VimWiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
