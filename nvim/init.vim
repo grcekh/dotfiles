@@ -37,6 +37,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
+Plug 'Yggdroot/indentLine'
 
 " Color Schemes + Icons
 Plug 'kaicataldo/material.vim'
@@ -173,16 +174,16 @@ let g:gruvbox_material_palette = {
     \ 'yellow':           ['#d8a657',   '214'],
     \ 'green':            ['#a9b665',   '142'],
     \ 'aqua':             ['#89b482',   '108'],
-      \ 'blue':             ['#7daea3',   '109'],
-      \ 'purple':           ['#d3869b',   '175'],
-      \ 'bg_red':           ['#ea6962',   '167'],
-      \ 'bg_green':         ['#a9b665',   '142'],
-      \ 'bg_yellow':        ['#d8a657',   '214'],
-      \ 'grey0':            ['#7b7974',   '243'],
-      \ 'grey1':            ['#99958d',   '245'],
-      \ 'grey2':            ['#acb2be',   '246'],
-      \ 'none':             ['NONE',      'NONE']
-      \ }
+    \ 'blue':             ['#7daea3',   '109'],
+    \ 'purple':           ['#d3869b',   '175'],
+    \ 'bg_red':           ['#ea6962',   '167'],
+    \ 'bg_green':         ['#a9b665',   '142'],
+    \ 'bg_yellow':        ['#d8a657',   '214'],
+    \ 'grey0':            ['#7b7974',   '243'],
+    \ 'grey1':            ['#99958d',   '245'],
+    \ 'grey2':            ['#acb2be',   '246'],
+    \ 'none':             ['NONE',      'NONE']
+    \ }
 colorscheme gruvbox-material
 
 
@@ -411,6 +412,9 @@ let g:vimwiki_global_ext = 0
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
+
+" indentLine
+let g:indentLine_char_list = ['', '│']
 
 " As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
