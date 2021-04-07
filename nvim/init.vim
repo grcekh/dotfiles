@@ -37,7 +37,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
-Plug 'Yggdroot/indentLine'
 
 " Color Schemes + Icons
 Plug 'kaicataldo/material.vim'
@@ -412,9 +411,6 @@ let g:vimwiki_global_ext = 0
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
-
-" indentLine
-let g:indentLine_char_list = ['', '│']
 
 " As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
