@@ -1,3 +1,5 @@
+" lua require("lua/init")
+
 "~~~~~~~~~~~~~~~~~"
 "   1. PLUGINS    "
 "~~~~~~~~~~~~~~~~~"
@@ -6,8 +8,6 @@ filetype plugin indent on
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-
-" Declare the list of plugins.
 
 " Core 
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
@@ -24,15 +24,12 @@ Plug 'romgrk/barbar.nvim'
 " Syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" Plug 'leafgarland/typescript-vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tmsvg/pear-tree'
-"Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 Plug 'tikhomirov/vim-glsl'
 
 " Productivity
-"Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -61,7 +58,8 @@ set backspace=2 "Makes backspace work
 set history=500 "Sets undo history size
 set ruler "Sets up status bar
 set laststatus=2 "Always keeps the status bar active
-set number "Turns on line numbering
+set number
+set relativenumber
 "set t_Co=256 "Sets Vim to use 256 colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -83,13 +81,9 @@ set undofile
 "~~~~~~~~~~~~~~~~~~~~~~"
 set tabstop=2 "Sets display width of tabs
 set shiftwidth=2 "Sets indentation width
-set autoindent "Turns on auto-indenting
+set autoindent
 set smartindent "Remembers previous indent when creating new lines
 set softtabstop=2 expandtab
-
-"Choose between tabs and spaces for indentation by uncommenting one of
-"these two. Expand for spaces, noexpand for tabs:"
-"set noexpandtab
 set expandtab
 
 
@@ -198,25 +192,19 @@ let g:coc_global_extensions = [
   \ 'coc-json', 
   \ 'coc-emmet',
   "\ 'coc-clangd',
-  "\ 'coc-pairs',
   \ ]
 
 " if hidden is not set, TextEdit might fail.
 set hidden
-
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
 " Better display for messages
 set cmdheight=2
-
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
-
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-
 " always show signcolumns
 set signcolumn=yes
 
@@ -281,41 +269,32 @@ let g:coc_snippet_next = '<tab>'
 "~~~~~~~~~~~~~~~~~~~~~~~"
 " Default rules for matching:
 let g:pear_tree_pairs = {
-            \ '(': {'closer': ')'},
-            \ '[': {'closer': ']'},
-            \ '{': {'closer': '}'},
-            \ "'": {'closer': "'"},
-            \ '"': {'closer': '"'},
-            \ '/*': {'closer': '*/'},
-            \ '<!--': {'closer': '-->'},
-            \ '```': {'closer': '```'},
-            \ }
-" See pear-tree/after/ftplugin/ for filetype-specific matching rules
+    \ '(': {'closer': ')'},
+    \ '[': {'closer': ']'},
+    \ '{': {'closer': '}'},
+    \ "'": {'closer': "'"},
+    \ '"': {'closer': '"'},
+    \ '/*': {'closer': '*/'},
+    \ '<!--': {'closer': '-->'},
+    \ '```': {'closer': '```'},
+    \ }
 
 " Pear Tree is enabled for all filetypes by default:
 let g:pear_tree_ft_disabled = []
-
 " Pair expansion is dot-repeatable by default:
 let g:pear_tree_repeatable_expand = 0
-
 " Smart are disabled by default:pairs
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
-
 " If enabled, smart pair functions timeout after 60ms:
 let g:pear_tree_timeout = 60
-
 " Automatically map <BS> and <CR>
 let g:pear_tree_map_special_keys = 0
-
 " Default mappings:
 imap <BS> <Plug>(PearTreeBackspace)
 imap <CR> <Plug>(PearTreeExpand)
 " imap <Esc> <Plug>(PearTreeFinishExpansion)
-" Pear Tree also makes <Plug> mappings for each opening and closing string.
-"     :help <Plug>(PearTreeOpener)
-"     :help <Plug>(PearTreeCloser)
 
 " Not mapped by default:
 " <Plug>(PearTreeSpace)
@@ -345,21 +324,8 @@ augroup startup
 augroup END
 
 
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"    10. SYNTAX HIGHLIGHTING    "
-"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-let g:cpp_simple_highlight = 1
-let g:cpp_named_requirements_highlight = 1
-
-" Highlight yanked text
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
-augroup END
-
-
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"     11. BARBAR.VIM     "
+"     10. BARBAR.VIM     "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " Magic buffer-picking mode
 nnoremap <silent> <C-s> :BufferPick<CR>
@@ -396,7 +362,7 @@ let bufferline.maximum_padding = 4
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-"   12. MISCELLANEOUS    "
+"   11. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 " CHADTree
 let g:chadtree_ignores = { 'path': 'node_modules' }
