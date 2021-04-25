@@ -53,7 +53,8 @@ set backspace=2 "Makes backspace work
 set history=500 "Sets undo history size
 set ruler "Sets up status bar
 set laststatus=2 "Always keeps the status bar active
-set number "Turns on line numbering
+set number
+set relativenumber
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -98,7 +99,7 @@ set smartcase "Unless you put some caps in your search term
 "~~~~~~~~~~~~~~~~~~~~~~"
 let mapleader="-"
 
-"Use jj instead of esc in insert mode
+" Use jj instead of esc in insert mode
 inoremap jj <Esc>`^
 
 " Toggle file manager
@@ -114,6 +115,16 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Copy and pasting to system clipboard
+vnoremap <Leader>y "+y
+nnoremap <Leader>y "+y
+nnoremap <Leader>Y "+yg_
+
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
@@ -407,3 +418,20 @@ let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/To
 let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
 "autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
 
+" FZF Buffer Delete
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
