@@ -122,6 +122,16 @@ map <C-l> <C-W>l
 " Enter selects current popup menu item when visible
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
+" Copy and pasting to system clipboard
+vnoremap <Leader>y "+y
+nnoremap <Leader>y "+y
+nnoremap <Leader>Y "+yg_
+
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    6. COLOR SCHEME    "
