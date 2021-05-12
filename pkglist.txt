@@ -4,6 +4,7 @@ acpi-support					install
 acpid						install
 adduser						install
 adwaita-icon-theme				install
+alacarte					install
 alacritty					install
 alsa-base					install
 alsa-topology-conf				install
@@ -68,6 +69,8 @@ ca-certificates					install
 chafa						install
 cheese-common					install
 chrome-gnome-shell				install
+cmake						install
+cmake-data					install
 colord						install
 colord-data					install
 com.github.donadigo.eddy			install
@@ -221,6 +224,7 @@ gir1.2-gdkpixbuf-2.0:amd64			install
 gir1.2-gdm-1.0:amd64				install
 gir1.2-geoclue-2.0:amd64			install
 gir1.2-glib-2.0:amd64				install
+gir1.2-gmenu-3.0:amd64				install
 gir1.2-gnomebluetooth-1.0:amd64			install
 gir1.2-gnomedesktop-3.0:amd64			install
 gir1.2-graphene-1.0:amd64			install
@@ -570,6 +574,7 @@ libboost-iostreams1.71.0:amd64			install
 libboost-locale1.71.0:amd64			install
 libboost-thread1.71.0:amd64			install
 libbrlapi0.7:amd64				install
+libbrotli-dev:amd64				install
 libbrotli1:amd64				install
 libbs2b0:amd64					install
 libbsd0:amd64					install
@@ -690,6 +695,7 @@ libedataserverui-1.2-2:amd64			install
 libedit2:amd64					install
 libefiboot1:amd64				install
 libefivar1:amd64				install
+libegl-dev:amd64				install
 libegl-mesa0:amd64				install
 libegl1:amd64					install
 libelf1:amd64					install
@@ -738,11 +744,14 @@ libfolks-eds25:amd64				install
 libfolks25:amd64				install
 libfont-afm-perl				install
 libfontconfig1:amd64				install
+libfontconfig1-dev:amd64			install
 libfontembed1:amd64				install
 libfontenc1:amd64				install
 libfprint-2-2:amd64				install
 libfreerdp2-2:amd64				install
+libfreetype-dev:amd64				install
 libfreetype6:amd64				install
+libfreetype6-dev:amd64				install
 libfreexl1:amd64				install
 libfribidi0:amd64				install
 libfuse2:amd64					install
@@ -784,9 +793,13 @@ libgirara-gtk3-3:amd64				install
 libgirepository-1.0-1:amd64			install
 libgit2-28:amd64				install
 libgjs0g:amd64					install
+libgl-dev:amd64					install
 libgl1:amd64					install
+libgl1-mesa-dev:amd64				install
 libgl1-mesa-dri:amd64				install
 libglapi-mesa:amd64				install
+libgles-dev:amd64				install
+libgles1:amd64					install
 libgles2:amd64					install
 libglew2.1:amd64				install
 libglfw3:amd64					install
@@ -797,7 +810,9 @@ libglib2.0-dev:amd64				install
 libglib2.0-dev-bin				install
 libglibmm-2.4-1v5:amd64				install
 libglu1-mesa:amd64				install
+libglvnd-dev:amd64				install
 libglvnd0:amd64					install
+libglx-dev:amd64				install
 libglx-mesa0:amd64				install
 libglx0:amd64					install
 libgme0:amd64					install
@@ -806,6 +821,7 @@ libgmp10:amd64					install
 libgnome-autoar-0-0:amd64			install
 libgnome-bluetooth13:amd64			install
 libgnome-desktop-3-19:amd64			install
+libgnome-menu-3-0:amd64				install
 libgnomekbd-common				install
 libgnomekbd8:amd64				install
 libgnutls30:amd64				install
@@ -932,6 +948,7 @@ libjpeg8:amd64					install
 libjson-c5:amd64				install
 libjson-glib-1.0-0:amd64			install
 libjson-glib-1.0-common				install
+libjsoncpp1:amd64				install
 libjuh-java					install
 libjurt-java					install
 libk5crypto3:amd64				install
@@ -1071,6 +1088,8 @@ libopencv-imgcodecs4.2:amd64			install
 libopencv-imgproc4.2:amd64			install
 libopencv-videoio4.2:amd64			install
 libopenexr25:amd64				install
+libopengl-dev:amd64				install
+libopengl0:amd64				install
 libopenimageio2.1:amd64				install
 libopenjp2-7:amd64				install
 libopenmpt0:amd64				install
@@ -1131,6 +1150,8 @@ libpipewire-0.3-modules:amd64			install
 libpixman-1-0:amd64				install
 libplist3:amd64					install
 libplymouth5:amd64				install
+libpng-dev:amd64				install
+libpng-tools					install
 libpng16-16:amd64				install
 libpocketsphinx3:amd64				install
 libpolkit-agent-1-0:amd64			install
@@ -1150,6 +1171,7 @@ libproxy1-plugin-gsettings:amd64		install
 libproxy1-plugin-networkmanager:amd64		install
 libproxy1v5:amd64				install
 libpsl5:amd64					install
+libpthread-stubs0-dev:amd64			install
 libpulse-mainloop-glib0:amd64			install
 libpulse0:amd64					install
 libpulsedsp:amd64				install
@@ -1217,6 +1239,7 @@ libreoffice-style-yaru				install
 libreoffice-writer				install
 librest-0.7-0:amd64				install
 librevenge-0.0-0:amd64				install
+librhash0:amd64					install
 libridl-java					install
 libroken18-heimdal:amd64			install
 librsvg2-2:amd64				install
@@ -1408,11 +1431,13 @@ libwww-perl					install
 libwww-robotrules-perl				install
 libx11-6:amd64					install
 libx11-data					install
+libx11-dev:amd64				install
 libx11-protocol-perl				install
 libx11-xcb1:amd64				install
 libx264-160:amd64				install
 libx265-192:amd64				install
 libxatracker2:amd64				install
+libxau-dev:amd64				install
 libxau6:amd64					install
 libxaw7:amd64					install
 libxcb-dri2-0:amd64				install
@@ -1434,15 +1459,21 @@ libxcb-xfixes0:amd64				install
 libxcb-xkb1:amd64				install
 libxcb-xv0:amd64				install
 libxcb1:amd64					install
+libxcb1-dev:amd64				install
 libxcomposite1:amd64				install
+libxcursor-dev:amd64				install
 libxcursor1:amd64				install
 libxdamage1:amd64				install
+libxdmcp-dev:amd64				install
 libxdmcp6:amd64					install
 libxerces-c3.2:amd64				install
+libxext-dev:amd64				install
 libxext6:amd64					install
+libxfixes-dev:amd64				install
 libxfixes3:amd64				install
 libxfont2:amd64					install
 libxft2:amd64					install
+libxi-dev:amd64					install
 libxi6:amd64					install
 libxinerama1:amd64				install
 libxkbcommon-x11-0:amd64			install
@@ -1461,6 +1492,7 @@ libxmu6:amd64					install
 libxmuu1:amd64					install
 libxpm4:amd64					install
 libxrandr2:amd64				install
+libxrender-dev:amd64				install
 libxrender1:amd64				install
 libxres1:amd64					install
 libxshmfence1:amd64				install
@@ -1580,6 +1612,7 @@ network-manager-gnome				install
 network-manager-pptp				install
 network-manager-pptp-gnome			install
 networkd-dispatcher				install
+ninja-build					install
 nordvpn						install
 ntfs-3g						install
 ocl-icd-libopencl1:amd64			install
@@ -1870,6 +1903,10 @@ x11-session-utils				install
 x11-utils					install
 x11-xkb-utils					install
 x11-xserver-utils				install
+x11proto-core-dev				install
+x11proto-dev					install
+x11proto-input-dev				install
+x11proto-xext-dev				install
 xauth						install
 xbitmaps					install
 xbrlapi						install
@@ -1890,6 +1927,7 @@ xkb-data					install
 xml-core					install
 xorg						install
 xorg-docs-core					install
+xorg-sgml-doctools				install
 xserver-common					install
 xserver-xephyr					install
 xserver-xorg					install
@@ -1909,6 +1947,7 @@ xserver-xorg-video-radeon			install
 xserver-xorg-video-vesa				install
 xserver-xorg-video-vmware			install
 xsltproc					install
+xtrans-dev					install
 xwayland					install
 xxd						install
 xz-utils					install
