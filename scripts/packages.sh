@@ -9,9 +9,9 @@ cat << EOM
 USAGE:
     ./packages.sh [OPTIONS]
 OPTIONS:
+    -h Print this message
     -c Create pkglist.txt
     -i Install from pkglist.txt
-    -h Print this message
 EOM
 }
 
@@ -37,7 +37,7 @@ main() {
 
     while getopts ":hci" flag; do
         case $flag in
-            h ) create_pkglist; return 0 ;;
+            h ) print_usage; return 0 ;;
             c ) create_pkglist; return 0 ;;
             i ) install_pkglist; return 0 ;;
             ? ) print_usage; return 1 ;;

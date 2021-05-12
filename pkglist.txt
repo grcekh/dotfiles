@@ -107,6 +107,7 @@ dc						install
 dconf-cli					install
 dconf-gsettings-backend:amd64			install
 dconf-service					install
+dctrl-tools					install
 debconf						install
 debconf-i18n					install
 debianutils					install
@@ -131,11 +132,7 @@ ecryptfs-utils					install
 ed						install
 efibootmgr					install
 eject						install
-emacs						install
-emacs-bin-common				install
-emacs-common					install
-emacs-el					install
-emacs-gtk					install
+emacs-common					deinstall
 emacsen-common					install
 enchant-2					install
 eog						install
@@ -211,6 +208,7 @@ geoclue-2.0					install
 gettext-base					install
 ghostscript					install
 ghostscript-x					install
+giblib1:amd64					install
 gir1.2-accountsservice-1.0			install
 gir1.2-atk-1.0:amd64				install
 gir1.2-atspi-2.0:amd64				install
@@ -259,6 +257,7 @@ gkbd-capplet					install
 glib-networking:amd64				install
 glib-networking-common				install
 glib-networking-services			install
+glslviewer					install
 gnome-accessibility-themes			install
 gnome-bluetooth					install
 gnome-calculator				install
@@ -790,6 +789,7 @@ libgl1-mesa-dri:amd64				install
 libglapi-mesa:amd64				install
 libgles2:amd64					install
 libglew2.1:amd64				install
+libglfw3:amd64					install
 libglib2.0-0:amd64				install
 libglib2.0-bin					install
 libglib2.0-data					install
@@ -896,6 +896,7 @@ libical3:amd64					install
 libice6:amd64					install
 libicu-dev:amd64				install
 libicu67:amd64					install
+libid3tag0:amd64				install
 libidn11:amd64					install
 libidn2-0:amd64					install
 libiec61883-0:amd64				install
@@ -903,6 +904,7 @@ libieee1284-3:amd64				install
 libigdgmm11:amd64				install
 libijs-0.35:amd64				install
 libilmbase25:amd64				install
+libimlib2:amd64					install
 libimobiledevice6:amd64				install
 libinput-bin					install
 libinput10:amd64				install
@@ -977,7 +979,6 @@ liblwp-protocol-https-perl			install
 liblz4-1:amd64					install
 liblzma5:amd64					install
 liblzo2-2:amd64					install
-libm17n-0:amd64					install
 libmagic-mgc					install
 libmagic1:amd64					install
 libmagickcore-6.q16-6:amd64			install
@@ -1009,7 +1010,6 @@ libmpeg2encpp-2.1-0:amd64			install
 libmpfr6:amd64					install
 libmpg123-0:amd64				install
 libmplex2-2.1-0:amd64				install
-libmsgpackc2:amd64				install
 libmtdev1:amd64					install
 libmtp-common					install
 libmtp-runtime					install
@@ -1084,7 +1084,6 @@ libosdcpu3.4.3:amd64				install
 libosdgpu3.4.3:amd64				install
 libostree-1-1:amd64				install
 libostree-dev:amd64				install
-libotf0:amd64					install
 libp11-kit0:amd64				install
 libpackagekit-glib2-18:amd64			install
 libpam-cap:amd64				install
@@ -1310,7 +1309,6 @@ libtcl8.6:amd64					install
 libtdb1:amd64					install
 libteamdctl0:amd64				install
 libtepl-5-0:amd64				install
-libtermkey1:amd64				install
 libtevent0:amd64				install
 libtext-charwidth-perl				install
 libtext-iconv-perl				install
@@ -1341,7 +1339,6 @@ libubsan1:amd64					install
 libuchardet0:amd64				install
 libudev1:amd64					install
 libudisks2-0:amd64				install
-libunibilium4:amd64				install
 libunistring2:amd64				install
 libunity-protocol-private0:amd64		install
 libunity-scopes-json-def-desktop		install
@@ -1380,7 +1377,6 @@ libvorbisfile3:amd64				install
 libvpx6:amd64					install
 libvte-2.91-0:amd64				install
 libvte-2.91-common				install
-libvterm0:amd64					install
 libvulkan1:amd64				install
 libwacom-bin					install
 libwacom-common					install
@@ -1493,17 +1489,27 @@ libzvbi0:amd64					install
 linux-base					install
 linux-firmware					install
 linux-generic					install
+linux-headers-5.11.0-7612			install
+linux-headers-5.11.0-7612-generic		install
+linux-headers-5.11.0-7614			install
+linux-headers-5.11.0-7614-generic		install
 linux-headers-5.8.0-7630			install
 linux-headers-5.8.0-7630-generic		install
 linux-headers-5.8.0-7642			install
 linux-headers-5.8.0-7642-generic		install
 linux-headers-generic				install
+linux-image-5.11.0-7612-generic			install
+linux-image-5.11.0-7614-generic			install
 linux-image-5.8.0-7630-generic			install
 linux-image-5.8.0-7642-generic			install
 linux-image-generic				install
 linux-libc-dev:amd64				install
+linux-modules-5.11.0-7612-generic		install
+linux-modules-5.11.0-7614-generic		install
 linux-modules-5.8.0-7630-generic		install
 linux-modules-5.8.0-7642-generic		install
+linux-modules-extra-5.11.0-7612-generic		install
+linux-modules-extra-5.11.0-7614-generic		install
 linux-modules-extra-5.8.0-7630-generic		install
 linux-modules-extra-5.8.0-7642-generic		install
 linux-sound-base				install
@@ -1523,11 +1529,9 @@ lua-bitop:amd64					install
 lua-expat:amd64					install
 lua-json					install
 lua-lpeg:amd64					install
-lua-luv:amd64					install
 lua-socket:amd64				install
 lvm2						install
 lz4						install
-m17n-db						install
 make						install
 man-db						install
 manpages					install
@@ -1761,7 +1765,10 @@ rtkit						install
 rygel						install
 samba-libs:amd64				install
 sane-utils					install
+sbsigntool					install
+scrot						install
 seahorse					install
+secureboot-db					install
 sed						install
 sensible-utils					install
 session-migration				install
