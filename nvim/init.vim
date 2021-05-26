@@ -83,7 +83,7 @@ set tabstop=2 "Sets display width of tabs
 set shiftwidth=2 "Sets indentation width
 set autoindent
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=2 expandtab
+set softtabstop=2
 set expandtab
 
 

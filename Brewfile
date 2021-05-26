@@ -10,6 +10,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "koekeishiya/formulae"
 tap "rigellute/tap"
+tap "mongodb/brew"
 
 # Mac App Store
 brew "mas"
@@ -115,3 +116,4 @@ brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 brew "rigellute/tap/spotify-tui"
+brew "mongodb/brew/mongodb-community"
