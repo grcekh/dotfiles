@@ -118,6 +118,7 @@ desktop-file-utils				install
 dictionaries-common				install
 diffutils					install
 dirmngr						install
+distro-info					install
 distro-info-data				install
 dkms						install
 dleyna-server					install
@@ -711,6 +712,7 @@ libestr0:amd64					install
 libetonyek-0.1-1:amd64				install
 libevdev2:amd64					install
 libevdocument3-4:amd64				install
+libevent-2.1-7:amd64				install
 libevview3-3:amd64				install
 libexempi8:amd64				install
 libexif12:amd64					install
@@ -1378,6 +1380,7 @@ liburi-perl					install
 liburiparser1:amd64				install
 libusb-1.0-0:amd64				install
 libusbmuxd6:amd64				install
+libutempter0:amd64				install
 libuuid1:amd64					install
 libuv1:amd64					install
 libv4l-0:amd64					install
@@ -1843,6 +1846,7 @@ thin-provisioning-tools				install
 time						install
 timeshift					install
 timgm6mb-soundfont				install
+tmux						install
 totem						install
 totem-common					install
 totem-plugins					install
