@@ -103,7 +103,7 @@ set smartcase "Unless you put some caps in your search term
 "~~~~~~~~~~~~~~~~~~~~~~"
 let mapleader="-"
 
-"Use jj instead of esc in insert mode
+" Use jj instead of esc in insert mode
 inoremap jj <Esc>`^
 
 " Toggle file manager
@@ -122,6 +122,16 @@ map <C-l> <C-W>l
 
 " Enter selects current popup menu item when visible
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
+" Copying and pasting to system clipboard
+vnoremap <Leader>y "+y
+nnoremap <Leader>y "+y
+nnoremap <Leader>Y "+yg_
+
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
