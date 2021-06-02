@@ -204,12 +204,19 @@ alias emacs="emacs -nw"                                         # Launch termina
 alias dot="cd ~/dotfiles && nvim"                               # Shortcut to edit dotfiles
 alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vimwiki
 
-# Git specific
+# Git
 alias gs="git status -s"                                           
 alias gl="git log"
 alias ga="git add"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
+
+# Tmux
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
 
 ########### FZF + RIPGREP ############
 
