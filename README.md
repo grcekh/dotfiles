@@ -7,7 +7,6 @@ Dotfiles for Pop!_OS on the Intel Thinkpad T14s.
 * [X] nvim
 * [X] tmux
 * [X] zathura
-
 * DE: GNOME 3.38
 * WM: Mutter
 * WM Theme: Pop
