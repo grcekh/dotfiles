@@ -1,14 +1,14 @@
 # dotfiles (pop)
 
-Building out dotfiles for a Pop!_OS setup on the Intel Thinkpad T15s.
+Dotfiles for Pop!_OS on the Intel Thinkpad T14s.
 
 * [X] alacritty
 * [X] zsh
 * [X] nvim
-* [ ] tmux
+* [X] tmux
 * [X] zathura
 
-* DE: Gnome 3.38
+* DE: GNOME 3.38
 * WM: Mutter
 * WM Theme: Pop
 * Theme: Orchis-dark
@@ -17,6 +17,6 @@ Building out dotfiles for a Pop!_OS setup on the Intel Thinkpad T15s.
 ## TODO
 
 * [ ] Create install script to automate process
-* [ ] System backup
+* [ ] System backup: Rsync, Timeshift
 * [ ] (nvim): `init.lua`, `LSP`
 * [ ] (tmux): tmux plugin manager, etc?
