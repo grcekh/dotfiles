@@ -13,6 +13,8 @@ Dotfiles for Pop!_OS on the Intel Thinkpad T14s.
 * Theme: Orchis-dark
 * Icons: Tela-circle-dark
 
+![](./screenshots/screenshot-stitch.png)
+
 ## TODO
 
 * [ ] Create install script to automate process
