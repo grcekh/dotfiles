@@ -14,7 +14,9 @@
 		"graphql",
 		"Markdown",
 		"html",
-		"handlebars"
+		"handlebars",
+		"htmldjango",
+		"python"
 	],
 	"prettier.disableLanguages": [],
 	"prettier.tabWidth": 2,
