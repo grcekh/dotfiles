@@ -35,6 +35,10 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 
+" TODO: Get todo-comments.nvim plugin to work
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+
 " Color schemes + icons
 Plug 'sainnhe/gruvbox-material'
 Plug 'ap/vim-css-color'
@@ -77,7 +81,7 @@ set tabstop=2 "Sets display width of tabs
 set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=2 expandtab
+set softtabstop=2
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
@@ -410,6 +414,9 @@ let g:vimwiki_global_ext = 0
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
+
+" Set filetype and syntax highlighting for Nunjucks files
+autocmd BufNewFile,BufRead *.njk set filetype=html | set syntax=htmldjango
 
 " As of MacOS Catalina
 let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
