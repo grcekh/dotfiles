@@ -2,12 +2,13 @@
 -- KEYMAPPING --
 ----------------
 
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+
 -- Set global and buffer leader key
 vim.g.mapleader = "-"
 vim.b.mapleader = "-"
-
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
 
 -- Use jj instead of esc in insert mode
 map("i", "jj", "<Esc>", opts)
