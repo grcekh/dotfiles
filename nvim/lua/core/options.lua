@@ -6,11 +6,12 @@ vim.cmd("syntax enable")
 vim.cmd("syntax on")
 
 --- 1. Global options
+-- vim.o to set global options
 
--- vim.o.nocompatible = true -- Fix old Vi bugs
--- vim.o.backspace = 2 -- Make backspace work
+vim.cmd("set nocompatible") -- Fix old Vi bugs
+vim.cmd("set backspace=2") -- Make backspace work
+vim.cmd("filetype plugin indent on")
 vim.o.history = 500
-
 
 -- Override default split pane directions
 vim.o.splitright = true
@@ -28,6 +29,7 @@ vim.o.smartcase = true -- ...Unless using caps
 
 
 --- 2. Buffer options
+-- vim.bo to set buffer-scoped options
 -- For all buffer-local options, set a global option as well
 
 -- Indentation
@@ -44,6 +46,7 @@ vim.o.expandtab = true
 
 
 --- 3. Window options
+-- vim.wo to set window-scoped options
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -52,5 +55,15 @@ vim.wo.wrap = true
 
 --- 4. Global and buffer variables
 
-vim.g.mapleader = "-"
-vim.b.mapleader = "-"
+-- vim.g.mapleader = "-"
+-- vim.b.mapleader = "-"
+
+
+-- Use persistent history
+vim.cmd([[
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
+]])

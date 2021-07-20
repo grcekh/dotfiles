@@ -2,21 +2,36 @@
 -- KEYMAPPING --
 ----------------
 
-local opts = { noremap = true, silent=true }
+-- Set global and buffer leader key
+vim.g.mapleader = "-"
+vim.b.mapleader = "-"
 
--- jj instead of esc in insert mode
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", opts)
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- Use jj instead of esc in insert mode
+map("i", "jj", "<Esc>", opts)
 
 -- Toggle file manager
-vim.api.nvim_set_keymap("n", "<Leader>t", ":CHADopen<CR>", opts)
+map("n", "<Leader>t", ":CHADopen<CR>", opts)
 
 -- FZF + ripgrep
-vim.api.nvim_set_keymap("n", "<C-p>", ":FZF<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-f>", ":Files<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-g>", ":Rg<CR>", opts)
+map("n", "<C-p>", ":FZF<CR>", opts)
+map("n", "<C-f>", ":Files<CR>", opts)
+map("n", "<C-g>", ":Rg<CR>", opts)
 
 -- Window navigation
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-W>j", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-W>k", opts)
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-W>h", opts)
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-W>l", opts)
+map("n", "<C-j>", "<C-W>j", opts)
+map("n", "<C-k>", "<C-W>k", opts)
+map("n", "<C-h>", "<C-W>h", opts)
+map("n", "<C-l>", "<C-W>l", opts)
+
+-- Copy and paste to system clipboard
+map("v", "<Leader>y", '"+y', opts)
+map("n", "<Leader>y", '"+y', opts)
+map("n", "<Leader>Y", '"+yg', opts)
+
+map("v", "<Leader>p", '"+p', opts)
+map("v", "<Leader>P", '"+P', opts)
+map("n", "<Leader>p", '"+p', opts)
+map("n", "<Leader>P", '"+P', opts)
