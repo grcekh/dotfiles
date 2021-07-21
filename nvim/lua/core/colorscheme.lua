@@ -1,6 +1,6 @@
-------------------
--- COLOR SCHEME --
-------------------
+-----------------
+-- COLORSCHEME --
+-----------------
 
 vim.o.termguicolors = true
 vim.o.background = "dark"

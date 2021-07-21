@@ -35,10 +35,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'wellle/context.vim'
 Plug 'dbeniamine/cheat.sh-vim'
 
-" TODO: Get todo-comments.nvim plugin to work
-Plug 'nvim-lua/plenary.nvim'
-Plug 'folke/todo-comments.nvim'
-
 " Color schemes + icons
 Plug 'sainnhe/gruvbox-material'
 Plug 'ap/vim-css-color'

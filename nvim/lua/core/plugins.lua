@@ -14,8 +14,6 @@ vim.cmd("packadd packer.nvim")
 
     -- Core 
     use { "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" }
-    use "/usr/local/opt/fzf"
-    use "junegunn/fzf.vim"
     use { "neoclide/coc.nvim", branch = "release" }
     use "tpope/vim-commentary"
     use "tpope/vim-fugitive"
@@ -27,14 +25,25 @@ vim.cmd("packadd packer.nvim")
     -- Syntax
     use "sheerun/vim-polyglot"
     use "norcalli/nvim-colorizer.lua"
-    use "tmsvg/pear-tree"
+    use "windwp/nvim-autopairs"
 
     -- Productivity
+    -- use "wellle/context.vim" --  TODO: Fix me
     use "junegunn/goyo.vim"
     use "vimwiki/vimwiki"
-    -- use "wellle/context.vim"
-    use "nvim-lua/plenary.nvim"
-    use "folke/todo-comments.nvim"
+    use {
+       "iamcco/markdown-preview.nvim",
+       run = "cd app & yarn install"
+    }
+    use {
+       "folke/todo-comments.nvim",
+       requires = "nvim-lua/plenary.nvim",
+       config = function() require("todo-comments").setup({}) end
+    }
+    use {
+       "nvim-telescope/telescope.nvim",
+       requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"} }
+    }
 
     -- Color schemes + icons
     use "sainnhe/gruvbox-material"

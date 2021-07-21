@@ -67,3 +67,9 @@ endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
 ]])
+
+-- oF Makefile
+-- autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
+vim.cmd([[
+let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
+]])

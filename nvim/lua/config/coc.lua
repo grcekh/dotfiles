@@ -44,7 +44,7 @@ function _G.tab_completion()
     if check_back_space() then
       return utils.t("<Tab>")
     else
-      return vim.call("coc#refresh()")
+      return vim.cmd(":call coc#refresh()")
     end
   end
 end
