@@ -12,7 +12,7 @@
     "scss",
     "json",
     "graphql",
-    "Markdown"
+    "markdown"
   ],
   "prettier.disableLanguages": [],
   "prettier.tabWidth": 2,

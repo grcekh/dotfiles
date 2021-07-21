@@ -13,9 +13,9 @@ function utils.map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function utils.t(str) -- termcodes
+function utils.t(cmd) -- termcodes
   -- Adjust the boolean arguments as needed
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
+  return vim.api.nvim_replace_termcodes(cmd, true, false, true)
 end
 
 return utils

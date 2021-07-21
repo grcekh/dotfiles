@@ -1,4 +1,4 @@
-require("utils")
+local t = require("utils").t
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -39,10 +39,10 @@ end
 
 function _G.tab_completion()
   if vim.fn.pumvisible() == 1 then
-    return utils.t("<C-n>")
+    return t("<C-n>")
   else
     if check_back_space() then
-      return utils.t("<Tab>")
+      return t("<Tab>")
     else
       return vim.cmd(":call coc#refresh()")
     end
