@@ -3,7 +3,7 @@ require("core/keymapping")
 require("core/plugins")
 require("core/colorscheme")
 
-require("config/startify")
+require("config/dashboard")
 require("config/barbar")
 require("config/coc")
 require("config/todo-comments")

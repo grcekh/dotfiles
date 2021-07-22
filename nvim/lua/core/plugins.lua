@@ -5,12 +5,21 @@
 -- Check if packer is installed
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 
+local util = require("packer.util")
+-- print(vim.inspect(util))
+
 -- Use { } when using a different branch of the plugin or loading the plugin with certain commands
 vim.cmd("packadd packer.nvim")
 
  return require("packer").startup(function()
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
+
+    -- TODO:
+    -- galaxyline 
+    -- nvim-tree? 
+    -- lsp?
+    -- treesitter?
 
     -- Core 
     use { "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" }
@@ -20,7 +29,8 @@ vim.cmd("packadd packer.nvim")
     use "junegunn/gv.vim"
     use "romgrk/barbar.nvim"
     use "itchyny/lightline.vim"
-    use "mhinz/vim-startify"
+    -- use "mhinz/vim-startify"
+    use "glepnir/dashboard-nvim"
 
     -- Syntax
     use "sheerun/vim-polyglot"
@@ -28,7 +38,7 @@ vim.cmd("packadd packer.nvim")
     use "windwp/nvim-autopairs"
 
     -- Productivity
-    -- use "wellle/context.vim" --  TODO: Fix me
+    -- use "wellle/context.vim" -- FIX: context.vim install breaks
     use "junegunn/goyo.vim"
     use "vimwiki/vimwiki"
     use {
@@ -47,6 +57,7 @@ vim.cmd("packadd packer.nvim")
 
     -- Color schemes + icons
     use "sainnhe/gruvbox-material"
+    use "arcticicestudio/nord-vim"
     use "ap/vim-css-color"
     use "ryanoasis/vim-devicons"
     use "kyazdani42/nvim-web-devicons"
