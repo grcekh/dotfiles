@@ -1,13 +1,13 @@
 require("core/options")
 require("core/keymapping")
 require("core/plugins")
-require("core/colorscheme")
 
-require("config/dashboard")
 require("config/barbar")
 require("config/coc")
-require("config/todo-comments")
-require("config/chadtree")
+require("config/dashboard")
+require("config/galaxyline")
+require("config/nvim-tree")
 require("config/telescope")
+require("config/todo-comments")
 require("config/vimwiki")
-require("config/autopairs")
+

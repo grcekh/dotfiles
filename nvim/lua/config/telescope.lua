@@ -1,10 +1,11 @@
 local map = require("utils").map
+local opts = {silent = true}
 
-map("n", "<Leader>fb", [[<cmd>Telescope buffers show_all_buffers=true sort_lastused=true<cr>]], {silent = true})
-map("n", "<Leader>fg", [[<cmd>Telescope git_files<cr>]], {silent = true})
+map("n", "<Leader>fb", [[<cmd>Telescope buffers show_all_buffers=true sort_lastused=true<cr>]], opts)
+map("n", "<Leader>fg", [[<cmd>Telescope git_files<cr>]], opts)
 
-map("n", "<C-f>", [[<cmd>Telescope find_files<cr>]], {silent = true})
-map("n", "<C-g>", [[<cmd>Telescope live_grep<cr>]], {silent = true})
+map("n", "<C-f>", [[<cmd>Telescope find_files<cr>]], opts)
+map("n", "<C-g>", [[<cmd>Telescope live_grep<cr>]], opts)
 
 local actions = require("telescope.actions")
 

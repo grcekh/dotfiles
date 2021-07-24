@@ -27,6 +27,11 @@ vim.o.showmatch = true -- Highlight matching parentheses
 vim.o.ignorecase = true -- Ignore case when searching...
 vim.o.smartcase = true -- ...Unless using caps
 
+-- Color scheme
+
+vim.o.termguicolors = true
+vim.o.background = "dark"
+
 
 --- 2. Buffer options
 -- vim.bo to set buffer-scoped options
