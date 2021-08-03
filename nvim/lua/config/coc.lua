@@ -28,6 +28,7 @@ vim.g.coc_global_extensions = {
   "coc-json",
   "coc-emmet",
   "coc-styled-components",
+  "coc-go",
 }
 
 -- Use tab for trigger completion with characters ahead and navigate.
