@@ -149,7 +149,11 @@ local components = {
   -- Coc
   CocStatus = {
     highlight = {colors.gray, colors.bg},
-    provider = function() return " " .. vim.fn["coc#status"]() .. " " end
+    provider = function()
+      local status = vim.fn["coc#status"]()
+      status = string.gsub(status, "❌", "")
+      return " " .. status .. " "
+    end
   },
   CocFunction = {
     icon = "λ ",
