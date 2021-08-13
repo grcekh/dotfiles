@@ -149,11 +149,7 @@ local components = {
   -- Coc
   CocStatus = {
     highlight = {colors.gray, colors.bg},
-    provider = function()
-      local status = vim.fn["coc#status"]()
-      status = string.gsub(status, "❌", "")
-      return " " .. status .. " "
-    end
+    provider = function() return " " .. vim.fn["coc#status"]() .. " " end
   },
   CocFunction = {
     icon = "λ ",
@@ -174,10 +170,16 @@ local components = {
   LineColumn = {
     icon = "   ",
     condition = condition.buffer_not_empty,
-    highlight = {colors.bg, colors.purple},
+    highlight = {colors.bg, mode_color()},
+    separator_highlight = "GalaxyLineColumnReverse",
     provider = function()
       local line = vim.fn.line(".")
       local column = vim.fn.col(".")
+      local m = vim.fn.mode() or vim.fn.visualmode()
+      local mode = mode_alias(m)
+      local color = mode_color(m)
+      vim.api.nvim_command("hi GalaxyLineColumn guibg=" .. color)
+      vim.api.nvim_command("hi GalaxyLineColumnReverse guifg=" .. color)
       return string.format("%1d:%1d", line, column) .. " "
     end,
   },
@@ -206,8 +208,6 @@ local components = {
 --   highlight! StatuslineNC
 -- ]])
 
-vim.api.nvim_command("hi GalaxyViModeReverse guibg=" .. colors.bg)
-
 -- Left
 
 gls.left[1] = {ViMode = components.ViMode}
@@ -233,5 +233,5 @@ gls.right[5] = {LineColumn = components.LineColumn}
 
 gls.short_line_left[1] = {FileIcon = components.FileIcon}
 gls.short_line_left[2] = {FileName = components.FileName}
-gls.short_line_left[3] = {ShortLineSpacer = components.ShortLineSpacer}
-gls.short_line_right[1] = {ShortLineSpacer = components.ShortLineSpacer}
+gls.short_line_left[3] = {shortlinespacer = components.shortlinespacer}
+gls.short_line_right[1] = {shortlinespacer = components.shortlinespacer}
