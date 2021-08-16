@@ -75,7 +75,7 @@ return require("packer").startup(function()
    use "vimwiki/vimwiki"
    use {
       "iamcco/markdown-preview.nvim",
-      run = "cd app & yarn install"
+      run = "cd app && yarn install"
    }
    use {
       "folke/todo-comments.nvim",

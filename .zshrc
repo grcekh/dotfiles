@@ -188,3 +188,7 @@ eval "$(jenv init -)"
 
 export LC_ALL="en_US.UTF-8"
 export TERM="xterm-256color"
+
+# go
+export PATH="$PATH/usr/local/go/bin"
+export PATH="$PATH:/Users/grace/go/bin"
