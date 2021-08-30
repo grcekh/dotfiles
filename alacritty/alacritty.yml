@@ -376,10 +376,10 @@ live_config_reload: true
 #   - (Windows) powershell
 shell:
   program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
+  # args:
+  #   - -l
+  #   - -c
+  # - "tmux"
 
 # Startup directory
 #
