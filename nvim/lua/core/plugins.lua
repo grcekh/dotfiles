@@ -12,13 +12,14 @@ return require("packer").startup(function()
    -- Packer can manage itself
    use "wbthomason/packer.nvim"
 
+   -- Local
+   use { "~/repos/outline-doc.nvim" }
+
    -- Core 
    use {
       "kyazdani42/nvim-tree.lua",
-      cmd = {"NvimTreeToggle", "NvimTreeOpen"},
       requires = "kyazdani42/nvim-web-devicons",
-      -- FIX: Both plugin and config are not loaded
-      -- config = function() require("config/nvim-tree") end,
+      config = function() require("config/nvim-tree") end,
    }
    use { "neoclide/coc.nvim", branch = "release" }
    use "tpope/vim-commentary"
