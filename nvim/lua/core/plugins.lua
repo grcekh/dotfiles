@@ -13,9 +13,15 @@ return require("packer").startup(function()
    use "wbthomason/packer.nvim"
 
    -- Local
-   use { "~/repos/outline-doc.nvim" }
+   use { "~/repos/outline-doc.nvim",
+     config = function()
+       require("outline-doc").setup({
+         width = 10,
+       })
+     end
+   }
 
-   -- Core 
+   -- Core
    use {
       "kyazdani42/nvim-tree.lua",
       requires = "kyazdani42/nvim-web-devicons",
