@@ -1,0 +1,97 @@
+{
+  "name" : "8bit - cursor nav",
+  "entries" : {
+    "1356:1476:1~Axis 3~Low" : {
+      "type" : "key press",
+      "key" : 123
+    },
+    "1356:1476:1~Axis 1~Low" : {
+      "type" : "mouse move",
+      "axis" : 0,
+      "speed" : 20
+    },
+    "1356:1476:1~Hat Switch 1~Down" : {
+      "type" : "key press",
+      "key" : 56
+    },
+    "1356:1476:1~Hat Switch 1~Up" : {
+      "type" : "key press",
+      "key" : 48
+    },
+    "1356:1476:1~Axis 4~High" : {
+      "type" : "key press",
+      "key" : 125
+    },
+    "1356:1476:1~Axis 2~High" : {
+      "type" : "mouse move",
+      "axis" : 3,
+      "speed" : 20
+    },
+    "1356:1476:1~Button 1" : {
+      "type" : "mouse button",
+      "button" : 1
+    },
+    "1356:1476:1~Button 2" : {
+      "type" : "key press",
+      "key" : 54
+    },
+    "1356:1476:1~Hat Switch 1~Left" : {
+      "type" : "key press",
+      "key" : 59
+    },
+    "1356:1476:1~Button 3" : {
+      "type" : "mouse button",
+      "button" : 0
+    },
+    "1356:1476:1~Axis 4~Low" : {
+      "type" : "key press",
+      "key" : 126
+    },
+    "1356:1476:1~Button 4" : {
+      "type" : "key press",
+      "key" : 49
+    },
+    "1356:1476:1~Axis 2~Low" : {
+      "type" : "mouse move",
+      "axis" : 2,
+      "speed" : 20
+    },
+    "1356:1476:1~Button 5" : {
+      "type" : "key press",
+      "key" : 53
+    },
+    "1356:1476:1~Button 13" : {
+      "type" : "mapping",
+      "name" : "anki"
+    },
+    "1356:1476:1~Button 6" : {
+      "type" : "key press",
+      "key" : 50
+    },
+    "1356:1476:1~Axis 3~High" : {
+      "type" : "key press",
+      "key" : 124
+    },
+    "1356:1476:1~Button 7" : {
+      "speed" : 29,
+      "type" : "mouse scroll",
+      "smooth" : true,
+      "direction" : -1
+    },
+    "1356:1476:1~Axis 1~High" : {
+      "type" : "mouse move",
+      "axis" : 1,
+      "speed" : 20
+    },
+    "1356:1476:1~Button 8" : {
+      "speed" : 29,
+      "type" : "mouse scroll",
+      "smooth" : true,
+      "direction" : 1
+    },
+    "1356:1476:1~Hat Switch 1~Right" : {
+      "type" : "key press",
+      "key" : 58
+    }
+  }
+}
