@@ -7,6 +7,7 @@ Dotfiles for my main laptop running MacOS Catalina.
 - zsh
 - tmux
 - homebrew
+- zathura
 - [raycast](https://www.raycast.com/)
 - [enjoyable](https://yukkurigames.com/enjoyable/)
 - [warpd](https://github.com/rvaiya/warpd)
