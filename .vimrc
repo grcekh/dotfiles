@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug '/usr/local/opt/fzf'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 
@@ -22,7 +21,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
-Plug 'jparise/vim-graphql'
 Plug 'sheerun/vim-polyglot'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'jiangmiao/auto-pairs'
@@ -140,17 +138,19 @@ colorscheme onedark
 "~~~~~~~~~~~~~~~~~~~~~~~"
 "    7. STARTIFY        "
 "~~~~~~~~~~~~~~~~~~~~~~~"
-let g:startify_custom_header = []
-
-"let g:startify_custom_header=[
-"\ '                                       ',
-"\ ]
+let g:startify_custom_header = [
+    \ '     ▀▄   ▄▀                   ▄ ▀▄   ▄▀ ▄   ',
+    \ '    ▄█▀███▀█▄    █ █ █ █▀▄▀█   █▄███████▄█   ',
+    \ '   █▀███████▀█   ▀▄▀ █ █ ▀ █   ███▄███▄███   ',
+    \ '   █ █▀▀▀▀▀█ █                 ▀█████████▀   ',
+    \ '      ▀▀ ▀▀                     ▄▀     ▀▄    ',
+\ ]
 
 let g:startify_bookmarks = [{"v":"~/.config/nvim/init.vim"}]
 let g:startify_lists = [
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-      \ { 'type': 'files',     'header': ['   Recent Files']            },
-      \ { 'type': 'dir',       'header': ['   Recent Files in '. getcwd()] },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+    \ { 'type': 'files',     'header': ['   Recent Files']            },
+    \ { 'type': 'dir',       'header': ['   Recent Files in '. getcwd()] },
 \ ]
 let g:startify_files_number = 5 
 
