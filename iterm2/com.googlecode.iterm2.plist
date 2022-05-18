@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>Custom Color Presets</key>
@@ -4121,7 +4123,7 @@
 			<key>Normal Font</key>
 			<string>SFMono-Medium 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
-			<true/>
+			<false/>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -4156,13 +4158,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.18431372940540314</real>
+				<real>0.39105224609375</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.18823529779911041</real>
+				<real>0.35252994155003264</real>
 				<key>Red Component</key>
-				<real>0.19607843458652496</real>
+				<real>0.33051719609647989</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -4751,7 +4753,7 @@
 			<key>Guid</key>
 			<string>640211A6-C388-4A19-AABE-9605CFB13001</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
