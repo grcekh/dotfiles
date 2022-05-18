@@ -12,15 +12,6 @@ return require("packer").startup(function()
    -- Packer can manage itself
    use "wbthomason/packer.nvim"
 
-   -- Local
-   use { "~/repos/outline-doc.nvim",
-     config = function()
-       require("outline-doc").setup({
-         width = 10,
-       })
-     end
-   }
-
    -- Core
    use {
       "kyazdani42/nvim-tree.lua",
