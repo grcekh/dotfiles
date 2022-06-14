@@ -1,0 +1,28 @@
+{
+  "name": "SCRAMBLE",
+  "vendorProductId": 1851875426,
+  "macros": [
+    "{KC_LALT,KC_LGUI,KC_N}",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "layers": [
+    ["KC_P1", "KC_P2", "KC_P3", "KC_P4", "SPC_FN1", "TG(2)"],
+    ["KC_E", "KC_R", "KC_TRNS", "KC_P5", "KC_TRNS", "KC_TRNS"],
+    ["KC_L", "KC_J", "KC_H", "KC_M", "KC_K", "TO(0)"],
+    ["KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"]
+  ]
+}
