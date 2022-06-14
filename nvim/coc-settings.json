@@ -18,7 +18,8 @@
     "handlebars",
     "htmldjango",
     "python",
-    "go"
+    "go",
+    "rust"
   ],
 
   "languageserver": {
@@ -39,9 +40,6 @@
   "prettier.useTabs": false,
   "prettier.arrowParens": "always",
   "eslint.autoFixOnSave": true,
-  "eslint.options": {
-    "indent": ["error", "tab"]
-  },
   "emmet.showExpandedAbbreviation": "always",
   "codeLens.enable": true,
   "clangd.path": "/Users/grace/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",

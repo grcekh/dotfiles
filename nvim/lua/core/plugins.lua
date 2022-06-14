@@ -72,8 +72,12 @@ return require("packer").startup(function()
    use "junegunn/goyo.vim"
    use "vimwiki/vimwiki"
    use {
-      "iamcco/markdown-preview.nvim",
-      run = "cd app && yarn install"
+     "iamcco/markdown-preview.nvim",
+     run = "cd app && npm install",
+     setup = function()
+       vim.g.mkdp_filetypes = { "markdown" }
+     end,
+     ft = { "markdown" },
    }
    use {
       "folke/todo-comments.nvim",
