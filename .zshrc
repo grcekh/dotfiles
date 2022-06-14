@@ -165,10 +165,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # bat highlighting theme
 export BAT_THEME="base16"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/sbin:$PATH"
-
 # pyenv version management
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -189,3 +185,20 @@ export TERM="xterm-256color"
 # go
 export PATH="$PATH/usr/local/go/bin"
 export PATH="$PATH:/Users/grace/go/bin"
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="/Users/grace/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# android
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/sbin:$PATH"
+
