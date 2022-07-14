@@ -1,4 +1,4 @@
-let g:gruvbox_material_palette = {
+let g:gruvbox_material_colors_override = {
     \ 'bg0':              ['#292d34',   '234'],
     \ 'bg1':              ['#3f4451',   '235'],
     \ 'bg2':              ['#292d34',   '235'],

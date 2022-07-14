@@ -30,7 +30,7 @@ return require("packer").startup(function()
       config = function() require("config/galaxyline") end,
    }
    use {
-      "nvim-telescope/telescope.nvim",
+      "nvim-telescope/telescope.nvim", tag = "0.1.0",
       requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"} }
    }
 
@@ -46,7 +46,7 @@ return require("packer").startup(function()
       "windwp/nvim-autopairs",
       config = function()
          require("nvim-autopairs").setup({
-            disable_filetype = {"TelescopePrompt"},
+            disable_filetype = { "TelescopePrompt" },
          })
       end
    }
@@ -54,7 +54,7 @@ return require("packer").startup(function()
       "norcalli/nvim-colorizer.lua",
       config = function()
          require("colorizer").setup(
-            {"*";},
+            { "*"; },
             { RRGGBBAA = true, css = true }
          )
       end
@@ -79,11 +79,17 @@ return require("packer").startup(function()
      end,
      ft = { "markdown" },
    }
+   -- use {
+   --    "folke/todo-comments.nvim",
+   --    requires = "nvim-lua/plenary.nvim",
+   --    config = function() require("config/todo-comments").setup({}) end
+   -- }
+   use "simrat39/symbols-outline.nvim"
    use {
-      "folke/todo-comments.nvim",
+      "nvim-neorg/neorg",
       requires = "nvim-lua/plenary.nvim",
-      config = function() require("todo-comments").setup({}) end
-   }
+      config = function() require("config/neorg") end
+    }
 
    -- Colorschemes + icons
    use "sainnhe/gruvbox-material"
