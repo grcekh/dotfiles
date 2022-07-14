@@ -11,8 +11,8 @@ main() {
   local bold=$(tput bold)
   local reset_attributes=$(tput sgr0)
 
-  dots_cache_dir="$HOME/dotfiles/cache/nvim/packer.nvim"
-  packer_cache_dir="$HOME/.cache/nvim/packer.nvim"
+  local dots_cache_dir="$HOME/dotfiles/cache/nvim/packer.nvim"
+  local packer_cache_dir="$HOME/.cache/nvim/packer.nvim"
 
   if [ -d "$packer_cache_dir" ]; then
     if [ "$(ls -A $packer_cache_dir)" ]; then
@@ -20,8 +20,8 @@ main() {
       cd "$packer_cache_dir"
 
       # Read the last modified file in the current working directory
-      latest_snapshot=$(ls -t | head -n1)
-      latest_snapshot_date=$(stat -f "%Sm" -t "%Y-%m-%d %H:%M:%S" "$packer_cache_dir/$latest_snapshot")
+      local latest_snapshot=$(ls -t | head -n1)
+      local latest_snapshot_date=$(stat -f "%Sm" -t "%Y-%m-%d %H:%M:%S" "$packer_cache_dir/$latest_snapshot")
 
       echo -e "found the following snapshot:\n"
       echo -e "\tlast modified           name"
@@ -37,10 +37,11 @@ main() {
           mv "$packer_cache_dir/$latest_snapshot" "$dots_cache_dir/stable"
           ln -sfn "$dots_cache_dir/stable" "$packer_cache_dir"
           echo -e "${success_color}${bold}success${reset_attributes}: backed up latest packer.nvim snapshot!"
+          return 0
           ;;
-        *)
+        * )
           echo -e "program exited without taking any action."
-          return 1
+          return 0
           ;;
       esac
 
@@ -48,6 +49,7 @@ main() {
       # The packer.nvim snapshots directory is empty
       echo -e "${error_color}${bold}error${reset_attributes}: no snapshots were found in the packer.nvim cache directory."
       echo -e "= ${bold}help${reset_attributes}: try running the PackerSnapshot command."
+      return 1
     fi
   else
     # The packer.nvim snapshots directory does not exist
@@ -55,6 +57,7 @@ main() {
     echo -e "\t--> $packer_cache_dir"
     echo -e "${error_color}\t    ^ this path should match the snapshot_path set in your packer.nvim configuration.${reset_attributes}"
     echo -e "\t= ${bold}help${reset_attributes}: double check that the path is set correctly."
+    return 1
   fi
 }
 
