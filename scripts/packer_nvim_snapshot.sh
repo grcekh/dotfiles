@@ -35,7 +35,7 @@ main() {
       case "$yn" in
         [yY][eE][sS]|[yY] )
           mv "$packer_cache_dir/$latest_snapshot" "$dots_cache_dir/stable"
-          ln -s "$dots_cache_dir/stable" "$packer_cache_dir"
+          ln -sfn "$dots_cache_dir/stable" "$packer_cache_dir"
           echo -e "${success_color}${bold}success${reset_attributes}: backed up latest packer.nvim snapshot!"
           ;;
         *)

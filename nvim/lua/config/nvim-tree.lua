@@ -1,6 +1,3 @@
--- TODO: Migrate
--- https://github.com/kyazdani42/nvim-tree.lua/issues/674
-
 -- if not packer_plugins["nvim-tree.lua"].loaded then
   vim.cmd("packadd nvim-tree.lua")
   vim.cmd("packadd nvim-web-devicons")

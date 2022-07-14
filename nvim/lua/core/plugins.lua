@@ -79,11 +79,11 @@ return require("packer").startup(function()
      end,
      ft = { "markdown" },
    }
-   -- use {
-   --    "folke/todo-comments.nvim",
-   --    requires = "nvim-lua/plenary.nvim",
-   --    config = function() require("config/todo-comments").setup({}) end
-   -- }
+   use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function() require("todo-comments").setup({}) end
+   }
    use "simrat39/symbols-outline.nvim"
    use {
       "nvim-neorg/neorg",
