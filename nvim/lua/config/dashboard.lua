@@ -6,7 +6,6 @@ local home = os.getenv("HOME")
 map("n", "<Leader>ss", ":<C-u>SessionSave<CR>", {noremap = false})
 map("n", "<Leader>sl", ":<C-u>SessionLoad<CR>", {noremap = false})
 
--- vim.g.dashboard_default_executive = "telescope"
 db.custom_center = {
   {
     icon = "  ",

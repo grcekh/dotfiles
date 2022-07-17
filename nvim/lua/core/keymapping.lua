@@ -2,8 +2,9 @@
 -- KEYMAPPING --
 ----------------
 
+local vim = vim
 local map = require("utils").map
-local opts = {silent = true}
+local opts = { silent = true }
 
 -- Set global and buffer leader key
 vim.g.mapleader = "-"

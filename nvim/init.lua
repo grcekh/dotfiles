@@ -1,6 +1,7 @@
 require("core/options")
 require("core/keymapping")
 require("core/plugins")
+require("core/colorscheme")
 
 require("config/barbar")
 require("config/coc")
@@ -10,5 +11,5 @@ require("config/neorg")
 require("config/nvim-tree")
 require("config/telescope")
 require("config/todo-comments")
+require("config/treesitter")
 require("config/vimwiki")
-

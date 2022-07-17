@@ -1,6 +1,6 @@
 -- Use Markdown in VimWiki
 vim.g.vimwiki_list = {{
-  path = "~/vimwiki/",
+  path = "~/pkm/vimwiki/",
   syntax = "markdown",
   ext = ".md",
 }}

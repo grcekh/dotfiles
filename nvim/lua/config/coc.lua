@@ -1,3 +1,4 @@
+local vim = vim
 local t = require("utils").t
 
 local map = vim.api.nvim_set_keymap

@@ -2,6 +2,8 @@
 -- PLUGINS --
 -------------
 
+local vim = vim
+
 -- Check if packer is installed
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 vim.cmd("packadd packer.nvim")
@@ -91,7 +93,8 @@ return require("packer").startup(function()
       config = function() require("config/neorg") end
     }
 
-   -- Colorschemes + icons
+   -- Colorschemes
    use "sainnhe/gruvbox-material"
+   use "sainnhe/everforest"
    use "arcticicestudio/nord-vim"
 end)

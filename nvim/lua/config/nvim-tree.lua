@@ -3,9 +3,7 @@
   vim.cmd("packadd nvim-web-devicons")
 -- end
 
-local tree_action = require("nvim-tree.config").nvim_tree_callback
 local map = require("utils").map
-local g = vim.g
 
 map("n", "<Leader>v", ":NvimTreeToggle<CR>", {silent = true})
 
