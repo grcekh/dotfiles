@@ -38,7 +38,6 @@ return require("packer").startup(function()
 
    -- Syntax
    use "tikhomirov/vim-glsl"
-   use "glench/vim-jinja2-syntax"
    use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
@@ -66,12 +65,7 @@ return require("packer").startup(function()
    use "romgrk/nvim-treesitter-context"
    use "simrat39/symbols-outline.nvim"
    use "junegunn/goyo.vim"
-   use {
-     "iamcco/markdown-preview.nvim",
-     run = "cd app && npm install",
-     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-     ft = { "markdown" },
-   }
+   use "ellisonleao/glow.nvim"
    use {
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim",
