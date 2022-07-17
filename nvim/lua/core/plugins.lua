@@ -63,22 +63,13 @@ return require("packer").startup(function()
    }
 
    -- Productivity
-   use {
-     "romgrk/nvim-treesitter-context",
-     -- config = function()
-     --   require("treesitter-context.config").setup({
-     --     enable = true
-     --   })
-     -- end
-   }
+   use "romgrk/nvim-treesitter-context"
+   use "simrat39/symbols-outline.nvim"
    use "junegunn/goyo.vim"
-   use "vimwiki/vimwiki"
    use {
      "iamcco/markdown-preview.nvim",
      run = "cd app && npm install",
-     setup = function()
-       vim.g.mkdp_filetypes = { "markdown" }
-     end,
+     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
      ft = { "markdown" },
    }
    use {
@@ -86,7 +77,7 @@ return require("packer").startup(function()
       requires = "nvim-lua/plenary.nvim",
       config = function() require("todo-comments").setup({}) end
    }
-   use "simrat39/symbols-outline.nvim"
+   use "vimwiki/vimwiki"
    use {
       "nvim-neorg/neorg",
       requires = "nvim-lua/plenary.nvim",
@@ -96,5 +87,4 @@ return require("packer").startup(function()
    -- Colorschemes
    use "sainnhe/gruvbox-material"
    use "sainnhe/everforest"
-   use "arcticicestudio/nord-vim"
 end)

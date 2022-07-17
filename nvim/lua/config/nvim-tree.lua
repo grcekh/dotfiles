@@ -1,6 +1,6 @@
 -- if not packer_plugins["nvim-tree.lua"].loaded then
-  vim.cmd("packadd nvim-tree.lua")
-  vim.cmd("packadd nvim-web-devicons")
+vim.cmd("packadd nvim-tree.lua")
+vim.cmd("packadd nvim-web-devicons")
 -- end
 
 local map = require("utils").map
