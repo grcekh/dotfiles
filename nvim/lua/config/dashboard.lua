@@ -1,21 +1,45 @@
+local db = require("dashboard")
 local map = require("utils").map
+
+local home = os.getenv("HOME")
 
 map("n", "<Leader>ss", ":<C-u>SessionSave<CR>", {noremap = false})
 map("n", "<Leader>sl", ":<C-u>SessionLoad<CR>", {noremap = false})
 
-vim.g.dashboard_default_executive = "telescope"
-
-vim.g.dashboard_custom_header = {
-  "    ▄   ▄███▄   ████▄     ▄   ▄█ █▀▄▀█ ",
-  "     █  █▀   ▀  █   █      █  ██ █ █ █ ",
-  " ██   █ ██▄▄    █   █ █     █ ██ █ █ █ ",
-  " █ █  █ █▄   ▄▀ ▀████  █    █ ▐█ █   █ ",
-  " █  █ █ ▀███▀           █  █   ▐    █  ",
-  " █   ██                  █▐        ▀   ",
-  "                        ▐              ",
+db.custom_center = {
+  {
+    icon = "  ",
+    desc = "Last session                            ",
+    shortcut = "SPC s l",
+    action ="SessionLoad"
+  },
+  {
+    icon = "  ",
+    desc = "Recently opened files                   ",
+    action =  "Telescope oldfiles",
+    shortcut = "SPC f h"
+  },
+  {
+    icon = "  ",
+    desc = "Find files                              ",
+    action = "Telescope find_files find_command=rg,--hidden,--files",
+    shortcut = "SPC f f"
+  },
+  {
+    icon = "  ",
+    desc ="File browser                            ",
+    action =  "Telescope file_browser",
+    shortcut = "SPC f b"
+  },
+  {
+    icon = "  ",
+    desc = "Open dotfiles                           ",
+    action = "Telescope find_files path=" .. home .. "/dotfiles",
+    shortcut = "SPC f d"
+  },
 }
 
-vim.g.dashboard_custom_header = {
+db.custom_header = {
   "                                       ",
   "                                       ",
   "                  ▀▄   ▄▀              ",
@@ -35,12 +59,12 @@ vim.g.dashboard_custom_header = {
   "         █▄ █ █▀▀ █▀█ █ █ █ █▀▄▀█      ",
   "         █ ▀█ ██▄ █▄█ ▀▄▀ █ █ ▀ █      ",
   "                                       ",
-  "                v0.6.0-beta            ",
+  "        v0.8.0-dev+236-gb70856009      ",
   "                                       ",
   "                                       ",
 }
 
-vim.g.dashboard_custom_footer = {
+db.custom_footer = {
   "                                       ",
   "                                       ",
   "                     ▄                 ",

@@ -202,7 +202,7 @@ alias src="source ~/.zshrc"                                     # Source .zshrc
 alias fd="fdfind"                                               # Use fd binary as intended
 alias emacs="emacs -nw"                                         # Launch terminal-based Emacs
 alias dot="cd ~/dotfiles && nvim"                               # Shortcut to edit dotfiles
-alias vw="cd ~/vimwiki && nvim"                                 # Shortcut to vimwiki
+alias org="cd ~/pkm/neorg && nvim"                              # Shortcut to neorg directory
 
 # Git
 alias gs="git status -s"                                           
@@ -243,3 +243,6 @@ export BAT_THEME="OneHalfDark"
 
 # Added by n-install (see http://git.io/n-install-repo)
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
+# fnm
+eval "$(fnm env --use-on-cd)"

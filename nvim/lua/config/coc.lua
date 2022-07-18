@@ -1,3 +1,4 @@
+local vim = vim
 local t = require("utils").t
 
 local map = vim.api.nvim_set_keymap
@@ -52,7 +53,7 @@ end
 
 map("i", "<Tab>", "v:lua.tab_completion()", expr_opts)
 
--- " Use <c-space> to trigger completion.
+-- Use <c-space> to trigger completion.
 map("i", "<c-space>", ":call coc#refresh()", expr_opts)
 
 -- Make <CR> auto-select the first completion item and notify coc.nvim to
@@ -61,15 +62,16 @@ function _G.select_first_completion()
   return vim.fn.pumvisible() == 1 and vim.cmd("coc#_select_confirm()") or vim.cmd([[\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>]])
 end
 
--- " Use `[g` and `]g` to navigate diagnostics
+-- Use `[g` and `]g` to navigate diagnostics
 -- nmap <silent> [g <Plug>(coc-diagnostic-prev)
 -- nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
--- " Remap keys for gotos
+-- Remap keys for gotos
 map("n", "gd", "<Plug>(coc-definition)", opts)
 map("n", "gy", "<Plug>(coc-type-definition)", opts)
 map("n", "gi", "<Plug>(coc-implementation)", opts)
 map("n", "gr", "<Plug>(coc-references)", opts)
+map("n", "K", ":call CocAction('doHover')<CR>", opts)
 
 -- Prettier
 vim.cmd([[

@@ -2,6 +2,8 @@
 -- PLUGINS --
 -------------
 
+local vim = vim
+
 -- Check if packer is installed
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
 vim.cmd("packadd packer.nvim")
@@ -12,13 +14,11 @@ return require("packer").startup(function()
    -- Packer can manage itself
    use "wbthomason/packer.nvim"
 
-   -- Core 
+   -- Core
    use {
       "kyazdani42/nvim-tree.lua",
-      cmd = {"NvimTreeToggle", "NvimTreeOpen"},
       requires = "kyazdani42/nvim-web-devicons",
-      -- FIX: Both plugin and config are not loaded
-      -- config = function() require("config/nvim-tree") end,
+      config = function() require("config/nvim-tree") end,
    }
    use { "neoclide/coc.nvim", branch = "release" }
    use "tpope/vim-commentary"
@@ -32,13 +32,12 @@ return require("packer").startup(function()
       config = function() require("config/galaxyline") end,
    }
    use {
-      "nvim-telescope/telescope.nvim",
+      "nvim-telescope/telescope.nvim", tag = "0.1.0",
       requires = { {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"} }
    }
 
    -- Syntax
    use "tikhomirov/vim-glsl"
-   use "glench/vim-jinja2-syntax"
    use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
@@ -48,7 +47,7 @@ return require("packer").startup(function()
       "windwp/nvim-autopairs",
       config = function()
          require("nvim-autopairs").setup({
-            disable_filetype = {"TelescopePrompt"},
+            disable_filetype = { "TelescopePrompt" },
          })
       end
    }
@@ -56,34 +55,30 @@ return require("packer").startup(function()
       "norcalli/nvim-colorizer.lua",
       config = function()
          require("colorizer").setup(
-            {"*";},
+            { "*"; },
             { RRGGBBAA = true, css = true }
          )
       end
    }
 
    -- Productivity
-   use {
-     "romgrk/nvim-treesitter-context",
-     -- config = function()
-     --   require("treesitter-context.config").setup({
-     --     enable = true
-     --   })
-     -- end
-   }
+   use "romgrk/nvim-treesitter-context"
+   use "simrat39/symbols-outline.nvim"
    use "junegunn/goyo.vim"
-   use "vimwiki/vimwiki"
-   use {
-      "iamcco/markdown-preview.nvim",
-      run = "cd app && yarn install"
-   }
+   use "ellisonleao/glow.nvim"
    use {
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim",
       config = function() require("todo-comments").setup({}) end
    }
+   use "vimwiki/vimwiki"
+   use {
+      "nvim-neorg/neorg",
+      requires = "nvim-lua/plenary.nvim",
+      config = function() require("config/neorg") end
+    }
 
-   -- Colorschemes + icons
+   -- Colorschemes
    use "sainnhe/gruvbox-material"
-   use "arcticicestudio/nord-vim"
+   use "sainnhe/everforest"
 end)

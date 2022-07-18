@@ -1,3 +1,4 @@
+local vim = vim
 local gl = require("galaxyline")
 local condition = require("galaxyline.condition")
 local buffer = require("galaxyline.provider_buffer")
@@ -5,7 +6,7 @@ local my_icons = require("galaxyline.provider_fileinfo").define_file_icon()
 
 local gls = gl.section
 
-local colors = {
+local gruvbox_material_modified_theme = {
   bg = "#292d34",
   bg_dim = "#333842",
   bg_light = "#444b59",
@@ -16,12 +17,30 @@ local colors = {
   orange = "#e78a4e",
   yellow = "#d8a657",
   green = "#a9b665",
+  aqua = "#89b482",
   blue = "#7daea3",
   purple = "#d3869b",
-  aqua = "#89b482",
 }
 
-gl.short_line_list = { "NvimTree", "chadtree", "term", "fugitive" }
+local everforest_theme = {
+  bg = "#2b3339",
+  bg_dim = "#3a454a",
+  bg_light = "#4c555b",
+  black = "#222222",
+  white = "#c9d4cc",
+  gray = "#9da9a0",
+  red = "#e67e80",
+  orange = "#e69875",
+  yellow = "#dbbc7f",
+  green = "#a7c080",
+  aqua = "#83c092",
+  blue = "#7fbbb3",
+  purple = "#d699b6",
+}
+
+local colors = vim.g.colors_name == "everforest" and everforest_theme or gruvbox_material_modified_theme
+
+gl.short_line_list = { "NvimTree", "term", "fugitive" }
 
 my_icons["NvimTree"] = {colors.gray, ""}
 my_icons["njk"] = {colors.gray, ""}

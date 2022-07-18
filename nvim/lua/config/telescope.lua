@@ -1,5 +1,5 @@
 local map = require("utils").map
-local opts = {silent = true}
+local opts = { silent = true }
 
 map("n", "<Leader>fb", [[<cmd>Telescope buffers show_all_buffers=true sort_lastused=true<cr>]], opts)
 map("n", "<Leader>fg", [[<cmd>Telescope git_files<cr>]], opts)

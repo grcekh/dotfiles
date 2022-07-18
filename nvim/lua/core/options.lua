@@ -2,6 +2,8 @@
 -- OPTIONS --
 -------------
 
+local vim = vim
+
 --- 1. Global options
 -- vim.o to set global options
 
@@ -24,14 +26,10 @@ vim.o.showmatch = true -- Highlight matching parentheses
 vim.o.ignorecase = true -- Ignore case when searching...
 vim.o.smartcase = true -- ...Unless using caps
 
--- Color
+-- Syntax
 
 vim.cmd("syntax enable")
 vim.cmd("syntax on")
-
-vim.o.termguicolors = true
-vim.o.background = "dark"
-
 
 --- 2. Buffer options
 -- vim.bo to set buffer-scoped options
@@ -81,5 +79,5 @@ set undofile
 -- oF Makefile
 -- autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
 vim.cmd([[
-let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
+let &makeprg = "if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi"
 ]])
