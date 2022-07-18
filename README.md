@@ -1,23 +1,17 @@
 # dotfiles (pop)
 
-Dotfiles for Pop!_OS on the Intel Thinkpad T14s.
+Dotfiles for Pop!\_OS on the Intel Thinkpad T14s.
 
-* [X] alacritty
-* [X] zsh
-* [X] nvim
-* [X] tmux
-* [X] zathura
-* DE: GNOME 3.38
-* WM: Mutter
-* WM Theme: Pop
-* Theme: Orchis-dark
-* Icons: Tela-circle-dark
+- [x] alacritty
+- [x] zsh
+- [x] nvim
+- [x] tmux
+- [x] zathura
+- OS: Pop!\_OS 22.04
+- DE: GNOME 42
+- WM: Mutter
+- WM Theme: Pop
+- Theme: Orchis-dark [GTK2/3]
+- Icons: Tela-circle-dark [GTK2/3]
 
 ![](./screenshots/screenshot-stitch.png)
-
-## TODO
-
-* [ ] Create install script to automate process
-* [ ] System backup: Rsync, Timeshift
-* [ ] (nvim): `init.lua`, `LSP`
-* [ ] (tmux): tmux plugin manager, etc?
