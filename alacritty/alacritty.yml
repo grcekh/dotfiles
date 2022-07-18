@@ -176,7 +176,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#292d34'
+    # background: '#292d34' # Gruvbox Material Modified
+    background: '#2b3339' # Everforest
     foreground: '#d1ccc2'
 
     # Bright and dim foreground colors
@@ -235,7 +236,7 @@ colors:
     #  background: '#c5c8c6'
     #  foreground: '#1d1f21'
 
-  # Normal colors
+  # Normal colors (Gruvbox Material Modified)
   normal:
     black:   '#282828'
     red:     '#ea6962'
@@ -246,7 +247,7 @@ colors:
     cyan:    '#89b482'
     white:   '#d1ccc2'
 
-  # Bright colors
+  # Bright colors (Gruvbox Material Modified)
   bright:
     black:   '#282828'
     red:     '#ea6962'
