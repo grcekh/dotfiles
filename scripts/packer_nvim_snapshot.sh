@@ -14,6 +14,10 @@ main() {
   local dots_cache_dir="$HOME/dotfiles/cache/nvim/packer.nvim"
   local packer_cache_dir="$HOME/.cache/nvim/packer.nvim"
 
+  if [ ! -d "$dots_cache_dir" ]; then
+    mkdir -p "$dots_cache_dir"
+  fi
+
   if [ -d "$packer_cache_dir" ]; then
     if [ "$(ls -A $packer_cache_dir)" ]; then
       # The packer.nvim snapshots directory is not empty
@@ -21,7 +25,12 @@ main() {
 
       # Read the last modified file in the current working directory
       local latest_snapshot=$(ls -t | head -n1)
-      local latest_snapshot_date=$(stat -f "%Sm" -t "%Y-%m-%d %H:%M:%S" "$packer_cache_dir/$latest_snapshot")
+
+      if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        local latest_snapshot_date=$(stat -c "%.19y" "$packer_cache_dir/$latest_snapshot")
+      elif [[ "$OSTYPE" == "darwin"* ]]; then
+        local latest_snapshot_date=$(stat -f "%Sm" -t "%Y-%m-%d %H:%M:%S" "$packer_cache_dir/$latest_snapshot")
+      fi
 
       echo -e "found the following snapshot:\n"
       echo -e "\tlast modified           name"
