@@ -30,6 +30,7 @@ vim.g.coc_global_extensions = {
   "coc-emmet",
   "coc-styled-components",
   "coc-go",
+  "coc-sumneko-lua",
 }
 
 -- Use tab for trigger completion with characters ahead and navigate.

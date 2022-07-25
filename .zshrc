@@ -1,4 +1,3 @@
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -12,6 +11,7 @@ export ZSH="/Users/grace/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# ZSH_THEME="spaceship"
 ZSH_THEME="robbyrussellmod"
 
 # Set list of themes to pick from when loading at random
@@ -105,12 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias wifi="wifi-password"
 alias config="nvim ~/.zshrc"
 alias src="source ~/.zshrc"
 alias dot="cd ~/dotfiles && nvim"
-alias wifi="wifi-password"
 alias vw="cd ~/pkm/vimwiki/personal && nvim"
 alias org="cd ~/pkm/neorg && nvim"
+alias repos="cd ~/repos"
 
 alias gs="git status -s"
 alias gl="git log"
@@ -166,10 +167,16 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # bat highlighting theme
 export BAT_THEME="base16"
 
+# doom emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
 # pyenv version management
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# python 3.9
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
 
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # bindkey '^\n' autosuggest-execute
@@ -203,3 +210,5 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
 
+# Starship
+eval "$(starship init zsh)"

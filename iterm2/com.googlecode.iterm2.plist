@@ -6402,7 +6402,7 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -6422,9 +6422,9 @@
 	<key>TabsHaveCloseButton</key>
 	<false/>
 	<key>TerminalMargin</key>
-	<integer>5</integer>
+	<integer>15</integer>
 	<key>TerminalVMargin</key>
-	<integer>2</integer>
+	<integer>15</integer>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Profiles</string>

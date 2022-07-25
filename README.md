@@ -5,6 +5,7 @@ Dotfiles for my main laptop running MacOS Catalina.
 - neovim
 - iTerm2
 - zsh
+- starship
 - tmux
 - homebrew
 - zathura

@@ -13,10 +13,15 @@ require("neorg").setup({
     ["core.norg.journal"] = {
       config = {
         workspace = "main",
+        strategy = "flat",
       }
     },
     ["core.norg.manoeuvre"] = {},
-    ["core.norg.concealer"] = {},
+    ["core.norg.concealer"] = {
+      config = {
+        icon_preset = "varied",
+      }
+    },
     ["core.norg.qol.toc"] = {},
     ["core.gtd.base"] = {
       config = {
