@@ -31,13 +31,15 @@ vim.g.coc_global_extensions = {
   "coc-styled-components",
   "coc-go",
   "coc-sumneko-lua",
+  "@yaegassy/coc-volar",
+  "@yaegassy/coc-volar-tools",
 }
 
 -- Use tab for trigger completion with characters ahead and navigate.
 -- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 function _G.check_back_space()
-    local col = vim.api.nvim_win_get_cursor(0)[2]
-    return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match("%s")) and true
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match("%s")) and true
 end
 
 function _G.tab_completion()
@@ -60,7 +62,8 @@ map("i", "<c-space>", ":call coc#refresh()", expr_opts)
 -- Make <CR> auto-select the first completion item and notify coc.nvim to
 -- format on enter, <cr> could be remapped by other vim plugin
 function _G.select_first_completion()
-  return vim.fn.pumvisible() == 1 and vim.cmd("coc#_select_confirm()") or vim.cmd([[\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>]])
+  return vim.fn.pumvisible() == 1 and vim.cmd("coc#_select_confirm()") or
+      vim.cmd([[\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>]])
 end
 
 -- Use `[g` and `]g` to navigate diagnostics

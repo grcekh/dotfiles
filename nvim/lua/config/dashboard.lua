@@ -3,20 +3,20 @@ local map = require("utils").map
 
 local home = os.getenv("HOME")
 
-map("n", "<Leader>ss", ":<C-u>SessionSave<CR>", {noremap = false})
-map("n", "<Leader>sl", ":<C-u>SessionLoad<CR>", {noremap = false})
+map("n", "<Leader>ss", ":<C-u>SessionSave<CR>", { noremap = false })
+map("n", "<Leader>sl", ":<C-u>SessionLoad<CR>", { noremap = false })
 
 db.custom_center = {
   {
     icon = "  ",
     desc = "Last session                            ",
     shortcut = "SPC s l",
-    action ="SessionLoad"
+    action = "SessionLoad"
   },
   {
     icon = "  ",
     desc = "Recently opened files                   ",
-    action =  "Telescope oldfiles",
+    action = "Telescope oldfiles",
     shortcut = "SPC f h"
   },
   {
@@ -27,8 +27,8 @@ db.custom_center = {
   },
   {
     icon = "  ",
-    desc ="File browser                            ",
-    action =  "Telescope file_browser",
+    desc = "File browser                            ",
+    action = "Telescope file_browser",
     shortcut = "SPC f b"
   },
   {
@@ -59,7 +59,7 @@ db.custom_header = {
   "         █▄ █ █▀▀ █▀█ █ █ █ █▀▄▀█      ",
   "         █ ▀█ ██▄ █▄█ ▀▄▀ █ █ ▀ █      ",
   "                                       ",
-  "        v0.8.0-dev+236-gb70856009      ",
+  "         v0.9.0-dev-75-g760b399f6      ",
   "                                       ",
   "                                       ",
 }

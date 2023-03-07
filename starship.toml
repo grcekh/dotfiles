@@ -1,16 +1,17 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
-add_newline = true
+# Prompt-wide configuration options
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 100
 
 [character]
-success_symbol = "[ ](bold green)" 
-# error_symbol = "[ ](bold red)" 
+success_symbol = "[ ](bold green)"
 error_symbol = "[ﮏ ](bold red)" 
 
 [aws]
 symbol = "  "
+disabled = true
 
 [buf]
 symbol = " "
@@ -27,6 +28,19 @@ symbol = " "
 [directory]
 read_only = " "
 
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
 [docker_context]
 symbol = " "
 
@@ -36,8 +50,15 @@ symbol = " "
 [elm]
 symbol = " "
 
+[gcloud]
+disabled = true
+
 [git_branch]
 symbol = " "
+
+[git_commit]
+only_detached = true
+tag_symbol = "笠 "
 
 [git_status]
 ahead = ""

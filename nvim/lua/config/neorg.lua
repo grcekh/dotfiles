@@ -5,7 +5,7 @@ require("neorg").setup({
       config = {
         workspaces = {
           main = "~/pkm/neorg",
-          gtd = "~/pkm/neorg/gtd",
+          -- gtd = "~/pkm/neorg/gtd",
         }
       }
     },
@@ -23,10 +23,10 @@ require("neorg").setup({
       }
     },
     ["core.norg.qol.toc"] = {},
-    ["core.gtd.base"] = {
-      config = {
-        workspace = "gtd",
-      }
-    },
+    -- ["core.gtd.base"] = {
+    --   config = {
+    --     workspace = "gtd",
+    --   }
+    -- },
   }
 })

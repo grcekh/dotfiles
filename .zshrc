@@ -112,15 +112,17 @@ alias dot="cd ~/dotfiles && nvim"
 alias vw="cd ~/pkm/vimwiki/personal && nvim"
 alias org="cd ~/pkm/neorg && nvim"
 alias repos="cd ~/repos"
+alias pn=pnpm
+alias v="cd /Volumes"
 
 alias gs="git status -s"
 alias gl="git log"
 alias ga="git add ."
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
+alias gdc="git diff --cached"
 alias gp="git push"
-alias gco="git checkout"
-alias gcob="git checkout -b"
+alias gcob='git branch | fzf | xargs git checkout'
 
 
 ########## BROWSER-SYNC ##########
@@ -160,7 +162,12 @@ _fzf_compgen_dir() {
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" "!pnpm-lock.yaml'
+
+export FZF_DEFAULT_OPTS='
+  --color="fg:7,fg+:#e8dcc1,bg:#2b3339,bg+:#3b454d,hl:3,hl+:#fabd2f,gutter:#3b454d"
+  --color="query:7,prompt:2,info:12,pointer:#fabd2f,marker:3"
+'
 
 
 ########## MISCELLANEOUS ##########
@@ -210,5 +217,5 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/sbin:$PATH"
 
-# Starship
+# starship
 eval "$(starship init zsh)"
