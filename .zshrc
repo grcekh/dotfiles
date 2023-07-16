@@ -106,13 +106,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias wifi="wifi-password"
-alias config="nvim ~/.zshrc"
 alias src="source ~/.zshrc"
+alias pn=pnpm
+
+alias c="cd $PWD"
 alias dot="cd ~/dotfiles && nvim"
 alias vw="cd ~/pkm/vimwiki/personal && nvim"
 alias org="cd ~/pkm/neorg && nvim"
 alias repos="cd ~/repos"
-alias pn=pnpm
+alias dev="cd ~/Developer"
+alias scripts="cd ~/Developer/scripts"
 alias v="cd /Volumes"
 
 alias gs="git status -s"
@@ -123,6 +126,9 @@ alias gac="git add . && git commit -m"
 alias gdc="git diff --cached"
 alias gp="git push"
 alias gcob='git branch | fzf | xargs git checkout'
+
+# Override aliases set by oh-my-zsh
+unalias gg
 
 
 ########## BROWSER-SYNC ##########
@@ -219,3 +225,16 @@ export PATH="/usr/local/sbin:$PATH"
 
 # starship
 eval "$(starship init zsh)"
+
+# shell scripts
+export PATH="$PATH:$HOME/Developer/scripts"
+
+# devkitpro
+export DEVKITPRO="/opt/devkitpro"
+export DEVKITARM="/opt/devkitpro/devkitARM"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
