@@ -15,26 +15,31 @@ return require("packer").startup(function()
   use "wbthomason/packer.nvim"
 
   -- Core
-  use {
-    "kyazdani42/nvim-tree.lua",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function() require("config/nvim-tree") end,
-  }
-  use { "neoclide/coc.nvim", branch = "release" }
-  use "tpope/vim-commentary"
-  use "tpope/vim-fugitive"
-  use "glepnir/dashboard-nvim"
   use "romgrk/barbar.nvim"
+  use { "neoclide/coc.nvim", branch = "release" }
+  use "glepnir/dashboard-nvim"
+  -- use "folke/flash.nvim"
   use {
     "glepnir/galaxyline.nvim",
     branch = "main",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
     config = function() require("config/galaxyline") end,
   }
+  -- use {
+  --   "ggandor/leap.nvim",
+  --   config = function() require("leap").add_default_mappings() end,
+  -- }
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
     requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } }
   }
+  use {
+    "kyazdani42/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function() require("config/nvim-tree") end,
+  }
+  use "tpope/vim-commentary"
+  use "tpope/vim-fugitive"
 
   -- Syntax
   use "tikhomirov/vim-glsl"
@@ -55,7 +60,7 @@ return require("packer").startup(function()
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup(
-        { "*"; },
+        { "*", },
         { RRGGBBAA = true, css = true }
       )
     end
