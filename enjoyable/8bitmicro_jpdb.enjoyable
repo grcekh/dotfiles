@@ -1,0 +1,53 @@
+{
+  "name" : "8bitmicro - jpdb",
+  "entries" : {
+    "11720:36896:1~Button 11" : {
+      "type" : "key press",
+      "key" : 23
+    },
+    "11720:36896:1~Button 1" : {
+      "type" : "key press",
+      "key" : 18
+    },
+    "11720:36896:1~Button 2" : {
+      "type" : "key press",
+      "key" : 19
+    },
+    "11720:36896:1~Button 12" : {
+      "type" : "key press",
+      "key" : 21
+    },
+    "11720:36896:1~Button 4" : {
+      "type" : "key press",
+      "key" : 49
+    },
+    "11720:36896:1~Axis 2~Low" : {
+      "type" : "key press",
+      "key" : 123
+    },
+    "11720:36896:1~Button 5" : {
+      "type" : "key press",
+      "key" : 20
+    },
+    "11720:36896:1~Axis 1~Low" : {
+      "type" : "key press",
+      "key" : 125
+    },
+    "11720:36896:1~Button 7" : {
+      "type" : "key press",
+      "key" : 14
+    },
+    "11720:36896:1~Button 8" : {
+      "type" : "key press",
+      "key" : 15
+    },
+    "11720:36896:1~Axis 2~High" : {
+      "type" : "key press",
+      "key" : 124
+    },
+    "11720:36896:1~Axis 1~High" : {
+      "type" : "key press",
+      "key" : 126
+    }
+  }
+}
