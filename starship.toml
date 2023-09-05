@@ -6,8 +6,8 @@
 scan_timeout = 100
 
 [character]
-success_symbol = "[ ](bold green)"
-error_symbol = "[ﮏ ](bold red)" 
+success_symbol = "[󰉊 ](bold green)"
+error_symbol = "[󰚑 ](bold red)" 
 
 [aws]
 symbol = "  "
@@ -26,20 +26,15 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " 󰌾"
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = " "
+"Documents" = "󰈙 "
 "Downloads" = " "
-"Music" = " "
+"Music" = "󰝚 "
 "Pictures" = " "
-# Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
 
 [docker_context]
 symbol = " "
@@ -58,7 +53,7 @@ symbol = " "
 
 [git_commit]
 only_detached = true
-tag_symbol = "笠 "
+tag_symbol = "󰓹 "
 
 [git_status]
 ahead = ""
@@ -81,10 +76,10 @@ symbol = " "
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = "󰍛 "
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
@@ -93,7 +88,7 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [python]
 symbol = " "
@@ -102,7 +97,6 @@ symbol = " "
 symbol = "🅢 "
 
 [ruby]
-# symbol = " "
 symbol = " "
 detect_variables = []
 
