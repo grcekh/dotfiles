@@ -1,57 +1,61 @@
 "~~~~~~~~~~~~~~~~~"
 "   1. PLUGINS    "
 "~~~~~~~~~~~~~~~~~"
-" Turn on plugin & indentation support for specific filetypes
-filetype plugin indent on
+" Automatic installation
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.config/nvim/plugged')
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.'
 
-" Core
-Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
+" 1. Core
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" Syntax Plugins
+" 2. Syntax Plugins
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'elzr/vim-json'
 Plug 'sheerun/vim-polyglot'
-Plug 'bfrg/vim-cpp-modern'
 Plug 'jiangmiao/auto-pairs'
 
-" Productivity
+" 3. Productivity
 Plug 'junegunn/goyo.vim'
-Plug 'vimwiki/vimwiki'
 Plug 'wellle/context.vim'
 
-"Color Schemes
-" Plug 'flazz/vim-colorschemes'
-Plug 'kaicataldo/material.vim'
-Plug 'patstockwell/vim-monokai-tasty'
+" 4. Color Schemes
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 
-" List ends here. Plugins become visible to Vim after this call.
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~"
 "    2. BASIC SETTINGS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~"
-syntax enable
 set nocompatible "Fixes old Vi bugs
 set backspace=2 "Makes backspace work
 set history=500 "Sets undo history size
 set ruler "Sets up status bar
 set laststatus=2 "Always keeps the status bar active
 set number "Turns on line numbering
+set relativenumber
 "set t_Co=256 "Sets Vim to use 256 colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -71,11 +75,11 @@ set undofile
 "~~~~~~~~~~~~~~~~~~~~~~"
 "    3. INDENTATION    "
 "~~~~~~~~~~~~~~~~~~~~~~"
-set tabstop=4 "Sets display width of tabs
-set shiftwidth=4 "Sets indentation width
+set tabstop=2 "Sets display width of tabs
+set shiftwidth=2 "Sets indentation width
 set autoindent "Turns on auto-indenting
 set smartindent "Remembers previous indent when creating new lines
-set softtabstop=4 expandtab
+set softtabstop=2 expandtab
 
 "Choose between tabs and spaces for indentation by uncommenting one of
 "these two. Expand for spaces, noexpand for tabs:"
@@ -87,6 +91,7 @@ set expandtab
 "    4. SEARCH SETTINGS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~~"
 set hlsearch "Highlights search terms
+set is hls "Incremental search and highlight all matches
 set showmatch "Highlights matching parentheses
 set ignorecase "Ignores case when searching
 set smartcase "Unless you put some caps in your search term
@@ -99,18 +104,27 @@ let mapleader="-"
 
 "Use jj instead of esc in insert mode
 inoremap jj <Esc>`^
-"nnoremap <silent> <C-k><C-B> :NERDTreeToggle<CR>
-"autocmd VimEnter * NERDTree | wincmd p
 
 " Toggle NERDTree
-nnoremap <Leader>n :NERDTree<CR>
-nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>v :NERDTreeToggle<CR>
 
 " Window cursor motions
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Copy to system clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from system clipboard
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 
 
 "~~~~~~~~~~~~~~~~~~~~~~~"
@@ -146,7 +160,7 @@ let g:startify_custom_header = [
     \ '      ▀▀ ▀▀                     ▄▀     ▀▄    ',
 \ ]
 
-let g:startify_bookmarks = [{"v":"~/.config/nvim/init.vim"}]
+let g:startify_bookmarks = [{"v":"~/dotfiles/.vimrc"}]
 let g:startify_lists = [
     \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
     \ { 'type': 'files',     'header': ['   Recent Files']            },
@@ -173,15 +187,12 @@ let g:cpp_named_requirements_highlight = 1
 "~~~~~~~~~~~~~~~~~~~~~~~~"
 "    9. MISCELLANEOUS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~"
-" Ignore in file manager
-let g:NERDTreeIgnore = ['^node_modules$']
+" FZF
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
-" Use Markdown in VimWiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_global_ext = 0
+" NERDTree
+let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeShowHidden = 1
 
 " Context.vim 
 let g:context_nvim_no_redraw = 1
-
-" As of MacOS Catalina
-let g:ncm2_pyclang#library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
