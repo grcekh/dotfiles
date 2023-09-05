@@ -1,0 +1,23 @@
+[user]
+	name = Grace Kim Howard
+	email = gracekimhoward@gmail.com
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[include]
+	path = ~/dotfiles/delta/themes.gitconfig
+
+[delta]
+	features = chameleon
+	navigate = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
