@@ -1,19 +1,27 @@
 # dotfiles
 
-Dotfiles for my main laptop running MacOS Catalina.
+<p align="center" width="100%">
+<img src="./screenshots/neofetch.png" alt="neofetch" width="75%" style="border-radius: 8px"/>
+</p>
 
-- neovim
-- iTerm2
+dotfiles for my primary laptop, a macbook pro (14-inch, 2023) with the apple m2 max chipset, running macos ventura.
+
+- homebrew
+- iterm2
 - zsh
 - starship
+- neovim
 - tmux
-- homebrew
-- zathura
-- [raycast](https://www.raycast.com/)
+- bat
+- git with git-delta
+- mpv
+- neofetch
+- ~~zathura~~ sioyek
+- raycast
 - [enjoyable](https://yukkurigames.com/enjoyable/)
 - [warpd](https://github.com/rvaiya/warpd)
 
-## See also:
+## see also
 
-- [Dotfiles for Pop!\_OS](https://github.com/grcekh/dotfiles/tree/pop)
-- [Dotfiles for Manjaro i3](https://github.com/grcekh/dotfiles/tree/manjaro)
+- [dotfiles for Pop!\_OS](https://github.com/grcekh/dotfiles/tree/pop)
+- [dotfiles for Manjaro i3](https://github.com/grcekh/dotfiles/tree/manjaro)
