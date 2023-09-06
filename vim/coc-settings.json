@@ -1,0 +1,13 @@
+{
+    "[javascript][javascriptreact][typescript][typescriptreact][css][scss][html][json]": {
+        "coc.preferences.formatOnSave": true
+    },
+    "suggest.noselect": false,
+    "prettier.arrowParens": "always",
+    "prettier.disableLanguages": [],
+    "prettier.singleQuote": false,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false,
+    "eslint.autoFixOnSave": true,
+}
+
