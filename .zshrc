@@ -1,22 +1,30 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+###########################################################
+# $PATH
+###########################################################
 
-# Suppress insecure directory warning
-ZSH_DISABLE_COMPFIX="true"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Add $HOME/bin to $PATH for single-user scripts
+export PATH="$HOME/bin:$PATH"
+
+
+###########################################################
+# OH MY ZSH
+###########################################################
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/grace/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="spaceship"
-ZSH_THEME="robbyrussellmod"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -27,17 +35,16 @@ ZSH_THEME="robbyrussellmod"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -49,7 +56,10 @@ ZSH_THEME="robbyrussellmod"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -68,8 +78,8 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
@@ -83,44 +93,44 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Preferred editor
+export EDITOR="vim"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+ 
 
-
-########## ALIASES ##########
+###########################################################
+# ALIASES
+###########################################################
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias wifi="wifi-password"
+# Commands
 alias src="source ~/.zshrc"
-alias pn=pnpm
+alias wifi="wifi-password"
 
+# Navigation
 alias c="cd $PWD"
-alias dot="cd ~/dotfiles && nvim"
-alias vw="cd ~/pkm/vimwiki/personal && nvim"
-alias org="cd ~/pkm/neorg && nvim"
-alias repos="cd ~/repos"
+alias dot="cd ~/dotfiles"
 alias dev="cd ~/Developer"
-alias scripts="cd ~/Developer/scripts"
 alias v="cd /Volumes"
 
+# Git
 alias gs="git status -s"
 alias gl="git log"
 alias ga="git add ."
+alias gap="git add --patch"
 alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias gdc="git diff --cached"
@@ -131,17 +141,13 @@ alias gcob='git branch | fzf | xargs git checkout'
 unalias gg
 
 
-########## BROWSER-SYNC ##########
-
-# Get the current local IP address
-export LOCAL_IP=`ipconfig getifaddr en0`
-# The command alias to start the Browser-sync server
-alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
-
-
-########### FZF + FD + RIPGREP ############
+###########################################################
+# FZF + FD + RIPGREP
+###########################################################
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_COMPLETION_OPTS='--border --info=inline'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
@@ -156,19 +162,13 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
-# Feed the output of fd into fzf
-#fd --type f | fzf
-
-# Setting fd as the default source for fzf
-# export FZF_DEFAULT_COMMAND='fd --type f'
-
-# Setting ripgrep as the default source for fzf
+# Set ripgrep as the default source for fzf
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*" "!pnpm-lock.yaml'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 export FZF_DEFAULT_OPTS='
   --color="fg:7,fg+:#e8dcc1,bg:#2b3339,bg+:#3b454d,hl:3,hl+:#fabd2f,gutter:#3b454d"
@@ -176,65 +176,12 @@ export FZF_DEFAULT_OPTS='
 '
 
 
-########## MISCELLANEOUS ##########
-# bat highlighting theme
-export BAT_THEME="base16"
+###########################################################
+# MISCELLANEOUS
+###########################################################
 
-# doom emacs
-export PATH="$HOME/.emacs.d/bin:$PATH"
-
-# pyenv version management
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# python 3.9
-export PATH=$HOME/Library/Python/3.9/bin:$PATH
-
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# bindkey '^\n' autosuggest-execute
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-export LC_ALL="en_US.UTF-8"
-export TERM="xterm-256color"
-
-# go
-export PATH="$PATH/usr/local/go/bin"
-export PATH="$PATH:/Users/grace/go/bin"
+# Starship
+eval "$(starship init zsh)"
 
 # fnm
 eval "$(fnm env --use-on-cd)"
-
-# pnpm
-export PNPM_HOME="/Users/grace/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# android
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/sbin:$PATH"
-
-# starship
-eval "$(starship init zsh)"
-
-# shell scripts
-export PATH="$PATH:$HOME/Developer/scripts"
-
-# devkitpro
-export DEVKITPRO="/opt/devkitpro"
-export DEVKITARM="/opt/devkitpro/devkitARM"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
