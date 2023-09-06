@@ -38,7 +38,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'wellle/context.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-" 4. Color Schemes
+" 4. Color Schemes + Icons
+Plug 'sainnhe/everforest'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
@@ -77,7 +78,6 @@ set undodir=/tmp/.vim-undo-dir
 set re=0
 
 " Use a line cursor within insert mode and a block cursor everywhere else.
-"
 " Reference chart of values:
 "   Ps = 0  -> blinking block.
 "   Ps = 1  -> blinking block (default).
@@ -88,6 +88,9 @@ set re=0
 "   Ps = 6  -> steady bar (xterm).
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+" Enable mouse reporting
+set mouse=a
 
 
 "~~~~~~~~~~~~~~~~~~~~~~"
@@ -150,18 +153,16 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-" Material theme settings
-let g:material_theme_style = 'default'
-let g:material_terminal_italics = 1
-
 " Lightline theme 
-let g:lightline = {
-        \ 'colorscheme': 'onedark',
-        \ }
+let g:lightline = {'colorscheme': 'everforest'}
+
+" Everforest color scheme
+let g:everforest_background = 'hard'
+let g:everforest_disable_italic_comment = 1
 
 " Set color scheme
 set background=dark
-colorscheme onedark 
+colorscheme everforest 
 
 
 "~~~~~~~~~~~~~~~~~~~"
