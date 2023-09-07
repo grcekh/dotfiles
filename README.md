@@ -1,7 +1,7 @@
 # dotfiles
 
 <p align="center" width="100%">
-<img src="./screenshots/neofetch.png" alt="neofetch" width="75%" style="border-radius: 8px"/>
+<img src="./screenshots/neofetch.png" alt="neofetch" width="65%" />
 </p>
 
 dotfiles for my primary laptop, a macbook pro (14-inch, 2023) with the apple m2 max chipset, running macos ventura.
