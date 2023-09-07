@@ -97,7 +97,7 @@ symbol = " "
 symbol = "🅢 "
 
 [ruby]
-symbol = " "
+symbol = " "
 detect_variables = []
 
 [rust]
