@@ -2,88 +2,110 @@
 -- PLUGINS --
 -------------
 
-local vim = vim
+-- Bootstrap lazy.nvim installation
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Check if packer is installed
-local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
-vim.cmd("packadd packer.nvim")
+-- Use a protected call so to avoid erroring out on first use
+local status_ok, lazy = pcall(require, "lazy")
+if not status_ok then
+  return
+end
 
-local use = require("packer").use
+lazy.opts = {
+  checker = {
+    enabled = true,
+  },
+}
 
-return require("packer").startup(function()
-  -- Packer can manage itself
-  use "wbthomason/packer.nvim"
+lazy.setup({
+  { import = "plugins" },
+})
 
-  -- Core
-  use "romgrk/barbar.nvim"
-  use { "neoclide/coc.nvim", branch = "release" }
-  use "glepnir/dashboard-nvim"
-  -- use "folke/flash.nvim"
-  use {
-    "glepnir/galaxyline.nvim",
-    branch = "main",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    config = function() require("config/galaxyline") end,
-  }
-  -- use {
-  --   "ggandor/leap.nvim",
-  --   config = function() require("leap").add_default_mappings() end,
-  -- }
-  use {
-    "nvim-telescope/telescope.nvim", tag = "0.1.0",
-    requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } }
-  }
-  use {
-    "kyazdani42/nvim-tree.lua",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function() require("config/nvim-tree") end,
-  }
-  use "tpope/vim-commentary"
-  use "tpope/vim-fugitive"
+-- Automatically back up lazy.nvim lockfiles
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazySync",
+  callback = function()
+    local uv = vim.loop
+    local config = vim.fn.stdpath("config")
+    local dotfiles = os.getenv("HOME") .. "/dotfiles/nvim"
 
-  -- Syntax
-  use "tikhomirov/vim-glsl"
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function() require("config/treesitter") end
-  }
-  use {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({
-        disable_filetype = { "TelescopePrompt" },
-      })
+    local NUM_BACKUPS = 5
+    local LOCKFILES_DIR_REAL = string.format("%s/lockfiles/", dotfiles)
+    local LOCKFILES_DIR_LINK = string.format("%s/lockfiles/", config)
+
+    -- Create directory for lockfiles in the real path if it does not exist
+    if not uv.fs_stat(LOCKFILES_DIR_REAL) then
+      uv.fs_mkdir(LOCKFILES_DIR_REAL, 448)
     end
-  }
-  use {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup(
-        { "*", },
-        { RRGGBBAA = true, css = true }
+
+    -- Create a symbolic link from the real path to the link path
+    if not uv.fs_stat(LOCKFILES_DIR_LINK) then
+      vim.fn.system({ "ln", "-s", LOCKFILES_DIR_REAL, LOCKFILES_DIR_LINK })
+    end
+
+    local lockfile = require("lazy.core.config").options.lockfile
+    if uv.fs_stat(lockfile) then
+      -- Create "%Y%m%d_%H:%M:%s_lazy-lock.json" in lockfile folder
+      local filename =
+        string.format("%s_lazy-lock.json", os.date("%Y%m%d_%H:%M:%S"))
+      local backup_lockfile =
+        string.format("%s/%s", LOCKFILES_DIR_REAL, filename)
+      local success = uv.fs_copyfile(lockfile, backup_lockfile)
+
+      if not success then
+        vim.notify(
+          string.format("Failed to create backup of lockfile."),
+          vim.log.levels.ERROR,
+          { title = "lazy.nvim " }
+        )
+        return
+      end
+
+      -- Clean up backups which exceed `NUM_BACKUPS`
+      local iter_dir = uv.fs_scandir(LOCKFILES_DIR_REAL)
+
+      if iter_dir then
+        local backups = {}
+        local suffix = "lazy-lock.json"
+
+        while true do
+          local name = uv.fs_scandir_next(iter_dir)
+          -- Make sure we are deleting lockfiles
+          if name and name:sub(-#suffix, -1) == suffix then
+            table.insert(
+              backups,
+              string.format("%s/%s", LOCKFILES_DIR_REAL, name)
+            )
+          end
+
+          if name == nil then
+            break
+          end
+
+          -- Sort backups and remove oldest first
+          table.sort(backups)
+          while #backups > NUM_BACKUPS do
+            uv.fs_unlink(table.remove(backups, 1))
+          end
+        end
+      end
+
+      vim.notify(
+        string.format("Successfully created backup: %s.", filename),
+        vim.log.levels.INFO,
+        { title = "lazy.nvim" }
       )
     end
-  }
-
-  -- Productivity
-  use "romgrk/nvim-treesitter-context"
-  use "simrat39/symbols-outline.nvim"
-  use "junegunn/goyo.vim"
-  use "ellisonleao/glow.nvim"
-  use {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function() require("todo-comments").setup({}) end
-  }
-  use "vimwiki/vimwiki"
-  use {
-    "nvim-neorg/neorg",
-    requires = "nvim-lua/plenary.nvim",
-    config = function() require("config/neorg") end
-  }
-
-  -- Colorschemes
-  use "sainnhe/gruvbox-material"
-  use "sainnhe/everforest"
-end)
+  end,
+})

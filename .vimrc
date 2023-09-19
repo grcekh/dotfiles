@@ -53,7 +53,7 @@ call plug#end()
 "    2. BASIC SETTINGS    "
 "~~~~~~~~~~~~~~~~~~~~~~~~~"
 set nocompatible "Fixes old Vi bugs
-set backspace=2 "Makes backspace work
+set backspace=indent,eol,start "More powerful backspacing
 set history=500 "Sets undo history size
 set ruler "Sets up status bar
 set laststatus=2 "Always keeps the status bar active

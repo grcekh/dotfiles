@@ -4,80 +4,47 @@
 
 local vim = vim
 
---- 1. Global options
--- vim.o to set global options
+local opts = {
+  autoindent = true, -- Automatically set the indent of a new line
+  background = "dark", -- Set background to dark theme
+  backspace = [[indent,eol,start]], -- Make backspace work
+  cindent = true, -- Enable C-style indentation
+  -- clipboard = "unnamedplus", -- Sync with system clipboard
+  completeopt = "menu,menuone,noselect", -- Required by nvim-cmp
+  confirm = true, -- Confirm to save chagnes before exiting modified buffer
+  cursorline = true, -- Highlight the cursor line
+  expandtab = true, -- Convert tabs to spaces
+  hlsearch = true, -- Highlight search results
+  history = 500, -- Store up to 500 lines of command line history
+  ignorecase = true, -- Ignore case when searching
+  incsearch = true, -- Incremental search
+  laststatus = 2, -- Always display the status line
+  mouse = "a", -- Enable mouse support
+  number = true, -- Show line numbers
+  relativenumber = true, -- Show line numbers relative to the cursor line
+  ruler = true, -- Display the cursor position in the status line
+  shiftwidth = 0, -- Set the number of spaces per indent
+  showmatch = true, -- Show matching parenthesis
+  showmode = false, -- Hide the mode indicator in favor of custom statusline
+  signcolumn = "yes", -- Always show the sign column
+  smartcase = true, -- Enable case-sensitive search when caps are used
+  smartindent = true, -- Enable smart indentation
+  spelllang = { "en_us", "cjk" }, -- Languages to spellcheck for when the 'spell' option is on
+  splitbelow = true, -- Split new windows below the current one
+  splitright = true, -- Split new windows to the right of the current one
+  tabstop = 2, -- Number of spaces in a tab
+  termguicolors = true, -- Enable true color support
+  undofile = true, -- Enable persistment undo
+  undolevels = 10000, -- Set the number of changes that can be undone
+  updatetime = 200, -- Set the time (in ms) to trigger CursorHold event
+  wrap = true, -- Enable line wrapping
+}
 
-vim.cmd("set nocompatible") -- Fix old Vi bugs
-vim.cmd("set backspace=2") -- Make backspace work
-vim.cmd("filetype plugin indent on")
-vim.o.history = 500
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.opt.splitkeep = "screen"
+  vim.opt.shortmess:append({ C = true })
+end
 
--- Override default split pane directions
-vim.o.splitright = true
-vim.o.splitbelow = true
-
-vim.o.ruler = true -- Set up status bar
-vim.o.laststatus = 2 -- Always keep status bar active
-
--- Search settings
-vim.o.incsearch = true -- Incremental search
-vim.o.hlsearch = true -- Highlight search terms
-vim.o.showmatch = true -- Highlight matching parentheses
-vim.o.ignorecase = true -- Ignore case when searching...
-vim.o.smartcase = true -- ...Unless using caps
-
--- Syntax
-
-vim.cmd("syntax enable")
-vim.cmd("syntax on")
-
---- 2. Buffer options
--- vim.bo to set buffer-scoped options
--- For all buffer-local options, set a global option as well
-
--- Indentation
-vim.bo.shiftwidth = 0
-vim.o.shiftwidth = 0
-vim.bo.tabstop = 2
-vim.o.tabstop = 2
-vim.bo.softtabstop = 2
-vim.o.softtabstop = 2
-vim.bo.expandtab = true
-vim.o.expandtab = true
-vim.bo.autoindent = true
-vim.o.autoindent = true
-vim.bo.smartindent = true -- Remembers previous indent when creating newlines
-vim.o.smartindent = true
-vim.bo.cindent = true
-vim.o.cindent = true
-
-
---- 3. Window options
--- vim.wo to set window-scoped options
-
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.wo.wrap = true
-
-
---- 4. Global and buffer variables
-
--- vim.g.mapleader = "-"
--- vim.b.mapleader = "-"
-
-
---- 5. Ex mode commands
--- Use persistent history
-vim.cmd([[
-if !isdirectory("/tmp/.vim-undo-dir")
-    call mkdir("/tmp/.vim-undo-dir", "", 0700)
-endif
-set undodir=/tmp/.vim-undo-dir
-set undofile
-]])
-
--- oF Makefile
--- autocmd  BufRead,BufNewFile  *.cpp let &makeprg = 'if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi'
-vim.cmd([[
-let &makeprg = "if [ -f Makefile ]; then make Release && make RunRelease; else make Release -C .. && make RunRelease -C ..; fi"
-]])
+for k, v in pairs(opts) do
+  vim.opt[k] = v
+end
