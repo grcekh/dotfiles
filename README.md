@@ -18,6 +18,7 @@ dotfiles for my primary laptop, a macbook pro (14-inch, 2023) with the apple m2 
 - neofetch
 - ~~zathura~~ sioyek
 - raycast
+- rectangle
 - [enjoyable](https://yukkurigames.com/enjoyable/)
 - [warpd](https://github.com/rvaiya/warpd)
 
