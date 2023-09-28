@@ -1,66 +1,85 @@
 local Plugin = { "VonHeikemen/lsp-zero.nvim" }
 
--- TODO: v3.x will become the default branch on September 20, 2023.
--- https://github.com/VonHeikemen/lsp-zero.nvim#future-changesdeprecation-notice
-Plugin.branch = "v2.x"
+Plugin.branch = "v3.x"
 
 Plugin.dependencies = {
   -- LSP Support
   { "neovim/nvim-lspconfig" },
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-
   -- Autocompletion
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "L3MON4D3/LuaSnip" },
-
-  -- Neovim
-  {
-    "folke/neodev.nvim",
-    opts = {},
-  },
-
   -- Formatting
   {
     "creativenull/efmls-configs-nvim",
     version = "v1.x.x",
   },
-
   -- LSP progress handler
   {
     "j-hui/fidget.nvim",
     tag = "legacy",
     opts = {},
   },
+  -- Neovim
+  {
+    "folke/neodev.nvim",
+    opts = {},
+  },
 }
 
 Plugin.config = function()
-  local lsp = require("lsp-zero").preset({})
+  local lsp_zero = require("lsp-zero")
   local lspconfig = require("lspconfig")
+  local mason = require("mason")
+  local mason_lspconfig = require("mason-lspconfig")
+  local cmp = require("cmp")
 
-  lsp.on_attach(function(client, bufnr)
-    -- :help lsp-zero-keybindings
-    lsp.default_keymaps({ buffer = bufnr })
+  lsp_zero.on_attach(function(client, bufnr)
+    -- For available actions, see :help lsp-zero-keybindings
+    lsp_zero.default_keymaps({ buffer = bufnr })
   end)
 
-  -- TODO: glslls
-  lsp.ensure_installed({
-    "clangd",
-    "cssls",
-    "cssmodules_ls",
-    "efm",
-    "eslint",
-    "html",
-    "jsonls",
-    "lua_ls",
-    "marksman",
-    "pyright",
-    "rust_analyzer",
-    "tsserver",
+  mason.setup({})
+  mason_lspconfig.setup({
+    ensure_installed = {
+      "clangd",
+      "cssls",
+      "cssmodules_ls",
+      "efm",
+      "eslint",
+      "html",
+      "jsonls",
+      "lua_ls",
+      "marksman",
+      "pyright",
+      "ruff_lsp",
+      "rust_analyzer",
+      "tsserver",
+    },
+    handlers = {
+      lsp_zero.default_setup,
+      -- For mason-lspconfig, configure a language server by adding a handler:
+      -- Assign a function in the handler, and configure the server within the function.
+      lua_ls = function()
+        local lua_opts = lsp_zero.nvim_lua_ls()
+        lspconfig.lua_ls.setup(lua_opts)
+      end,
+    },
   })
 
-  lsp.format_on_save({
+  local cmp_format = lsp_zero.cmp_format()
+  cmp.setup({
+    formatting = cmp_format,
+    mapping = cmp.mapping.preset.insert({
+      -- Scroll up and down the documentation window
+      ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    }),
+  })
+
+  lsp_zero.format_on_save({
     format_opts = {
       async = false,
       timeout_ms = 10000,
@@ -83,7 +102,7 @@ Plugin.config = function()
     },
   })
 
-  lsp.set_sign_icons({
+  lsp_zero.set_sign_icons({
     error = "×",
     warn = "▲",
     hint = "⚑",
@@ -91,7 +110,7 @@ Plugin.config = function()
   })
 
   -- (Optional) Configure lua language server for neovim
-  lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+  lspconfig.lua_ls.setup(lsp_zero.nvim_lua_ls())
 
   -- vscode-eslint-language-server provides an EslintFixAll command that can be
   -- used to format a document on save:
@@ -106,9 +125,36 @@ Plugin.config = function()
 
   -- Configure formatters per language
   local prettier = require("efmls-configs.formatters.prettier")
-  local black = require("efmls-configs.formatters.black")
-  local ruff = require("efmls-configs.formatters.ruff")
   local stylua = require("efmls-configs.formatters.stylua")
+
+  -- Manually handle Python virtual environment executables,
+  -- as efmls-configs does not yet support venv tooling.
+  local function get_venv_exec(name, args)
+    local current_working_dir = vim.loop.cwd()
+    local venv_dir = ".venv"
+    local binpath =
+      string.format("%s/%s/bin/%s", current_working_dir, venv_dir, name)
+    if vim.fn.filereadable(binpath) == 1 then
+      return string.format("%s %s -", binpath, args or "")
+    else
+      return nil
+    end
+  end
+
+  local function custom_python_formatter(formatter, args)
+    local venv_command = get_venv_exec(formatter, args)
+    if venv_command then
+      return {
+        formatCommand = venv_command,
+        formatStdin = true,
+        rootMarkers = { "pyproject.toml", "setup.py", "requirements.txt" },
+      }
+    else
+      -- Fallback to the original formatter config from efmls-configs
+      return require(string.format("efmls-configs.formatters.%s", formatter))
+    end
+  end
+
   local languages = {
     css = { prettier },
     html = { prettier },
@@ -116,7 +162,13 @@ Plugin.config = function()
     javascriptreact = { prettier },
     json = { prettier },
     lua = { stylua },
-    python = { ruff, black },
+    python = {
+      custom_python_formatter("black", "--no-color -q"),
+      custom_python_formatter(
+        "ruff",
+        "check --fix-only --no-cache --stdin-filename '${INPUT}'"
+      ),
+    },
     sass = { prettier },
     scss = { prettier },
     typescript = { prettier },
@@ -136,12 +188,11 @@ Plugin.config = function()
   }
 
   lspconfig.efm.setup(vim.tbl_extend("force", efmls_config, {
-    -- Pass your custom lsp config below:
-    on_attach = lsp.on_attach,
-    capabilities = lsp.capabilities,
+    on_attach = lsp_zero.on_attach,
+    capabilities = lsp_zero.capabilities,
   }))
 
-  lsp.setup()
+  lsp_zero.setup()
 end
 
 return Plugin
