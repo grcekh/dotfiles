@@ -177,11 +177,38 @@ export FZF_DEFAULT_OPTS='
 
 
 ###########################################################
+# PYTHON
+###########################################################
+
+# pip
+export PIP_REQUIRE_VIRTUALENV=true
+gpip() {
+  PIP_REQUIRE_VIRTUALENV=false pip "$@"
+}
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# For compilers (e.g., python-build) to find zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
+
+###########################################################
+# NODE.JS
+###########################################################
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+export FNM_COREPACK_ENABLED=true
+
+
+###########################################################
 # MISCELLANEOUS
 ###########################################################
 
 # Starship
 eval "$(starship init zsh)"
 
-# fnm
-eval "$(fnm env --use-on-cd)"
