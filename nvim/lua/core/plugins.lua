@@ -16,7 +16,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Use a protected call so to avoid erroring out on first use
+-- Use a protected call to avoid erroring out on first use
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
   return

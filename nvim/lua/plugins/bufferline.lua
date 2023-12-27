@@ -1,5 +1,11 @@
 local Plugin = { "akinsho/bufferline.nvim" }
 
+Plugin.version = "*"
+
+Plugin.dependencies = {
+  "nvim-tree/nvim-web-devicons",
+}
+
 Plugin.event = "VeryLazy"
 
 Plugin.keys = {
@@ -22,6 +28,16 @@ Plugin.opts = {
   options = {
     separator_style = "slant",
     diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      local s = ""
+      for e, n in pairs(diagnostics_dict) do
+        local icon = e == "error" and ""
+          or (e == "warning" and "󱇎" or "")
+        s = s .. icon
+      end
+      return s
+    end,
+    toggle_hidden_on_enter = true,
     offsets = {
       {
         filetype = "NvimTree",

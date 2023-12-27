@@ -14,11 +14,13 @@ local opts = {
   confirm = true, -- Confirm to save chagnes before exiting modified buffer
   cursorline = true, -- Highlight the cursor line
   expandtab = true, -- Convert tabs to spaces
+  fillchars = { eob = "·" }, -- Replace '~' in empty lines at the end of a buffer
   hlsearch = true, -- Highlight search results
   history = 500, -- Store up to 500 lines of command line history
   ignorecase = true, -- Ignore case when searching
   incsearch = true, -- Incremental search
   laststatus = 2, -- Always display the status line
+  linebreak = true, -- When wrap is enabled, break lines at words
   mouse = "a", -- Enable mouse support
   number = true, -- Show line numbers
   relativenumber = true, -- Show line numbers relative to the cursor line

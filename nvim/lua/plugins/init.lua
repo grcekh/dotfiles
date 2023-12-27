@@ -9,14 +9,26 @@ return {
       vim.cmd.colorscheme("everforest")
     end,
   },
-  "sainnhe/gruvbox-material",
+  { "sainnhe/gruvbox-material", enabled = false },
 
   -- Git
-  "tpope/vim-fugitive",
+  { "tpope/vim-fugitive", event = "VeryLazy" },
 
-  -- Syntax
-  { "echasnovski/mini.surround", version = false, opts = {} },
-  { "echasnovski/mini.comment", version = false, opts = {} },
-  { "echasnovski/mini.pairs", version = false, opts = {} },
-  { "NvChad/nvim-colorizer.lua", opts = {} },
+  -- Syntax highlighting
+  { "tikhomirov/vim-glsl", ft = { "glsl" } },
+
+  -- Quality of life
+  {
+    "echasnovski/mini.surround",
+    event = "VeryLazy",
+    version = false,
+    opts = {},
+  },
+  {
+    "echasnovski/mini.comment",
+    event = "VeryLazy",
+    version = false,
+    opts = {},
+  },
+  { "echasnovski/mini.pairs", event = "VeryLazy", version = false, opts = {} },
 }

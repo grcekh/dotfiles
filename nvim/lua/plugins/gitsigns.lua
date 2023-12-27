@@ -1,5 +1,7 @@
 local Plugin = { "lewis6991/gitsigns.nvim" }
 
+Plugin.event = "VeryLazy"
+
 Plugin.opts = {
   signs = {
     add = { text = "+" },
