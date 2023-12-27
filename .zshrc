@@ -119,12 +119,14 @@ export EDITOR="vim"
 # Commands
 alias src="source ~/.zshrc"
 alias wifi="wifi-password"
+alias pn="pnpm"
 
 # Navigation
 alias c="cd $PWD"
-alias dot="cd ~/dotfiles"
-alias dev="cd ~/Developer"
 alias v="cd /Volumes"
+alias dev="cd ~/Developer"
+alias dot="cd ~/dotfiles"
+alias pkm="cd ~/pkm"
 
 # Git
 alias gs="git status -s"
@@ -135,7 +137,7 @@ alias gc="git commit -m"
 alias gac="git add . && git commit -m"
 alias gdc="git diff --cached"
 alias gp="git push"
-alias gcob='git branch | fzf | xargs git checkout'
+alias gcob="git branch | fzf | xargs git checkout"
 
 # Override aliases set by oh-my-zsh
 unalias gg
