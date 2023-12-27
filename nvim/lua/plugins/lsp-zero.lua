@@ -1,5 +1,7 @@
 local Plugin = { "VonHeikemen/lsp-zero.nvim" }
 
+Plugin.pin = true
+
 Plugin.branch = "v3.x"
 
 Plugin.dependencies = {
@@ -76,6 +78,9 @@ Plugin.config = function()
       -- Scroll up and down the documentation window
       ["<C-u>"] = cmp.mapping.scroll_docs(-4),
       ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    }),
+    sources = cmp.config.sources({
+      { name = "neorg" },
     }),
   })
 
