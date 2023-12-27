@@ -5534,13 +5534,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.50196081399917603</real>
+				<real>0.50196078431372548</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.75294119119644165</real>
+				<real>0.49411764705882355</real>
 				<key>Red Component</key>
-				<real>0.65490198135375977</real>
+				<real>0.90196078431372551</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -5959,7 +5959,7 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
