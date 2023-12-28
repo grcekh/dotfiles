@@ -23,6 +23,7 @@ brew "neovim", args: ["HEAD"]
 brew "pyenv"
 brew "ripgrep"
 brew "starship"
+brew "stow"
 brew "stylua"
 brew "tcl-tk"
 brew "tmux"

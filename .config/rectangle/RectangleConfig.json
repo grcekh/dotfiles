@@ -52,6 +52,9 @@
     "doubleClickTitleBar" : {
       "int" : 0
     },
+    "doubleClickTitleBarIgnoredApps" : {
+
+    },
     "doubleClickTitleBarRestore" : {
       "int" : 0
     },
@@ -80,7 +83,7 @@
 
     },
     "gapSize" : {
-      "float" : 0
+      "float" : 6
     },
     "hideMenubarIcon" : {
       "bool" : true
@@ -190,6 +193,9 @@
     "SUEnableAutomaticChecks" : {
       "bool" : false
     },
+    "systemWideMouseDown" : {
+      "int" : 0
+    },
     "todo" : {
       "int" : 2
     },
@@ -209,10 +215,10 @@
       "int" : 0
     },
     "unsnapRestore" : {
-      "int" : 0
+      "int" : 2
     },
     "windowSnapping" : {
-      "int" : 0
+      "int" : 2
     }
   },
   "shortcuts" : {
@@ -230,6 +236,10 @@
     },
     "center" : {
       "keyCode" : 8,
+      "modifierFlags" : 786432
+    },
+    "centerHalf" : {
+      "keyCode" : 11,
       "modifierFlags" : 786432
     },
     "centerThird" : {
@@ -333,5 +343,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "76"
+  "version" : "81"
 }

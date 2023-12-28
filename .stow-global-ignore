@@ -1,0 +1,12 @@
+\.DS_Store
+
+\.stow-local-ignore
+
+\.git
+\.gitignore
+
+^/README.*
+
+ansible
+screenshots
+scripts
