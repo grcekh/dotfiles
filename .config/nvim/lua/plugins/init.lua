@@ -31,4 +31,14 @@ return {
     opts = {},
   },
   { "echasnovski/mini.pairs", event = "VeryLazy", version = false, opts = {} },
+  {
+
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
 }

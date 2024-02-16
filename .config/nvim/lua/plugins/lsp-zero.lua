@@ -46,6 +46,7 @@ Plugin.config = function()
   mason.setup({})
   mason_lspconfig.setup({
     ensure_installed = {
+      "astro",
       "clangd",
       "cssls",
       "cssmodules_ls",
@@ -91,6 +92,7 @@ Plugin.config = function()
     },
     servers = {
       ["efm"] = {
+        "astro",
         "css",
         "graphql",
         "html",

@@ -1,6 +1,8 @@
 local Plugin = { "nvim-treesitter/nvim-treesitter" }
 
-Plugin.version = false
+Plugin.version = "0.9.2"
+
+Plugin.pin = true
 
 Plugin.build = function()
   require("nvim-treesitter.install").update({ with_sync = true })()
@@ -12,6 +14,7 @@ Plugin.config = function()
   local configs = require("nvim-treesitter.configs")
   configs.setup({
     ensure_installed = {
+      "astro",
       "bash",
       "c",
       "cmake",
@@ -26,6 +29,7 @@ Plugin.config = function()
       "javascript",
       "jsdoc",
       "json",
+      "latex",
       "lua",
       "luadoc",
       "make",

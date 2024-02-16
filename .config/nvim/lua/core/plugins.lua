@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("User", {
   callback = function()
     local uv = vim.loop
     local config = vim.fn.stdpath("config")
-    local dotfiles = os.getenv("HOME") .. "/dotfiles/nvim"
+    local dotfiles = os.getenv("HOME") .. "/dotfiles/.config/nvim"
 
     local NUM_BACKUPS = 5
     local LOCKFILES_DIR_REAL = string.format("%s/lockfiles/", dotfiles)

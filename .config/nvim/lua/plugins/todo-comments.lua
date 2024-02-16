@@ -6,7 +6,7 @@ Plugin.dependencies = {
 
 Plugin.event = "VeryLazy"
 
-Plugin.config = function()
+Plugin.init = function()
   vim.keymap.set(
     "n",
     "<Leader>tq",
@@ -29,5 +29,7 @@ Plugin.config = function()
     require("todo-comments").jump_prev()
   end, { desc = "Previous todo comment" })
 end
+
+Plugin.opts = {}
 
 return Plugin
