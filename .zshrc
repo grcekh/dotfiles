@@ -179,6 +179,14 @@ export FZF_DEFAULT_OPTS='
 
 
 ###########################################################
+# RUNTIME VERSION MANAGER
+###########################################################
+
+# mise
+eval "$(mise activate zsh)"
+
+
+###########################################################
 # PYTHON
 ###########################################################
 
@@ -196,16 +204,6 @@ eval "$(pyenv init -)"
 # For compilers (e.g., python-build) to find zlib
 export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
-
-
-###########################################################
-# NODE.JS
-###########################################################
-
-# fnm
-eval "$(fnm env --use-on-cd)"
-export FNM_COREPACK_ENABLED=true
-
 
 ###########################################################
 # MISCELLANEOUS
