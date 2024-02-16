@@ -2,8 +2,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Prompt-wide configuration options
-# Wait 10 milliseconds for starship to check files under the current directory.
-scan_timeout = 100
+# Wait 1 second for starship to check files under the current directory.
+scan_timeout = 1000
 
 [character]
 success_symbol = "[󰉊 ](bold green)"
