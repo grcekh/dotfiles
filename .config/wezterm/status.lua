@@ -37,7 +37,7 @@ local function create_status_component(args)
 
 	local component = {}
 
-	local function add_segment(bg_color, fg_color, text)
+	local function add_cell(bg_color, fg_color, text)
 		table.insert(component, { Background = { Color = bg_color } })
 		table.insert(component, { Foreground = { Color = fg_color } })
 		table.insert(component, { Text = text })
@@ -45,20 +45,20 @@ local function create_status_component(args)
 
 	-- Add separator before, if specified
 	if separator ~= "" and (separator_position == "before" or separator_position == "both") then
-		add_segment(separator_highlight.bg, separator_highlight.fg, separator)
+		add_cell(separator_highlight.bg, separator_highlight.fg, separator)
 	end
 
 	-- Add icon
 	if icon ~= "" then
-		add_segment(icon_highlight.bg, icon_highlight.fg, spacer .. icon)
+		add_cell(icon_highlight.bg, icon_highlight.fg, spacer .. icon)
 	end
 
 	-- Add provider
-	add_segment(highlight.bg, highlight.fg, spacer .. provider .. spacer)
+	add_cell(highlight.bg, highlight.fg, spacer .. provider .. spacer)
 
 	-- Add separator after, if specified
 	if separator ~= "" and (separator_position == "after" or separator_position == "both") then
-		add_segment(separator_highlight.bg, separator_highlight.fg, separator)
+		add_cell(separator_highlight.bg, separator_highlight.fg, separator)
 	end
 
 	return wezterm.format(component)
@@ -82,8 +82,29 @@ function M.setup(config)
 			status_color = palette.blue
 		end
 
-		local cwd = pane:get_current_working_dir()
-		cwd = cwd and utils.basename(cwd)
+		-- local cwd = pane:get_current_working_dir()
+		-- cwd = cwd and utils.basename(cwd)
+
+		local cwd_uri = pane:get_current_working_dir()
+		local cwd = ""
+
+		if cwd_uri then
+			if type(cwd_uri) == "userdata" then
+				-- As of version 20240127-113634-bbcac864, the return type of has changed to the new Url object.
+				-- https://wezfurlong.org/wezterm/config/lua/wezterm.url/Url
+				cwd = cwd_uri.file_path and utils.basename(cwd_uri.file_path)
+			else
+				-- For backwards compatability with older versions (i.e., 20230712-072601-f4abf8fd or earlier)
+				cwd_uri = cwd_uri:sub(8)
+				local slash = cwd_uri:find("/")
+				if slash then
+					-- Extract the cwd from the uri, decoding %-encoding
+					cwd = cwd_uri:sub(slash):gsub("%%(%x%x)", function(hex)
+						return string.char(tonumber(hex, 16))
+					end)
+				end
+			end
+		end
 
 		local cmd = pane:get_foreground_process_name()
 		cmd = cmd and utils.basename(cmd)

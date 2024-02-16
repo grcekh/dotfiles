@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 
-local session_manager = require("session-manager")
 local colors = require("colors")
 
 local config = {}
@@ -56,23 +55,12 @@ config.window_padding = {
 -- Tab bar
 config.tab_max_width = 32
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 
 -- Panes
 config.inactive_pane_hsb = {
 	saturation = 0.9,
 	brightness = 0.9,
 }
-
--- Session manager
-wezterm.on("save_session", function(window)
-	session_manager.save_state(window)
-end)
-wezterm.on("load_session", function(window)
-	session_manager.load_state(window)
-end)
-wezterm.on("restore_session", function(window)
-	session_manager.restore_state(window)
-end)
 
 return config

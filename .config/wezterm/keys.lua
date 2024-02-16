@@ -18,11 +18,6 @@ function M.setup(config)
 		{ key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
 		{ key = "m", mods = "LEADER", action = act.ActivateKeyTable({ name = "move_tab", one_shot = false }) },
 
-		-- Session manager
-		{ key = "S", mods = "SUPER", action = act({ EmitEvent = "save_session" }) },
-		{ key = "L", mods = "SUPER", action = act({ EmitEvent = "load_session" }) },
-		{ key = "R", mods = "SUPER", action = act({ EmitEvent = "restore_session" }) },
-
 		-- Workspaces
 		{ key = "f", mods = "CTRL|SHIFT", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 		{ key = "y", mods = "CTRL|SHIFT", action = act.SwitchToWorkspace({ name = "home" }) },
@@ -77,7 +72,7 @@ function M.setup(config)
 		{ key = "t", mods = "CMD|SHIFT", action = act.ShowTabNavigator },
 		{
 			key = "r",
-			mods = "CMD|SHIFT",
+			mods = "SHIFT|SUPER",
 			action = act.PromptInputLine({
 				description = "Rename the current tab:",
 				action = wezterm.action_callback(function(window, _, line)
