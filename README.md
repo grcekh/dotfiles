@@ -22,7 +22,7 @@ then, run the setup script to get a list of available commands:
 
 ```sh
 USAGE: setup.sh [COMMAND]
-       setup.sh [ -h | --help]
+       setup.sh [-h | --help]
 
 COMMANDS:
   i, install    Install system packages and fonts

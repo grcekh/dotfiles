@@ -77,7 +77,7 @@ PLAYBOOK="$ROOT_DIR/ansible/$(echo $OS | awk '{print tolower($0)}').yml"
 print_usage() {
 cat << EOM
 USAGE: setup.sh [COMMAND]
-       setup.sh [ -h | --help]
+       setup.sh [-h | --help]
 
 COMMANDS:
   i, install    Install system packages and fonts
