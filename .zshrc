@@ -182,7 +182,7 @@ export FZF_DEFAULT_OPTS='
 # RUNTIME VERSION MANAGER
 ###########################################################
 
-# mise
+# Activate mise to add tools like `npm` and `node` to PATH
 eval "$(mise activate zsh)"
 
 

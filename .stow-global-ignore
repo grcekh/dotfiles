@@ -8,7 +8,7 @@
 ^/README.*
 
 ansible
+assets
 firefox
-fonts
 screenshots
 scripts

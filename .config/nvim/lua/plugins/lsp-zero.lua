@@ -12,6 +12,9 @@ Plugin.dependencies = {
   -- Autocompletion
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "saadparwaiz1/cmp_luasnip" },
   { "L3MON4D3/LuaSnip" },
   -- Formatting
   {
@@ -43,6 +46,7 @@ Plugin.config = function()
     lsp_zero.default_keymaps({ buffer = bufnr })
   end)
 
+  -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
   mason.setup({})
   mason_lspconfig.setup({
     ensure_installed = {
@@ -50,7 +54,7 @@ Plugin.config = function()
       "clangd",
       "cssls",
       "cssmodules_ls",
-      "efm",
+      "efm", -- General purpose server
       "eslint",
       "html",
       "jsonls",
@@ -59,7 +63,10 @@ Plugin.config = function()
       "pyright",
       "ruff_lsp",
       "rust_analyzer",
+      "taplo", -- TOML
+      "texlab",
       "tsserver",
+      "yamlls",
     },
     handlers = {
       lsp_zero.default_setup,
@@ -72,15 +79,24 @@ Plugin.config = function()
     },
   })
 
-  local cmp_format = lsp_zero.cmp_format()
   cmp.setup({
-    formatting = cmp_format,
+    formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({
       -- Scroll up and down the documentation window
       ["<C-u>"] = cmp.mapping.scroll_docs(-4),
       ["<C-d>"] = cmp.mapping.scroll_docs(4),
     }),
+    snippet = {
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end,
+    },
     sources = cmp.config.sources({
+      { name = "path" },
+      { name = "nvim_lsp" },
+      { name = "nvim_lua" },
+      { name = "luasnip", keyword_length = 2 },
+      { name = "buffer", keyword_length = 3 },
       { name = "neorg" },
     }),
   })
@@ -92,19 +108,19 @@ Plugin.config = function()
     },
     servers = {
       ["efm"] = {
-        "astro",
-        "css",
-        "graphql",
-        "html",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "lua",
-        "python",
-        "sass",
-        "scss",
-        "typescript",
-        "typescriptreact",
+        -- "astro",
+        -- "css",
+        -- "graphql",
+        -- "html",
+        -- "javascript",
+        -- "javascriptreact",
+        -- "json",
+        -- "lua",
+        -- "python",
+        -- "sass",
+        -- "scss",
+        -- "typescript",
+        -- "typescriptreact",
       },
     },
   })

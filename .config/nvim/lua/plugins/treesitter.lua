@@ -1,9 +1,5 @@
 local Plugin = { "nvim-treesitter/nvim-treesitter" }
 
-Plugin.version = "0.9.2"
-
-Plugin.pin = true
-
 Plugin.build = function()
   require("nvim-treesitter.install").update({ with_sync = true })()
 end
@@ -34,10 +30,12 @@ Plugin.config = function()
       "luadoc",
       "make",
       "markdown",
+      "markdown_inline",
       "norg",
       "python",
       "rust",
       "scss",
+      "swift",
       "tsx",
       "typescript",
       "vim",

@@ -12,6 +12,8 @@ function M.setup(config)
 		-- Send C-a when inputting C-a twice
 		{ key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
 		{ key = "r", mods = "CTRL|SHIFT|SUPER", action = act.ReloadConfiguration },
+		{ key = "t", mods = "CTRL|SHIFT|SUPER", action = act.ToggleAlwaysOnTop },
+		{ key = "n", mods = "SHIFT|CTRL", action = wezterm.action.ToggleFullScreen },
 
 		-- Modes
 		{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },

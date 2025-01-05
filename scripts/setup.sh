@@ -62,8 +62,8 @@ fi
 SCRIPTS_DIR=$(dirname "${BASH_SOURCE[0]}")
 ROOT_DIR="$(cd "$(dirname "$SCRIPTS_DIR")" && pwd)"
 
-# Fonts
-FONTS_DIR="$ROOT_DIR/fonts"
+ASSETS_DIR="$ROOT_DIR/assets"
+FONTS_DIR="$ASSETS_DIR/fonts"
 
 # Git
 SOURCE="https://github.com/grcekh/dotfiles"
