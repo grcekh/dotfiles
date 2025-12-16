@@ -28,7 +28,7 @@ abbr -a dotdot --regex '^\.\.+$' --function multicd
 # Git
 #
 
-# https://github.com/lewisacidic/fish-git-abbr/tree/master
+# https://github.com/lewisacidic/fish-git-abbr
 abbr g 'git'
 abbr gi 'git init'
 abbr gcf 'git config --list'
@@ -37,7 +37,10 @@ abbr gcount 'git shortlog -sn'
 # ga: git add
 abbr ga 'git add'
 abbr gaa 'git add --all'
-abbr gac 'git commit -m'
+
+# gc: git commit
+abbr gca 'git commit -a -v'
+abbr gcm 'git commit -m'
 
 # gb: git branch
 abbr gb 'git branch'
