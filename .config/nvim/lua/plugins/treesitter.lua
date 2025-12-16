@@ -9,13 +9,17 @@ Plugin.event = { "BufReadPost", "BufNewFile" }
 Plugin.config = function()
   local configs = require("nvim-treesitter.configs")
   configs.setup({
+    folds = { enable = true },
+    highlight = { enable = true },
+    indent = { enable = true },
+    sync_install = false,
     ensure_installed = {
-      "astro",
       "bash",
       "c",
       "cmake",
       "cpp",
       "css",
+      "diff",
       "dockerfile",
       "glsl",
       "go",
@@ -25,17 +29,18 @@ Plugin.config = function()
       "javascript",
       "jsdoc",
       "json",
+      "jsonc",
       "latex",
       "lua",
       "luadoc",
       "make",
       "markdown",
       "markdown_inline",
-      "norg",
       "python",
+      "regex",
       "rust",
       "scss",
-      "swift",
+      "toml",
       "tsx",
       "typescript",
       "vim",
@@ -43,9 +48,6 @@ Plugin.config = function()
       "vue",
       "yaml",
     },
-    sync_install = false,
-    highlight = { enable = true },
-    indent = { enable = true },
   })
 end
 

@@ -1,13 +1,13 @@
-local Plugin = { "jbyuki/nabla.nvim" }
+return {
+  "jbyuki/nabla.nvim",
 
-Plugin.init = function()
-  vim.keymap.set("n", "<Leader>n", function()
-    require("nabla").toggle_virt()
-  end)
+  init = function()
+    vim.keymap.set("n", "<Leader>n", function()
+      require("nabla").toggle_virt()
+    end)
 
-  vim.keymap.set("n", "<Leader>N", function()
-    require("nabla").popup()
-  end)
-end
-
-return Plugin
+    vim.keymap.set("n", "<Leader>N", function()
+      require("nabla").popup()
+    end)
+  end,
+}

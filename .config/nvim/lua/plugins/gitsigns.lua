@@ -1,16 +1,16 @@
-local Plugin = { "lewis6991/gitsigns.nvim" }
+return {
+  "lewis6991/gitsigns.nvim",
 
-Plugin.event = "VeryLazy"
+  event = "VeryLazy",
 
-Plugin.opts = {
-  signs = {
-    add = { text = "+" },
-    change = { text = "~" },
-    delete = { text = "_" },
-    topdelete = { text = "‾" },
-    changedelete = { text = "~" },
-    untracked = { text = "┆" },
+  opts = {
+    signs = {
+      add = { text = "+" },
+      change = { text = "~" },
+      delete = { text = "_" },
+      topdelete = { text = "‾" },
+      changedelete = { text = "~" },
+      untracked = { text = "┆" },
+    },
   },
 }
-
-return Plugin

@@ -1,17 +1,17 @@
-local Plugin = { "NvChad/nvim-colorizer.lua" }
+return {
+  "NvChad/nvim-colorizer.lua",
 
-Plugin.ft = {
-  "css",
-  "scss",
-  "html",
-  "javascript",
-  "javascriptreact",
-  "typescript",
-  "typescriptreact",
-  "lua",
-  "vimscript",
+  ft = {
+    "css",
+    "scss",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "lua",
+    "vimscript",
+  },
+
+  opts = {},
 }
-
-Plugin.opts = {}
-
-return Plugin

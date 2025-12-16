@@ -1,35 +1,30 @@
-local Plugin = { "folke/todo-comments.nvim" }
+return {
+  "folke/todo-comments.nvim",
 
-Plugin.dependencies = {
-  "nvim-lua/plenary.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+
+  event = "VeryLazy",
+
+  cmd = { "TodoTelescope", "TodoQuickFix" },
+
+  opts = {},
+
+  keys = {
+    {
+      "]t",
+      function()
+        require("todo-comments").jump_next()
+      end,
+      desc = "Next Todo Comment",
+    },
+    {
+      "[t",
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      desc = "Previous Todo Comment",
+    },
+    { "<leader>tq", "<cmd>TodoQuickFix<cr>", desc = "Todo (Quickfix)" },
+    { "<leader>tt", "<cmd>TodoTelescope<cr>", desc = "Todo (Telescope)" },
+  },
 }
-
-Plugin.event = "VeryLazy"
-
-Plugin.init = function()
-  vim.keymap.set(
-    "n",
-    "<Leader>tq",
-    ":TodoQuickFix<CR>",
-    { desc = "Shows todos using quickfix list" }
-  )
-
-  vim.keymap.set(
-    "n",
-    "<Leader>tt",
-    ":TodoTelescope<CR>",
-    { desc = "Search todos with Telescope" }
-  )
-
-  vim.keymap.set("n", "]t", function()
-    require("todo-comments").jump_next()
-  end, { desc = "Next todo comment" })
-
-  vim.keymap.set("n", "[t", function()
-    require("todo-comments").jump_prev()
-  end, { desc = "Previous todo comment" })
-end
-
-Plugin.opts = {}
-
-return Plugin

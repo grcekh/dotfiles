@@ -1,52 +1,40 @@
-local Plugin = { "folke/trouble.nvim" }
+return {
+  "folke/trouble.nvim",
 
-Plugin.dependencies = {
-  "nvim-tree/nvim-web-devicons",
-}
+  opts = {}, -- For default options
 
-Plugin.keys = {
-  {
-    "<C-x>",
-    function()
-      require("trouble").open()
-    end,
-    desc = "Open Trouble",
-  },
-  {
-    "<Leader>xw",
-    function()
-      require("trouble").open("workspace_diagnostics")
-    end,
-    desc = "Open workspace dianogstics from builtin LSP",
-  },
-  {
-    "<Leader>xd",
-    function()
-      require("trouble").open("document_diagnostics")
-    end,
-    desc = "Open document dianogstics from builtin LSP",
-  },
-  {
-    "<Leader>xq",
-    function()
-      require("trouble").open("quickfix")
-    end,
-    desc = "Open quickfix items",
-  },
-  {
-    "<Leader>xl",
-    function()
-      require("trouble").open("loclist")
-    end,
-    desc = "Open items from the window's location list",
-  },
-  {
-    "gR",
-    function()
-      require("trouble").open("lsp_references")
-    end,
-    desc = "Open references for current word from builtin LSP",
+  cmd = "Trouble",
+
+  keys = {
+    {
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xX",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>cs",
+      "<cmd>Trouble symbols toggle focus=false<cr>",
+      desc = "Symbols (Trouble)",
+    },
+    {
+      "<leader>cl",
+      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      desc = "LSP Definitions (Trouble)",
+    },
+    {
+      "<leader>xL",
+      "<cmd>Trouble loclist toggle<cr>",
+      desc = "Location List (Trouble)",
+    },
+    {
+      "<leader>xQ",
+      "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
   },
 }
-
-return Plugin
