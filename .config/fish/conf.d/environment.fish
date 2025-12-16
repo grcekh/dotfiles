@@ -12,12 +12,3 @@ end
 
 fish_add_path /opt/homebrew/bin
 /opt/homebrew/bin/brew shellenv | source
-
-#
-# Python
-#
-
-set -gx PIP_REQUIRE_VIRTUALENV true
-set -gx PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-pyenv init - | source
