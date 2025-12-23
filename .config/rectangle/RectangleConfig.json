@@ -1,6 +1,9 @@
 {
   "bundleId" : "com.knollsoft.Rectangle",
   "defaults" : {
+    "SUEnableAutomaticChecks" : {
+      "bool" : false
+    },
     "allowAnyShortcut" : {
       "bool" : false
     },
@@ -10,11 +13,11 @@
     "almostMaximizeWidth" : {
       "float" : 0
     },
-    "alternateDefaultShortcuts" : {
-      "bool" : true
-    },
     "altThirdCycle" : {
       "int" : 0
+    },
+    "alternateDefaultShortcuts" : {
+      "bool" : true
     },
     "alwaysAccountForStage" : {
       "int" : 0
@@ -34,10 +37,10 @@
     "cascadeAllDeltaSize" : {
       "float" : 30
     },
-    "centeredDirectionalMove" : {
+    "centerHalfCycles" : {
       "int" : 0
     },
-    "centerHalfCycles" : {
+    "centeredDirectionalMove" : {
       "int" : 0
     },
     "cornerSnapAreaSize" : {
@@ -45,6 +48,9 @@
     },
     "curtainChangeSize" : {
       "int" : 0
+    },
+    "cycleSizesIsChanged" : {
+      "bool" : false
     },
     "disabledApps" : {
 
@@ -84,6 +90,9 @@
     },
     "gapSize" : {
       "float" : 4
+    },
+    "hapticFeedbackOnSnap" : {
+      "int" : 2
     },
     "hideMenubarIcon" : {
       "bool" : true
@@ -145,11 +154,20 @@
     "screenEdgeGapRight" : {
       "float" : 0
     },
+    "screenEdgeGapTop" : {
+      "float" : 0
+    },
+    "screenEdgeGapTopNotch" : {
+      "float" : 0
+    },
     "screenEdgeGapsOnMainScreenOnly" : {
       "bool" : false
     },
-    "screenEdgeGapTop" : {
-      "float" : 0
+    "screensOrderedByX" : {
+      "int" : 0
+    },
+    "selectedCycleSizes" : {
+      "int" : 0
     },
     "shortEdgeSnapAreaSize" : {
       "float" : 145
@@ -190,11 +208,11 @@
     "subsequentExecutionMode" : {
       "int" : 1
     },
-    "SUEnableAutomaticChecks" : {
-      "bool" : false
-    },
     "systemWideMouseDown" : {
       "int" : 0
+    },
+    "systemWideMouseDownApps" : {
+
     },
     "todo" : {
       "int" : 2
@@ -216,6 +234,9 @@
     },
     "unsnapRestore" : {
       "int" : 2
+    },
+    "widthStepSize" : {
+      "float" : 30
     },
     "windowSnapping" : {
       "int" : 2
@@ -343,5 +364,5 @@
       "modifierFlags" : 786432
     }
   },
-  "version" : "81"
+  "version" : "98"
 }
