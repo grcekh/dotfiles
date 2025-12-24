@@ -1,12 +1,12 @@
-# Default
+# OS
 .DS_Store
-.hg
-.svn
+Thumbs.db
+
+# Editor
 *.vscode
-node_modules
+.idea
 
 # Temporary files
-*.kate-swp
 *.swp
 *.swo
 *~
