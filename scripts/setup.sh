@@ -62,17 +62,6 @@ fi
 SCRIPTS_DIR=$(dirname "${BASH_SOURCE[0]}")
 ROOT_DIR="$(cd "$(dirname "$SCRIPTS_DIR")" && pwd)"
 
-ASSETS_DIR="$ROOT_DIR/assets"
-FONTS_DIR="$ASSETS_DIR/fonts"
-
-# Git
-SOURCE="https://github.com/grcekh/dotfiles"
-BRANCH="${BRANCH:-main}"
-
-# Ansible
-HOSTS="$ROOT_DIR/ansible/hosts"
-PLAYBOOK="$ROOT_DIR/ansible/$(echo $OS | awk '{print tolower($0)}').yml"
-
 
 print_usage() {
 cat << EOM
@@ -80,10 +69,7 @@ USAGE: setup.sh [COMMAND]
        setup.sh [-h | --help]
 
 COMMANDS:
-  i, install    Install system packages and fonts
-  p, packages   Install system packages
-  f, fonts      Install system fonts
-  a, ansible    Run Ansible playbook
+  i, install    Install system packages
   s, stow       Run GNU Stow to activate symlinks
 EOM
 }
@@ -110,54 +96,6 @@ install_homebrew() {
 install_packages() {
   log_debug "Installing system packages..."
   install_homebrew
-}
-
-install_fonts() {
-  log_debug "Installing fonts..."
-
-  if [[ "$OS" == "darwin" ]]; then
-    FONTS_INSTALL_DIR="$HOME/Library/Fonts"
-  elif [[ "$OS" == "linux" ]]; then
-    FONTS_INSTALL_DIR="$HOME/.local/share/fonts"
-    mkdir -p "$FONT_INSTALL_DIR"
-  fi
-
-  if [ -d "$FONTS_DIR" ]; then
-    cp -R "$FONTS_DIR/"* "$FONTS_INSTALL_DIR"
-    log_success "[fonts] Fonts installed successfully."
-  else
-    log_error "[fonts] Fonts directory does not exist."
-    return 1
-  fi
-}
-
-run_ansible() {
-  log_debug "Bootstrapping Ansible..."
-
-  if ! have ansible; then
-    if ! have brew; then install_homebrew || return 1; fi
-
-    log "[ansible] Installing..."
-    brew install ansible
-
-    if have ansible; then
-      log_success "[ansible] Installation successful."
-    else
-      log_error "[ansible] Installation failed."
-      return 1
-    fi
-  fi
-
-
-  if [ -d ~/.ansible/collections/ansible_collections/community ]; then
-    log "[ansible] Installing community plugins..."
-    log_debug "ansible-galaxy collection install community.general"
-    # ansible-galaxy collection install community.general
-  fi
-
-  log "[ansible] Running playbook..."
-  log_debug "ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass"
-  # ansible-playbook -i $HOSTS $PLAYBOOK --ask-become-pass
 }
 
 run_stow() {
@@ -200,19 +138,6 @@ main() {
     case $opt in
       i | install)
         install_packages
-        install_fonts
-        exit 0
-        ;;
-      p | packages)
-        install_packages
-        exit 0
-        ;;
-      f | fonts)
-        install_fonts
-        exit 0
-        ;;
-      a | ansible)
-        run_ansible
         exit 0
         ;;
       s | stow)
