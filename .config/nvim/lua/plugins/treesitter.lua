@@ -1,14 +1,13 @@
-local Plugin = { "nvim-treesitter/nvim-treesitter" }
+return {
+  "nvim-treesitter/nvim-treesitter",
 
-Plugin.build = function()
-  require("nvim-treesitter.install").update({ with_sync = true })()
-end
+  branch = "master",
 
-Plugin.event = { "BufReadPost", "BufNewFile" }
+  build = ":TSUpdate",
 
-Plugin.config = function()
-  local configs = require("nvim-treesitter.configs")
-  configs.setup({
+  main = "nvim-treesitter.configs", -- Sets main module to use for opts
+
+  opts = {
     folds = { enable = true },
     highlight = { enable = true },
     indent = { enable = true },
@@ -30,7 +29,6 @@ Plugin.config = function()
       "jsdoc",
       "json",
       "jsonc",
-      "latex",
       "lua",
       "luadoc",
       "make",
@@ -48,7 +46,5 @@ Plugin.config = function()
       "vue",
       "yaml",
     },
-  })
-end
-
-return Plugin
+  },
+}
