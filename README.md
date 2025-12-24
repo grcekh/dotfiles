@@ -4,7 +4,7 @@
 <img src="./screenshots/neofetch.png" alt="neofetch" width="65%" />
 </p>
 
-dotfiles for my primary machine, a macbook pro with the apple m2 max chipset running macos sonoma.
+dotfiles for my work machine, a macbook pro with the apple m4 pro chipset running macos tahoe.
 
 ## quickstart
 
@@ -26,19 +26,9 @@ USAGE: setup.sh [COMMAND]
 
 COMMANDS:
   i, install    Install system packages and fonts
-  p, packages   Install system packages
-  f, fonts      Install system fonts
-  a, ansible    Run Ansible playbook
   s, stow       Run GNU Stow to activate symlinks
 ```
 
 ## applications not managed with homebrew
 
 - xcode
-- [goldendict-ng](https://github.com/xiaoyifang/goldendict-ng)
-- [qolibri](https://github.com/mvf/qolibri)
-
-## see also
-
-- [dotfiles for Pop!\_OS](https://github.com/grcekh/dotfiles/tree/pop)
-- [dotfiles for Manjaro i3](https://github.com/grcekh/dotfiles/tree/manjaro)
