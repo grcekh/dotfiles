@@ -9,7 +9,6 @@ return {
       vim.cmd.colorscheme("everforest")
     end,
   },
-  { "sainnhe/gruvbox-material", enabled = false },
 
   -- Syntax highlighting
   { "tikhomirov/vim-glsl", ft = { "glsl" } },
